@@ -50,5 +50,10 @@ li.highlighted a{
 }
 
 .register td {
-	width: 33%;
+	width: 50%;
+}
+
+/* Form field width */
+input[type=text], input[type=submit], input[type=password], select {
+  width: 200px;
 }
