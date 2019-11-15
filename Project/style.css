@@ -24,6 +24,15 @@
   background-color: #111;
 }
 
+/*Highlight current page*/
+.highlighted {
+  background-color: #888;
+}
+
+li.highlighted a{
+  color: red;
+}
+
 /* Register a new user */
 
 .register table {
