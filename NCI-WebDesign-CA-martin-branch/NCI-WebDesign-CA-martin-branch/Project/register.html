@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>		
+		<meta charset="UTF-8">
+
+		<title>Register</title><!-- title text must match json names attribute of menuNames in menu.js -->
+
+		<link href="style.css" rel="stylesheet" />
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->	
+
+			<!--Google font-->
+			<link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet">
+				
+	</head>
+	
+	<body onload="resetForm()">			
+		
+		<div id="menu" class="menu"></div><!-- menu.js: displays the menu here -->
+		<script src="menu.js"></script>
+
+		<h1>Register</h1>	
+				
+		<div id="formdiv" class="register"></div><!-- register.js: display the form on loading, and the form data on submit-->
+	
+		<script src="register.js"></script>
+			
+	</body>
+
+</html>
