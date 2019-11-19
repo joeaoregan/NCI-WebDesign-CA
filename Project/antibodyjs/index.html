@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=0.275, maximum-scale=0.275, minimum-scale=0.275">
+		<!--meta name="viewport" content="width=device-width, user-scalable=no" /-->
+		<!--meta name="viewport" content="width=500, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"-->
+		<title>Antibody JS</title>
+		<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" />
+		<link href="styles.css" rel="stylesheet" />
+		<link href="../style.css" rel="stylesheet" />
+			
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="scores.json"></script>
+	</head>
+	
+	<body>
+		<div id="menu" class="menu"></div>
+		<script src="menu.js"></script>
+
+		<div style="width:1280px;margin: 0 auto;">
+			<h1>Antibody JavaScript</h1>
+		</div>
+		
+		<canvas id="antibody" width="1280" height="720"></canvas>
+
+		<script src="canvas.js"></script>
+		<script src="bloodcell.js"></script>
+		<script src="powerup.js"></script>
+		<script src="ship.js"></script>
+		<script src="enemyship.js"></script>
+		<script src="explosion.js"></script>
+		<script src="laser.js"></script>
+		<script src="scrollingBG.js"></script>
+		<script src="text.js"></script>
+		<script src="hud.js"></script>
+		<script src="game.js"></script>
+				
+		<!-- buttons -->
+		<br/>
+		<div class="controller-border" id="controller">
+			<h1>Double-Tapping Outside This Zone Will Lose Focus</h1>
+			<div class="controller">
+				<div class="button-box">
+				  <button class="button button-round" ontouchstart="moveUp()" onmousedown="moveUp()" onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
+				  <button class="button button-round" ontouchstart="moveLeft()" onmousedown="moveLeft()" onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8592;&nbsp;</button>
+				  <span class="button-divider"></span>
+				  <button class="button button-round" ontouchstart="moveRight()" onmousedown="moveRight()" onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
+				  <button class="button button-round" ontouchstart="moveDown()" onmousedown="moveDown()" onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
+				</div>
+				<span class="button-divider"></span>
+				<button class="button button-start" onmousedown="moveleft()" onmouseup="startGame()">START</button>
+				<span class="button-divider"></span>
+				<div class="button-box">
+				  <button class="button button-round buttonX" onmousedown="moveup()" onmouseup="fire()">&nbsp;X&nbsp;</button><br>
+				  <button class="button button-round buttonY" onmousedown="moveleft()" onmouseup="fire()">&nbsp;Y&nbsp;</button>
+				  <span class="button-divider"></span>
+				  <button class="button button-round buttonA" onmousedown="moveright()" onmouseup="fire()">&nbsp;A&nbsp;</button><br>
+				  <button class="button button-round buttonB" onmousedown="movedown()" onmouseup="fire()">&nbsp;B&nbsp;</button>
+				</div>
+			</div>
+			<h1>The A, B, X, and Y Buttons Do The Same Thing</h1>
+		</div>
+		<br/>
+		
+		<script src="controller.js"></script>
+		
+		<div class="body-border">
+			<div>
+				<h2>Current Top Score</h2>
+				
+				<p id="scoreID"></p>
+			</div>
+			
+			<div>
+				<button class="accordion">Controls</button>
+				<div class="panel">
+					<p>
+						<ul>
+							<li><b>A, 4, &larr;</b> = Left</li>
+							<li><b>S, 2, &darr;</b> = Down</li>
+							<li><b>D, 6, &rarr;</b> = Right</li>
+							<li><b>W, 8, &uarr;</b> = Up</li>
+							<li><b>SPACE, Right Click</b> = Fire</li>
+							<li><b>F5</b> = Reset Game</li>
+							<li><b>F11</b> = Full Screen</li>
+						</ul>
+					</p>
+				</div>
+				
+				<button class="accordion">Info</button>
+				<div class="panel">
+					<p>
+						<ul>
+							<li>Score points by destroying enemy ships</li>
+							<li>Player does not lose health when flashing</li>
+							<li>If the Bloodcell Count goes below zero, the game is over</li>
+							<li>The timer doesn't do anything yet</li>
+						</ul>
+					</p>
+					<p>
+						<a href="https://github.com/joeaoregan/AntibodyJS" target="_blank">AntiBody JS GitHub Page</a>
+					</p>
+				</div>
+				
+				<script src="accordion.js"></script>
+			</div>
+		</div>
+	</body>
+</html>

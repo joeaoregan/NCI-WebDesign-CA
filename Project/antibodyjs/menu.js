@@ -2,27 +2,27 @@
 var menuNames = [
 	{
 		"name": "Home",
-		"url": "index.html"
+		"url": "../index.html"
 	},
 	{
 		"name": "Info",
-		"url": "info.html"
+		"url": "../info.html"
 	},
 	{
 		"name": "Register",
-		"url": "register.html"
+		"url": "../register.html"
 	},
 	{
 		"name": "Contact Us",
-		"url": "contact.html"
+		"url": "../contact.html"
 	},
 	{
 		"name": "About",
-		"url": "about.html"
+		"url": "../about.html"
 	},
 	{
 		"name": "Antibody JS",
-		"url": "antibodyjs/index.html"
+		"url": "index.html"
 	}
 ];
 
