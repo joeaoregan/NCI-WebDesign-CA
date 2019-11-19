@@ -22,7 +22,7 @@ var menuNames = [
 	},
 	{
 		"name": "Antibody JS",
-		"url": "index.html"
+		"url": "antibody.html"
 	}
 ];
 
@@ -32,22 +32,22 @@ createMenu(menuNames);
 function createMenu(arr) {
 	var out = "";
 	var i;
-	var titleTxt=document.title;//The title of the current page
-	var classTxt="";//Set the class for highlighted menu item
-	
-	out+="<ul>"; // start of unordered list
+	var titleTxt = document.title;//The title of the current page
+	var classTxt = "";//Set the class for highlighted menu item
 
-	for(i = 0; i < arr.length; i++) {
-		if(titleTxt===arr[i].name){
-			classTxt="highlighted";
-		}else{
-			classTxt="";
+	out += "<div class=\"center\"><ul>"; // start of unordered list
+
+	for (i = 0; i < arr.length; i++) {
+		if (titleTxt === arr[i].name) {
+			classTxt = "highlighted";
+		} else {
+			classTxt = "";
 		}
-		
-		out += '<li class='+classTxt+'><a href="' + arr[i].url + '">' + arr[i].name + '</a></li>'; // add each as list item
+
+		out += '<li class=' + classTxt + '><a href="' + arr[i].url + '">' + arr[i].name + '</a></li>'; // add each as list item
 	}
-	
-	out+="</ul>"; // end of unordered list
-	
+
+	out += "</ul></div>"; // end of unordered list
+
 	document.getElementById("menu").innerHTML = out;
 }

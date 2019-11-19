@@ -118,13 +118,12 @@ function validatePassword() {
 // This function creates the form HTML in a table
 function resetForm() {
 	var formFields = `<form onsubmit="submitForm()">
+	<h1>New User Registration</h1>
+	<h2>Please Complete This Form</h2>
 		<table>
 			<thead>
-				<th colspan="3">New User Registration</th>
-			</thead>
-			<tr>				
-				<th colspan="3">Please complete the following information</th>
-			</tr>`;
+				<th colspan="3">Enter Your Details</th>
+			</thead>`;
 
 	//Concatenate each form field
 	for (i in formJSON) {

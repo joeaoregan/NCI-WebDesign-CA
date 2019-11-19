@@ -22,7 +22,7 @@ var menuNames = [
 	},
 	{
 		"name": "Antibody JS",
-		"url": "antibodyjs/index.html"
+		"url": "antibodyjs/antibody.html"
 	}
 ];
 
