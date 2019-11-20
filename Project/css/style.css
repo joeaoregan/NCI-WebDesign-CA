@@ -38,6 +38,20 @@ li.highlighted a {
   color: #ae31f1;
 }
 
+/*css for images*/
+
+.img{
+	position: relative;
+	left:300px;
+	padding-top: 1em;
+}
+.thumbnail{
+	margin-left: 15px;
+	border-radius: 25px;
+}
+
+
+
 /* Register a new user */
 
 .register table {
