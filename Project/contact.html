@@ -15,6 +15,9 @@
 
 	<!--Google font-->
 	<link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet">
+
+	<!-- Google maps key stored here - not uploaded to github -->
+	<script src="../goople-maps-api-key.js"></script>
 </head>
 
 <body>
@@ -23,6 +26,19 @@
 	<h1>Contact Us</h1>
 
 	<div class="body-border">
+		<h1>Our Location</h1>
+
+		<div id="googleMap" style="width:1280px;height:720px;"></div>
+		<script src="map.js"></script>
+
+		<script>
+			document.write("<script type='text/javascript' src=" + GOOGLE_API_KEY + "><\/script>");
+		</script>
+	</div>
+
+	<div class="body-border">
+		<h1>Email Us</h1>
+		
 		<table>
 			<thead>
 				<tr>
@@ -44,7 +60,6 @@
 			</tr>
 		</table>
 	</div>
-
 </body>
 
 </html>
