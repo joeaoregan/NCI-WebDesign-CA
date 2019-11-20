@@ -23,6 +23,10 @@ var menuNames = [
 	{
 		"name": "About",
 		"url": "about.html"
+	},
+	{
+		"name": "Login",
+		"url": "login.html"
 	}
 ];
 
