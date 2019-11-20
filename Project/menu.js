@@ -17,10 +17,6 @@ var menuNames = [
 		"url": "register.html"
 	},
 	{
-		"name": "Info",
-		"url": "info.html"
-	},
-	{
 		"name": "Contact Us",
 		"url": "contact.html"
 	},
