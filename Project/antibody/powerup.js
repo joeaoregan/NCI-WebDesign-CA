@@ -1,11 +1,11 @@
 const powerupFX = new Audio();
-powerupFX.src = "audio/Bonus1.wav";
+powerupFX.src = "antibody/audio/Bonus1.wav";
 
 class powerup{
 	constructor(sprite){
 		//sprite
 		this.sprite=new Image();
-		this.sprite.src="art/"+sprite+".png";
+		this.sprite.src="antibody/art/"+sprite+".png";
 		this.sX=0;
 		this.sY=0;
 		this.w=100;

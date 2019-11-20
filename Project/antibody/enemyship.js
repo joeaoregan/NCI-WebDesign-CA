@@ -1,8 +1,8 @@
 const enemySprite = new Image();
-enemySprite.src="art/EnemySpriteSheet.png";
+enemySprite.src="antibody/art/EnemySpriteSheet.png";
 
 const enemyFireFX = new Audio();
-enemyFireFX.src = "audio/LaserEnemy.wav";
+enemyFireFX.src = "antibody/audio/LaserEnemy.wav";
 
 const enemyShip = {
 	//sprite: new Image(),

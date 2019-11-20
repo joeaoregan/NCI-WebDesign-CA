@@ -5,12 +5,20 @@ var menuNames = [
 		"url": "index.html"
 	},
 	{
-		"name": "Info",
-		"url": "info.html"
+		"name": "Antibody JS",
+		"url": "antibody.html"
+	},
+	{
+		"name": "Flappy Bird JS",
+		"url": "flappybird.html"
 	},
 	{
 		"name": "Register",
 		"url": "register.html"
+	},
+	{
+		"name": "Info",
+		"url": "info.html"
 	},
 	{
 		"name": "Contact Us",
@@ -19,10 +27,6 @@ var menuNames = [
 	{
 		"name": "About",
 		"url": "about.html"
-	},
-	{
-		"name": "Antibody JS",
-		"url": "antibodyjs/antibody.html"
 	}
 ];
 

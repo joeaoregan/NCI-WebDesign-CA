@@ -1,11 +1,4 @@
-/* Game Canvas */
 
-canvas {
-	font-family: 'Teko', cursive;
-	border: 1px solid #000;
-	display: block;
-	margin: 0 auto;
-}
 
 .controller-border {
 	font-family: 'Teko', cursive;

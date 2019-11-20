@@ -1,6 +1,6 @@
 // Background
 const background = new Image();
-background.src="art/background720.png";
+background.src="antibody/art/background720.png";
 
 const scrollingBG = {
     sX: 0,

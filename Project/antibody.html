@@ -9,13 +9,13 @@
 	<title>Antibody JS</title>
 	<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet">
-	<link href="../css/style.css" rel="stylesheet" />
-	<link href="../css/controller.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/controller.css" rel="stylesheet" />
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	<script type="text/javascript" src="scores.json"></script>
+	<script type="text/javascript" src="antibody/scores.json"></script>
 </head>
 
 <body>
@@ -28,17 +28,17 @@
 
 	<canvas id="antibody" width="1280" height="720"></canvas>
 
-	<script src="canvas.js"></script>
-	<script src="bloodcell.js"></script>
-	<script src="powerup.js"></script>
-	<script src="ship.js"></script>
-	<script src="enemyship.js"></script>
-	<script src="explosion.js"></script>
-	<script src="laser.js"></script>
-	<script src="scrollingBG.js"></script>
-	<script src="text.js"></script>
-	<script src="hud.js"></script>
-	<script src="game.js"></script>
+	<script src="antibody/canvas.js"></script>
+	<script src="antibody/bloodcell.js"></script>
+	<script src="antibody/powerup.js"></script>
+	<script src="antibody/ship.js"></script>
+	<script src="antibody/enemyship.js"></script>
+	<script src="antibody/explosion.js"></script>
+	<script src="antibody/laser.js"></script>
+	<script src="antibody/scrollingBG.js"></script>
+	<script src="antibody/text.js"></script>
+	<script src="antibody/hud.js"></script>
+	<script src="antibody/game.js"></script>
 
 	<!-- buttons -->
 	<br />
@@ -75,7 +75,8 @@
 	</div>
 	<br />
 
-	<script src="controller.js"></script>
+	<!--This script is used to only display the controller if it is a mobile device-->
+	<script src="antibody/controller.js"></script>
 
 	<div class="body-border">
 		<div>

@@ -2,7 +2,7 @@ class laser {
 	constructor(x,y,speed,direction,img){
 		this.sprite=new Image();
 		this.img=img;
-		this.sprite.src="art/"+this.img+".png";
+		this.sprite.src="antibody/art/"+this.img+".png";
 		
 		this.sX=0;
 		this.sY=0;

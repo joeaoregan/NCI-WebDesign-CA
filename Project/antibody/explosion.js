@@ -1,13 +1,13 @@
 const explosionFX = new Audio();
-explosionFX.src = "audio/explosion.wav";
+explosionFX.src = "antibody/audio/explosion.wav";
 
 const splashFX = new Audio();
-splashFX.src = "audio/splash.wav";
+splashFX.src = "antibody/audio/splash.wav";
 
 class explosion {
 	constructor(x,y,dimension,numFrames,name){
 		this.explosionSprite=new Image();		
-		this.explosionSprite.src="art/"+name+".png";
+		this.explosionSprite.src="antibody/art/"+name+".png";
 		this.x=x;
 		this.y=y;
 		this.w=dimension;
