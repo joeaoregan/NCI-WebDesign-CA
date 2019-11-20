@@ -1,38 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Flappy Bird JS</title>
-		<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-			
-		<!--[if lt IE 9]>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Flappy Bird JS</title>
+	<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" />
+
+	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	</head>
-	
-	<body>
-		<div id="menu" class="menu"></div>
-		<script src="menu.js"></script>
+</head>
 
-		<div>
-			<h1>Flappy Bird JS</h1>
+<body onload="updateScore()">
+	<div id="menu" class="menu"></div>
+	<script src="menu.js"></script>
+
+	<div>
+		<h1>Flappy Bird JS</h1>
+	</div>
+
+
+	<canvas id="bird" width="1280" height="720"></canvas>
+
+	<script src="flappybird/game.js"></script>
+
+	<div class="body-border">
+		<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
+		<div class="panel">
+			<p>
+				<h2>Top Scores</h2>
+				<ul>
+					<li><b>Joe</b> 100</li>
+					<li><b>Ian</b> 90</li>
+					<li><b>Martin</b> 80</li>
+				</ul>
+			</p>
 		</div>
 
-		
-		<canvas id="bird" width="1280" height="720"></canvas>
+		<button class="accordion">Controls</button>
+		<div class="panel">
+			<p>
+				<ul>
+					<li>Mouse Click</li>
+					<li>Spacebar</li>
+				</ul>
+			</p>
+		</div>
 
-		<script src="flappybird/game.js"></script>
-		
-		<p>
-		<h2>Controls</h2>
-		<ul>
-			<li>Mouse Click</li>
-			<li>Spacebar</li>
-		</ul>
-		<p>
-		
-		<h2>Current Top Score</h2>
-		<p id="score"></p>
-	</body>
+		<button class="accordion">Info</button>
+		<div class="panel">
+			<p>
+				<h2>How To Play</h2>
+				<ul>
+					<li>Stay between the pipes</li>
+					<li>Stay up off the ground</li>
+					<li>Don't hit the pipes or the ground</li>
+					<li>Simples</li>
+				</ul>
+			</p>
+			<h2>About</h2>
+			<p>
+				Flappy bird is a mobile game developed by Dong Nguyen a video game artist from Vietnam.
+			</p>
+		</div>
+
+		<script src="accordion.js"></script>
+	</div>
+</body>
+
 </html>

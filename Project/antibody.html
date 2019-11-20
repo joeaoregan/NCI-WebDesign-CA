@@ -80,22 +80,36 @@
 
 	<div class="body-border">
 		<div>
-			<h2>Current Top Score</h2>
+			<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
+			<div class="panel">
+				<p>
+					<h2>Top Scores</h2>
+					<ul>
+						<li><b>Joe</b> 100</li>
+						<li><b>Ian</b> 90</li>
+						<li><b>Martin</b> 80</li>
+					</ul>
+				</p>
+			</div>
 
-			<p id="scoreID"></p>
-		</div>
-
-		<div>
 			<button class="accordion">Controls</button>
 			<div class="panel">
 				<p>
+					<h2>Movement</h2>
 					<ul>
 						<li><b>A, 4, &larr;</b> = Left</li>
 						<li><b>S, 2, &darr;</b> = Down</li>
 						<li><b>D, 6, &rarr;</b> = Right</li>
 						<li><b>W, 8, &uarr;</b> = Up</li>
+					</ul>
+					<h2>Weapons</h2>
+					<ul>
 						<li><b>SPACE, Right Click</b> = Fire</li>
-						<li><b>F5</b> = Reset Game</li>
+					</ul>
+					<h2>General</h2>
+					<ul>
+						<li><b>SPACE, Right Click</b> = Fire</li>
+						<li><b>F5</b> = Reset Game (Refreshes Page)</li>
 						<li><b>F11</b> = Full Screen</li>
 					</ul>
 				</p>
@@ -104,6 +118,7 @@
 			<button class="accordion">Info</button>
 			<div class="panel">
 				<p>
+					<h2>How To Play</h2>
 					<ul>
 						<li>Score points by destroying enemy ships</li>
 						<li>Player does not lose health when flashing</li>
@@ -112,6 +127,7 @@
 						<li>The timer doesn't do anything yet</li>
 					</ul>
 				</p>
+				<h2>Links</h2>
 				<p>
 					<a href="https://github.com/joeaoregan/AntibodyJS" target="_blank">AntiBody JS GitHub Page</a>
 				</p>

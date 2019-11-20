@@ -78,6 +78,8 @@ cvs.addEventListener("click", function (evt) {
 
 window.addEventListener('keydown', function (e) {
     if (e.keyCode == 32) {
+        e.preventDefault();//Stop spacebar from scrolling the page
+
         switch (state.current) {
             case state.getReady:
                 state.current = state.game;
@@ -236,23 +238,52 @@ const gameOver = {
     h: 202,
     x: cvs.width / 2 - 225 / 2,
     y: cvs.height / 2 - 202,
+    scoreTextWidth: 0,
+    highScoreTextWidth: 0,
 
     draw: function () {
-        if (state.current == state.over) { 
+        if (state.current == state.over) {
             ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x - (this.w / 2), this.y, this.w * 2, this.h * 2);
 
             ctx.fillStyle = "#FFF";
             ctx.strokeStyle = "#000";
+
+            this.scoreTextWidth = ctx.measureText(score.value).width;
+            this.highScoreTextWidth = ctx.measureText(score.best).width;
+
             // SCORE VALUE
             ctx.font = "50px Teko";
-            ctx.fillText(score.value, this.x - (this.w / 2) + 380, 350);
-            ctx.strokeText(score.value, this.x - (this.w / 2) + 380, 350);
+            ctx.fillText(score.value, this.x - (this.w / 2) + 405 - this.scoreTextWidth, 350);
+            ctx.strokeText(score.value, this.x - (this.w / 2) + 405 - this.scoreTextWidth, 350);
             // BEST SCORE
-            ctx.fillText(score.best, this.x - (this.w / 2) + 380, 436);
-            ctx.strokeText(score.best, this.x - (this.w / 2) + 380, 436);
+            ctx.fillText(score.best, this.x - (this.w / 2) + 405 - this.highScoreTextWidth, 436);
+            ctx.strokeText(score.best, this.x - (this.w / 2) + 405 - this.highScoreTextWidth, 436);
         }
     }
 }
+
+
+/*
+const antibodyTxt={
+	abText: 'Antibody JS by Joe O Regan',
+	textWidth: 0,
+	
+	draw : function(){
+        ctx.fillStyle = "#FFF";
+        ctx.strokeStyle = "#000";
+		
+		this.textWidth=ctx.measureText(this.abText).width;
+		
+        //if(state.current == state.game){
+            ctx.lineWidth = 2;
+            ctx.font = "35px Teko";
+            ctx.fillText(this.abText, (canvas.width/2)-(this.textWidth/2), 590);
+            ctx.strokeText(this.abText, (canvas.width/2)-(this.textWidth/2), 590);
+		//}				
+    }
+    
+*/
+
 
 // PIPES
 const pipes = {
@@ -269,7 +300,8 @@ const pipes = {
 
     w: 53,
     h: 400,
-    gap: 85,
+    //gap: 85,
+    gap: 125,
     maxYPos: -150,
     dx: 2,
 
@@ -294,7 +326,8 @@ const pipes = {
         if (frames % 100 == 0) {
             this.position.push({
                 x: cvs.width,
-                y: this.maxYPos * (Math.random() + 1)
+                y: this.maxYPos * (Math.random() + 1),
+                dead: false
             });
         }
         for (let i = 0; i < this.position.length; i++) {
@@ -302,29 +335,27 @@ const pipes = {
 
             let bottomPipeYPos = p.y + this.h + this.gap;
 
-            // COLLISION DETECTION
-            // TOP PIPE
-            if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.h) {
-                state.current = state.over;
-                HIT.play();
-            }
-            // BOTTOM PIPE
-            if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > bottomPipeYPos && bird.y - bird.radius < bottomPipeYPos + this.h) {
+            // COLLISION DETECTION (Top then bottom pipe)
+            if ((bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.h) ||
+                (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > bottomPipeYPos && bird.y - bird.radius < bottomPipeYPos + this.h)) {
                 state.current = state.over;
                 HIT.play();
             }
 
-            // MOVE THE PIPES TO THE LEFT
-            p.x -= this.dx;
+            p.x -= this.dx; // Pipes move right to left
+
+            // If bird moves past a pipe, update score
+            if (p.x + this.w < bird.x && !p.dead) {
+                score.value += 1;
+                p.dead = true;
+                SCORE_S.play();
+                score.best = Math.max(score.value, score.best);
+                localStorage.setItem("flappy-best", score.best);
+            }
 
             // if the pipes go beyond canvas, we delete them from the array
             if (p.x + this.w <= 0) {
                 this.position.shift();
-                score.value += 1;
-                SCORE_S.play();
-                score.best = Math.max(score.value, score.best);
-                localStorage.setItem("best", score.best);
-                //localStorage.setItem("best", 0);
             }
         }
 
@@ -335,19 +366,20 @@ const pipes = {
         this.position = [];
     }
 }
-
+/*
+// overwrites the onload in the html body tag
 window.onload = function () {
     //when the document is finished loading, replace everything
     //between the <a ...> </a> tags with the value of splitText
 }
-
+*/
 function updateScore() {
-    document.getElementById("score").innerHTML = score.best; //JOR
+    document.getElementById("scoreID").innerHTML = parseInt(localStorage.getItem("flappy-best")) || 0;
 }
 
 // SCORE
 const score = {
-    best: parseInt(localStorage.getItem("best")) || 0,
+    best: parseInt(localStorage.getItem("flappy-best")) || 0,
     value: 0,
 
     draw: function () {
