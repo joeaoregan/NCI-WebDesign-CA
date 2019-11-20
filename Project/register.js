@@ -79,7 +79,7 @@ function submitForm() {
 			<tr id="add"></tr>
 								
 			<tfoot>
-				<tr><td colspan="2"><input type="submit" value="Add New" onclick="resetForm()"/></td><tr>
+				<tr><td colspan="2"><input type="submit" class="btn" value="Add New" onclick="resetForm()"/></td><tr>
 			</tfoot>
 		</table>`;
 
@@ -165,7 +165,7 @@ function resetForm() {
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td><input name="submit" type="submit" value="Submit" /></td>
+				<td><input name="submit"  class="btn" type="submit" value="Submit" /></td>
 				<td></td>
 			</tr>
 		</table>
