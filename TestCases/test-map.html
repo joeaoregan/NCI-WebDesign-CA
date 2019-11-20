@@ -1,0 +1,41 @@
+<!-- test view location of college campus (fake business location) on google maps -->
+<!-- Requires an API Key that is generated on google site to work, and this can cost bucks -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../goople-maps-api-key.js"></script>
+</head>
+
+<body>
+
+  <h1>My First Google Map</h1>
+
+  <div id="googleMap" style="width:1280px;height:720px;"></div>
+
+  <script>
+    function myMap() {
+      var myLatLng = { lat: 53.349093, lng: -6.242793 };//NCI Google Maps Coordinates
+
+      var mapProp = {
+        center: new google.maps.LatLng(myLatLng.lat, myLatLng.lng),
+        zoom: 17,//initial zoom level
+      };
+
+      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'We are based here. (Not really, I am nowhere near Dublin)'
+      });
+    }
+  </script>
+
+  <script>
+    document.write("<script type='text/javascript' src=" + GOOGLE_API_KEY + "><\/script>");
+  </script>
+
+</body>
+
+</html>
