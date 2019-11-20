@@ -31,6 +31,32 @@ SWOOSHING.src = "flappybird/audio/sfx_swooshing.wav";
 const DIE = new Audio();
 DIE.src = "flappybird/audio/sfx_die.wav";
 
+var mute = false;
+
+function muteAudio() {
+    mute = !mute;
+    if (mute) {
+        document.getElementById("muteID").innerHTML = "Mute: Off";
+        document.getElementById("muteID").classList.add('cancelbtn');
+    } else {
+        document.getElementById("muteID").innerHTML = "Mute: On";
+        document.getElementById("muteID").classList.remove('cancelbtn');
+    }
+}
+
+var storedScores = JSON.parse(localStorage.getItem('flappy-scores')) || { hard: 0, medium: 0, easy: 0 };
+console.log(storedScores);
+console.log(storedScores.hard);
+console.log(storedScores.medium);
+console.log(storedScores.easy);
+
+const difficulty = {
+    current: 1,
+    easy: 0,
+    medium: 1,
+    hard: 2
+}
+
 // GAME STATE
 const state = {
     current: 0,
@@ -53,12 +79,13 @@ cvs.addEventListener("click", function (evt) {
     switch (state.current) {
         case state.getReady:
             state.current = state.game;
-            SWOOSHING.play();
+            if (!mute) SWOOSHING.play();
+            setDifficulty();
             break;
         case state.game:
             if (bird.y - bird.radius <= 0) return;
             bird.flap();
-            FLAP.play();
+            if (!mute) FLAP.play();
             break;
         case state.over:
             let rect = cvs.getBoundingClientRect();
@@ -83,12 +110,13 @@ window.addEventListener('keydown', function (e) {
         switch (state.current) {
             case state.getReady:
                 state.current = state.game;
-                SWOOSHING.play();
+                if (!mute) SWOOSHING.play();
+                setDifficulty();
                 break;
             case state.game:
                 if (bird.y - bird.radius <= 0) return;
                 bird.flap();
-                FLAP.play();
+                if (!mute) FLAP.play();
                 break;
             case state.over:
                 pipes.reset();
@@ -191,11 +219,13 @@ const bird = {
             this.speed += this.gravity;
             this.y += this.speed;
 
+            // bird moves off screen, or hits ground
             if (this.y + this.h / 2 >= cvs.height - fg.h) {
                 this.y = cvs.height - fg.h - this.h / 2;
                 if (state.current == state.game) {
                     state.current = state.over;
-                    DIE.play();
+                    if (!mute) DIE.play();
+                    document.getElementById("difficultyID").classList.remove('not-in-use-btn');
                 }
             }
 
@@ -247,17 +277,20 @@ const gameOver = {
 
             ctx.fillStyle = "#FFF";
             ctx.strokeStyle = "#000";
+            ctx.font = "30px Teko";
+
+            var text= "Hard: "+(storedScores.hard || 0)+" Med: "+(storedScores.medium || 0)+" Easy: "+(storedScores.easy || 0);
 
             this.scoreTextWidth = ctx.measureText(score.value).width;
-            this.highScoreTextWidth = ctx.measureText(score.best).width;
+            this.highScoreTextWidth = ctx.measureText(text).width;
 
             // SCORE VALUE
-            ctx.font = "50px Teko";
+            //ctx.font = "40px Teko";
             ctx.fillText(score.value, this.x - (this.w / 2) + 405 - this.scoreTextWidth, 350);
             ctx.strokeText(score.value, this.x - (this.w / 2) + 405 - this.scoreTextWidth, 350);
             // BEST SCORE
-            ctx.fillText(score.best, this.x - (this.w / 2) + 405 - this.highScoreTextWidth, 436);
-            ctx.strokeText(score.best, this.x - (this.w / 2) + 405 - this.highScoreTextWidth, 436);
+            ctx.fillText(text, this.x - (this.w / 2) + 405 - this.highScoreTextWidth, 436);
+            ctx.strokeText(text, this.x - (this.w / 2) + 405 - this.highScoreTextWidth, 436);
         }
     }
 }
@@ -300,8 +333,7 @@ const pipes = {
 
     w: 53,
     h: 400,
-    //gap: 85,
-    gap: 125,
+    gap: 85,
     maxYPos: -150,
     dx: 2,
 
@@ -339,7 +371,8 @@ const pipes = {
             if ((bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.h) ||
                 (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > bottomPipeYPos && bird.y - bird.radius < bottomPipeYPos + this.h)) {
                 state.current = state.over;
-                HIT.play();
+                document.getElementById("difficultyID").classList.remove('not-in-use-btn');
+                if (!mute) HIT.play();
             }
 
             p.x -= this.dx; // Pipes move right to left
@@ -348,9 +381,20 @@ const pipes = {
             if (p.x + this.w < bird.x && !p.dead) {
                 score.value += 1;
                 p.dead = true;
-                SCORE_S.play();
-                score.best = Math.max(score.value, score.best);
-                localStorage.setItem("flappy-best", score.best);
+                if (!mute) SCORE_S.play();
+
+                if (difficulty.current == difficulty.hard) {
+                    storedScores.hard = Math.max(score.value, storedScores.hard);
+                } else if (difficulty.current == difficulty.medium) {
+                    storedScores.medium = Math.max(score.value, storedScores.medium);
+                } else if (difficulty.current == difficulty.easy) {
+                    storedScores.easy = Math.max(score.value, storedScores.easy);
+                }
+
+                //console.log(JSON.stringify(storedScores));
+                localStorage.setItem('flappy-scores', JSON.stringify(storedScores));
+                // console.log('read:');
+                //console.log(JSON.parse(localStorage.getItem('flappy-scores')));
             }
 
             // if the pipes go beyond canvas, we delete them from the array
@@ -366,6 +410,30 @@ const pipes = {
         this.position = [];
     }
 }
+
+function setDifficulty() {
+    if (state.current != state.game) {
+        difficulty.current++;//increase difficulty level
+        if (difficulty.current > difficulty.hard) {
+            difficulty.current = difficulty.easy;//difficulty resets to 0 after hard
+        }
+        //Set button label
+        if (difficulty.current == difficulty.easy) {
+            document.getElementById("difficultyID").innerHTML = "Difficulty: Easy";
+            pipes.gap = 125;
+        } else if (difficulty.current == difficulty.medium) {
+            document.getElementById("difficultyID").innerHTML = "Difficulty: Medium";
+            pipes.gap = 100;
+        } else if (difficulty.current == difficulty.hard) {
+            document.getElementById("difficultyID").innerHTML = "Difficulty: Hard";
+            pipes.gap = 85;
+        }
+        document.getElementById("difficultyID").classList.remove('not-in-use-btn');
+    } else {
+        document.getElementById("difficultyID").classList.add('not-in-use-btn');
+    }
+}
+
 /*
 // overwrites the onload in the html body tag
 window.onload = function () {
@@ -374,12 +442,18 @@ window.onload = function () {
 }
 */
 function updateScore() {
-    document.getElementById("scoreID").innerHTML = parseInt(localStorage.getItem("flappy-best")) || 0;
+    //storedScores = JSON.parse(localStorage.getItem('flappy-scores')) || { hard: 0, medium: 0, easy: 0 };
+    document.getElementById("scoreID").innerHTML = storedScores.hard || 0;
+
+    document.getElementById("allScoresID").innerHTML = `
+                <p><b>Difficulty Hard: </b>`+ (storedScores.hard || 0) + `</p>
+                <p><b>Difficulty Medium: </b>`+ (storedScores.medium || 0) + `</p>
+                <p><b>Difficulty Easy: </b>`+ (storedScores.easy || 0) + `</p>
+    `;
 }
 
 // SCORE
 const score = {
-    best: parseInt(localStorage.getItem("flappy-best")) || 0,
     value: 0,
 
     draw: function () {

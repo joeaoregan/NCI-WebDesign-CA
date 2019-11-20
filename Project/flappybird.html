@@ -27,15 +27,22 @@
 	<script src="flappybird/game.js"></script>
 
 	<div class="body-border">
+
+		<div class="center">
+			<button id="muteID" onclick="muteAudio()">Mute: On</button>
+			<button id="difficultyID" onclick="setDifficulty()">Difficulty: Medium</button>
+		</div>
+
 		<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
 		<div class="panel">
 			<p>
 				<h2>Top Scores</h2>
-				<ul>
+				<!--ul>
 					<li><b>Joe</b> 100</li>
 					<li><b>Ian</b> 90</li>
 					<li><b>Martin</b> 80</li>
-				</ul>
+				</ul-->
+				<p id="allScoresID"></p>
 			</p>
 		</div>
 
