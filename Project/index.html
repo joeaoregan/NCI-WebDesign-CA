@@ -1,33 +1,113 @@
 <!DOCTYPE html>
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		
-		<title>Home</title><!-- title text must match json names attribute of menuNames in menu.js -->
 
-		<link href="style.css" rel="stylesheet" />
+<head>
+	<meta charset="UTF-8">
 
-		<!--[if lt IE 9]>
+	<title>Home</title><!-- title text must match json names attribute of menuNames in menu.js -->
+
+	<!--Social Icons-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!--Google Retro Font-->
+	<link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/login.css" rel="stylesheet" />
+
+	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
-		<div id="menu" class="menu"></div>
-		<script src="menu.js"></script>
+<body>
+	<div id="menu" class="menu"></div>
+	<script src="menu.js"></script>
 
-		<h1>Group Project: Home</h1>
+	<h1>Group Project: Home</h1>
 
-		<div id="test">		
-			<ul>
-				<li>one</li>
-				<li>two</li>
-				<li>three</li>
-				<li>four</li>
-			</ul>
-			<p>Github Test</p>
+	<div class="body-border">
+
+		<div>
+			<h1>Stuff Will Go Here Eventually</h1>
+
+			<h2>Like this</h2>
+			
+			<div class="center">
+				<button  onclick="document.getElementById('loginID').style.display='block'">Login</button>
+			</div>
+
+			<div id="test">
+				<ul>
+					<li>one</li>
+					<li>two</li>
+					<li>three</li>
+					<li>four</li>
+				</ul>
+			</div>
+
+			<h2>And more stuff</h2>
 		</div>
 
-	</body>
+		<div id="loginID" class="modal">
+			<form class="modal-content animate" action="/action_page.php" method="post">
+				<div class="imgcontainer">
+					<span onclick="document.getElementById('loginID').style.display='none'" class="close"
+						title="Close Modal">&times;</span>
+					<img src="img/space-invader-alien.svg" alt="Space Invader Image" class="space-invader">
+				</div>
+
+				<div class="login-container">
+					<label for="uname"><b>Username</b></label>
+					<input type="text" placeholder="Enter Username" name="uname" required>
+
+					<label for="psw"><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" name="psw" required>
+
+					<button type="submit">Login</button>
+					<label>
+						<input type="checkbox" checked="checked" name="remember"> Remember me
+					</label>
+				</div>
+
+				<div class="login-container">
+					<button type="button" onclick="document.getElementById('loginID').style.display='none'"
+						class="cancelbtn">Cancel</button>
+					<span class="psw">Forgot <a href="#">password?</a></span>
+				</div>
+			</form>
+		</div>
+
+		<script src="login.js"></script>
+	</div>
+
+
+
+  <div class="footer">
+  <!-- Add font awesome icons -->
+
+	<a href="#" class="fa fa-facebook"></a>
+
+<br>
+  <svg xmlns="http://www.w3.org/2000/svg" id="invader" viewBox="0 0 350 257">
+  <g id="hsi">
+    <path d="M0 127h176v65H0z"/>
+    <path d="M64 63h32v161H64z"/>
+    <path d="M96 224h64v33H96z"/>
+    <path d="M64 0h32v33H64z"/>
+    <path d="M31 97h38v33H31z"/>
+    <path d="M0 190h32v33H0z"/>
+    <path d="M95 32h33v65h-33z"/>
+    <path d="M128 64h48v65h-48z"/>
+    <path d="M63 63h112v33H63z"/>
+  </g>
+  <use xlink:href="#hsi" transform="translate(350, 0) scale(-1, 1)"></use>
+</svg>
+
+  </div>
+  
+	
+</body>
+
 </html>

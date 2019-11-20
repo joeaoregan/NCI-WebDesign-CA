@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=0.275, maximum-scale=0.275, minimum-scale=0.275">
+	<!--meta name="viewport" content="width=device-width, user-scalable=no" /-->
+	<!--meta name="viewport" content="width=500, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"-->
+	<title>Antibody JS</title>
+	<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/controller.css" rel="stylesheet" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	<script type="text/javascript" src="antibody/scores.json"></script>
+</head>
+
+<body>
+	<div id="menu" class="menu"></div>
+	<script src="menu.js"></script>
+
+	<div>
+		<h1>Antibody JavaScript</h1>
+	</div>
+
+	<canvas id="antibody" width="1280" height="720"></canvas>
+
+	<script src="antibody/canvas.js"></script>
+	<script src="antibody/bloodcell.js"></script>
+	<script src="antibody/powerup.js"></script>
+	<script src="antibody/ship.js"></script>
+	<script src="antibody/enemyship.js"></script>
+	<script src="antibody/explosion.js"></script>
+	<script src="antibody/laser.js"></script>
+	<script src="antibody/scrollingBG.js"></script>
+	<script src="antibody/text.js"></script>
+	<script src="antibody/hud.js"></script>
+	<script src="antibody/game.js"></script>
+
+	<!-- buttons -->
+	<br />
+	<div class="controller-border" id="controller">
+		<h1>Double-Tapping Outside This Zone Will Lose Focus</h1>
+		<div class="controller">
+			<div class="button-box">
+				<button class="button button-round" ontouchstart="moveUp()" onmousedown="moveUp()"
+					onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
+				<button class="button button-round" ontouchstart="moveLeft()" onmousedown="moveLeft()"
+					onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8592;&nbsp;</button>
+				<span class="button-divider"></span>
+				<button class="button button-round" ontouchstart="moveRight()" onmousedown="moveRight()"
+					onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
+				<button class="button button-round" ontouchstart="moveDown()" onmousedown="moveDown()"
+					onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
+			</div>
+			<span class="button-divider"></span>
+			<button class="button button-start" onmousedown="moveleft()" onmouseup="startGame()">START</button>
+			<span class="button-divider"></span>
+			<div class="button-box">
+				<button class="button button-round buttonX" onmousedown="moveup()"
+					onmouseup="fire()">&nbsp;X&nbsp;</button><br>
+				<button class="button button-round buttonY" onmousedown="moveleft()"
+					onmouseup="fire()">&nbsp;Y&nbsp;</button>
+				<span class="button-divider"></span>
+				<button class="button button-round buttonA" onmousedown="moveright()"
+					onmouseup="fire()">&nbsp;A&nbsp;</button><br>
+				<button class="button button-round buttonB" onmousedown="movedown()"
+					onmouseup="fire()">&nbsp;B&nbsp;</button>
+			</div>
+		</div>
+		<h1>The A, B, X, and Y Buttons Do The Same Thing</h1>
+	</div>
+	<br />
+
+	<!--This script is used to only display the controller if it is a mobile device-->
+	<script src="antibody/controller.js"></script>
+
+	<div class="body-border">
+		<div>
+			<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
+			<div class="panel">
+				<p>
+					<h2>Top Scores</h2>
+					<ul>
+						<li><b>Joe</b> 100</li>
+						<li><b>Ian</b> 90</li>
+						<li><b>Martin</b> 80</li>
+					</ul>
+				</p>
+			</div>
+
+			<button class="accordion">Controls</button>
+			<div class="panel">
+				<p>
+					<h2>Movement</h2>
+					<ul>
+						<li><b>A, 4, &larr;</b> = Left</li>
+						<li><b>S, 2, &darr;</b> = Down</li>
+						<li><b>D, 6, &rarr;</b> = Right</li>
+						<li><b>W, 8, &uarr;</b> = Up</li>
+					</ul>
+					<h2>Weapons</h2>
+					<ul>
+						<li><b>SPACE, Right Click</b> = Fire</li>
+					</ul>
+					<h2>General</h2>
+					<ul>
+						<li><b>SPACE, Right Click</b> = Fire</li>
+						<li><b>F5</b> = Reset Game (Refreshes Page)</li>
+						<li><b>F11</b> = Full Screen</li>
+					</ul>
+				</p>
+			</div>
+
+			<button class="accordion">Info</button>
+			<div class="panel">
+				<p>
+					<h2>How To Play</h2>
+					<ul>
+						<li>Score points by destroying enemy ships</li>
+						<li>Player does not lose health when flashing</li>
+						<li>Avoid destorying bloodcells</li>
+						<li>If the Bloodcell Count goes below zero, the game is over</li>
+						<li>The timer doesn't do anything yet</li>
+					</ul>
+				</p>
+				<h2>Links</h2>
+				<p>
+					<a href="https://github.com/joeaoregan/AntibodyJS" target="_blank">AntiBody JS GitHub Page</a>
+				</p>
+			</div>
+
+			<script src="accordion.js"></script>
+		</div>
+	</div>
+</body>
+
+</html>

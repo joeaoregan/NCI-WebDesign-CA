@@ -79,7 +79,7 @@ function submitForm() {
 			<tr id="add"></tr>
 								
 			<tfoot>
-				<tr><td colspan="2"><input type="submit" value="Add New" onclick="resetForm()"/></td><tr>
+				<tr><td colspan="2"><input type="submit" class="btn" value="Add New" onclick="resetForm()"/></td><tr>
 			</tfoot>
 		</table>`;
 
@@ -118,13 +118,12 @@ function validatePassword() {
 // This function creates the form HTML in a table
 function resetForm() {
 	var formFields = `<form onsubmit="submitForm()">
+	<h1>New User Registration</h1>
+	<h2>Please Complete This Form</h2>
 		<table>
 			<thead>
-				<th colspan="3">New User Registration</th>
-			</thead>
-			<tr>				
-				<th colspan="3">Please complete the following information</th>
-			</tr>`;
+				<th colspan="3">Enter Your Details</th>
+			</thead>`;
 
 	//Concatenate each form field
 	for (i in formJSON) {
@@ -166,7 +165,7 @@ function resetForm() {
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td><input name="submit" type="submit" value="Submit" /></td>
+				<td><input name="submit"  class="btn" type="submit" value="Submit" /></td>
 				<td></td>
 			</tr>
 		</table>
