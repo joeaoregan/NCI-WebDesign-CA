@@ -13,6 +13,10 @@ var menuNames = [
 		"url": "flappybird.html"
 	},
 	{
+		"name": "Space Invaders JS",
+		"url": "spaceinvaders.html"
+	},
+	{
 		"name": "Register",
 		"url": "register.html"
 	},

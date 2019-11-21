@@ -174,9 +174,11 @@ button, .btn {
 	color: grey;
   }
 
-
-  
 .center {
 	max-width: max-content;
 	margin: 0px auto;
+}
+
+#aliensCanvas {
+    background-color: black;
 }
