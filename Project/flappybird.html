@@ -14,15 +14,18 @@
 </head>
 
 <body onload="updateScore()">
-	<div id="menu" class="menu"></div>
-	<script src="menu.js"></script>
+	<div class="menu stretch">
+		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
+		<script src="menu.js"></script>
+	</div>
 
-	<div>
+	<div class="heading">
 		<h1>Flappy Bird JS</h1>
 	</div>
 
-
-	<canvas id="bird" width="1280" height="720"></canvas>
+	<div class="body-border">
+		<canvas id="bird" width="1280" height="720"></canvas>
+	</div>
 
 	<script src="flappybird/game.js"></script>
 
@@ -75,6 +78,10 @@
 
 		<script src="accordion.js"></script>
 	</div>
+
+	<footer>
+		The footer will go here!!!
+	</footer>
 </body>
 
 </html>

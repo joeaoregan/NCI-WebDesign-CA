@@ -17,10 +17,12 @@
 </head>
 
 <body>
-	<div id="menu" class="menu"></div>
-	<script src="menu.js"></script>
+	<div class="menu stretch">
+		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
+		<script src="menu.js"></script>
+	</div>
 
-	<div>
+	<div class="heading">
 		<h1>Space Invaders JS</h1>
 	</div>
 
@@ -30,6 +32,55 @@
 	</div>
 
 	<script src="spaceinvaders/spaceinvaders.js"></script>
+
+	<div class="body-border">
+		<div class="center">
+			<button id="muteID" onclick="muteAudio()">Mute: On</button>
+		</div>
+
+		<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
+		<div class="panel">
+			<p>
+				<h2>Top Scores</h2>
+				<p id="allScoresID"></p>
+			</p>
+		</div>
+
+		<button class="accordion">Controls</button>
+		<div class="panel">
+			<p>
+				<ul>
+					<li><b>Fire:</b>Spacebar</li>
+					<li><b>Move Left:</b>&larr; Left Arrow</li>
+					<li><b>Move Right:</b>&darr; Right Arrow</li>
+				</ul>
+			</p>
+		</div>
+
+		<button class="accordion">Info</button>
+		<div class="panel">
+			<p>
+				<h2>How To Play</h2>
+				<ul>
+					<li>Shoot the aliens</li>
+					<li>The less there is, the faster they move</li>
+					<li>Shoot the mothership for bonus points</li>
+					<li>They don't shoot back yet, I haven't that much time on my hands</li>
+					<li>Simples</li>
+				</ul>
+			</p>
+			<h2>About</h2>
+			<p>
+				Space Invaders is a 1978 arcade game created by Tomoshiro Nishikado.
+			</p>
+		</div>
+
+		<script src="accordion.js"></script>
+	</div>
+
+	<footer>
+		The footer will go here!!!
+	</footer>
 </body>
 
 </html>

@@ -19,14 +19,18 @@
 </head>
 
 <body>
-	<div id="menu" class="menu"></div>
-	<script src="menu.js"></script>
+	<div class="menu stretch">
+		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
+		<script src="menu.js"></script>
+	</div>
 
-	<div>
+	<div class="heading">
 		<h1>Antibody JavaScript</h1>
 	</div>
 
-	<canvas id="antibody" width="1280" height="720"></canvas>
+	<div class="body-border">
+		<canvas id="antibody" width="1280" height="720"></canvas>
+	</div>
 
 	<script src="antibody/canvas.js"></script>
 	<script src="antibody/bloodcell.js"></script>
@@ -41,39 +45,41 @@
 	<script src="antibody/game.js"></script>
 
 	<!-- buttons -->
-	<br />
-	<div class="controller-border" id="controller">
-		<h1>Double-Tapping Outside This Zone Will Lose Focus</h1>
-		<div class="controller">
-			<div class="button-box">
-				<button class="button button-round" ontouchstart="moveUp()" onmousedown="moveUp()"
-					onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
-				<button class="button button-round" ontouchstart="moveLeft()" onmousedown="moveLeft()"
-					onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8592;&nbsp;</button>
+	<div class="body-border" id="controller-section">
+		<div class="controller-border" id="controller">
+
+			<h1>Double-Tapping Outside This Zone Will Lose Focus</h1>
+
+			<div class="controller">
+				<div class="button-box">
+					<button class="button button-round" ontouchstart="moveUp()" onmousedown="moveUp()"
+						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
+					<button class="button button-round" ontouchstart="moveLeft()" onmousedown="moveLeft()"
+						onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8592;&nbsp;</button>
+					<span class="button-divider"></span>
+					<button class="button button-round" ontouchstart="moveRight()" onmousedown="moveRight()"
+						onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
+					<button class="button button-round" ontouchstart="moveDown()" onmousedown="moveDown()"
+						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
+				</div>
 				<span class="button-divider"></span>
-				<button class="button button-round" ontouchstart="moveRight()" onmousedown="moveRight()"
-					onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
-				<button class="button button-round" ontouchstart="moveDown()" onmousedown="moveDown()"
-					onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
-			</div>
-			<span class="button-divider"></span>
-			<button class="button button-start" onmousedown="moveleft()" onmouseup="startGame()">START</button>
-			<span class="button-divider"></span>
-			<div class="button-box">
-				<button class="button button-round buttonX" onmousedown="moveup()"
-					onmouseup="fire()">&nbsp;X&nbsp;</button><br>
-				<button class="button button-round buttonY" onmousedown="moveleft()"
-					onmouseup="fire()">&nbsp;Y&nbsp;</button>
+				<button class="button button-start" onmousedown="moveleft()" onmouseup="startGame()">START</button>
 				<span class="button-divider"></span>
-				<button class="button button-round buttonA" onmousedown="moveright()"
-					onmouseup="fire()">&nbsp;A&nbsp;</button><br>
-				<button class="button button-round buttonB" onmousedown="movedown()"
-					onmouseup="fire()">&nbsp;B&nbsp;</button>
+				<div class="button-box">
+					<button class="button button-round buttonX" onmousedown="moveup()"
+						onmouseup="fire()">&nbsp;X&nbsp;</button><br>
+					<button class="button button-round buttonY" onmousedown="moveleft()"
+						onmouseup="fire()">&nbsp;Y&nbsp;</button>
+					<span class="button-divider"></span>
+					<button class="button button-round buttonA" onmousedown="moveright()"
+						onmouseup="fire()">&nbsp;A&nbsp;</button><br>
+					<button class="button button-round buttonB" onmousedown="movedown()"
+						onmouseup="fire()">&nbsp;B&nbsp;</button>
+				</div>
 			</div>
+			<h1>The A, B, X, and Y Buttons Do The Same Thing</h1>
 		</div>
-		<h1>The A, B, X, and Y Buttons Do The Same Thing</h1>
 	</div>
-	<br />
 
 	<!--This script is used to only display the controller if it is a mobile device-->
 	<script src="antibody/controller.js"></script>
@@ -136,6 +142,10 @@
 			<script src="accordion.js"></script>
 		</div>
 	</div>
+
+	<footer>
+		The footer will go here!!!
+	</footer>
 </body>
 
 </html>

@@ -1,128 +1,177 @@
 /* Top Menu */
 
-.menu{
-	min-width: max-content;	/*Stops menu squashing up*/
+.menu {
+	/*overflow: hidden;*/
+	min-width: max-content;
+	width: 99%;
+	/*Stops menu squashing up*/
+	position: fixed;
+	top: 0;
+	/* margin: 0 auto; */
+}
+
+.stretch {
+	/* min-width: 80%; */
+	border: 2px solid #555;
+	background-color: purple;
+}
+
+footer {
+	box-sizing: border-box;/*keep the border from moving off the page when width is 100%*/
+	/* min-width: 80%; */
+	min-width: max-content;
+	min-height: 5%;
+	width: 100%;
+	border: 2px solid #333;
+	background-color: #222;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	color: white;
+	text-align: center;
 }
 
 .menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/* background-color: #333; */
 }
 
 .menu li {
-  float: left;
+	float: left;
 }
 
 .menu li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 .menu li a:hover {
-  background-color: #111;
+	background-color: #111;
+	color: #AAA;
+}
+
+/* Heading */
+
+.heading {
+	padding-top: 16px;
+	margin-top: 30px;
 }
 
 /*Highlight current page*/
 
 .highlighted {
-  background-color: #888;
+	background-color: #888;
 }
 
 li.highlighted a {
-  color: #ae31f1;
+	color: #ae31f1;
 }
 
 /* Register a new user */
 
 .register table {
-  border: 2px solid black;
-  background-color: red;/* For browsers that do not support gradients */
-  background-image: linear-gradient(#08da6d, #ae31f1);/*Gradient colour*/
-  /*width: 100%;*/
+	border: 2px solid black;
+	background-color: red;
+	/* For browsers that do not support gradients */
+	background-image: linear-gradient(#08da6d, #ae31f1);
+	/*Gradient colour*/
+	/*width: 100%;*/
 }
 
 .register thead {
-  background-color: #08da6d;/* green */
+	background-color: #08da6d;
+	/* green */
 }
 
 .register .lbl {
-  text-align: right;
+	text-align: right;
 }
 
 .register td {
-  width: 50%;
+	width: 50%;
 }
 
 /* Form field width */
+
 input[type=text], input[type=submit], input[type=password], select {
-  width: 200px;
+	width: 200px;
 }
 
 body {
-  font-family: 'Atomic Age', cursive;
-  height: 1500px;
-  background-color: purple;/* For browsers that do not support gradients */
-  background-image: linear-gradient(#e032e6, #020314);/*Gradient colour*/
-  font-size: 1.5em;
+	box-sizing: border-box;
+	font-family: 'Atomic Age', cursive;
+	min-height: 1250px;
+	/*min-height stops the gradient background colour repeating*/
+	background-color: purple;
+	/* For browsers that do not support gradients */
+	background-image: linear-gradient(#e032e6, #020314);
+	/*Gradient colour*/
+	font-size: 1.5em;
 }
 
 h1 {
-  text-align: center;
-  color: white;
+	text-align: center;
+	color: white;
 }
 
 .body-border {
+	box-shadow: 5px 10px 8px purple;/*Shadow around body sections*/
+	border: 1px solid;
+	padding: 10px;
+
 	font-family: 'Teko', fantasy;
 	color: black;
 	border: 2px solid black;
 	width: 1280px;
-	margin: 20px auto;
+	margin: 25px auto;
+	border-radius: 8px;
 }
 
 .body-border h2, h1 {
 	/*outline text*/
-	-webkit-text-fill-color: grey; /* Will override color (regardless of order) */	
+	-webkit-text-fill-color: grey;
+	/* Will override color (regardless of order) */
 	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: purple;	
+	-webkit-text-stroke-color: purple;
 }
 
 .body-border h2, p {
-	text-align:center;
+	text-align: center;
 }
 
-
 /*Accordian Panel*/
+
 .accordion {
 	/*background-color: #eee;*/
+	margin: 0.5% 1%;
+	width: 98%;
 	font-family: 'Teko', cursive;
 	background-color: purple;
 	color: white;
 	cursor: pointer;
 	padding: 18px;
-	width: 100%;
 	border: none;
 	text-align: left;
 	outline: none;
 	font-size: 1.5em;
 	transition: 0.4s;
 	font-weight: bold;
-	text-align:center;
+	text-align: center;
 	border: 1px solid black;
-
-  
-	-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+	-webkit-text-fill-color: white;
+	/* Will override color (regardless of order) */
 	-webkit-text-stroke-width: 2px;
 	-webkit-text-stroke-color: black;
 }
 
 .active, .accordion:hover {
-	background-color: rgb(195, 0, 255); 
+	background-color: rgb(195, 0, 255);
 }
 
 .panel {
@@ -134,7 +183,7 @@ h1 {
 	color: black;
 }
 
-table{
+table {
 	margin: 20px;
 }
 
@@ -147,8 +196,8 @@ canvas {
 	margin: 0 auto;
 }
 
-
 /* Buttons */
+
 button, .btn {
 	background-color: rgb(61, 161, 228);
 	color: white;
@@ -158,27 +207,29 @@ button, .btn {
 	cursor: pointer;
 	width: auto;
 	border-radius: 10px;
-  }
-  
-  button:hover, .btn:hover {
-	opacity: 0.8;
-  }
-  
-  /* Extra styles for the cancel button */
-  .cancelbtn {
-	background-color: #f44336;
-  }
+}
 
-  .not-in-use-btn {
+button:hover, .btn:hover {
+	opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+
+.cancelbtn {
+	background-color: #f44336;
+}
+
+.not-in-use-btn {
 	background-color: lightgrey;
 	color: grey;
-  }
+}
 
 .center {
+	/* border: 2px solid white; */
 	max-width: max-content;
 	margin: 0px auto;
 }
 
 #aliensCanvas {
-    background-color: black;
+	background-color: black;
 }
