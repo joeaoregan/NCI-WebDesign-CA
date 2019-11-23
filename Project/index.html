@@ -11,7 +11,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet" />
 	<link href="css/login.css" rel="stylesheet" />
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -23,74 +24,107 @@
 		<script src="menu.js"></script>
 	</div>
 
-	<div class="heading">
-		<h1>Group Project: Home</h1>
-	</div>
 
-	<div class="body-border">
-		<div>
-			<h1>Stuff Will Go Here Eventually</h1>
+	<div class="main">
+		<div class="heading">
+			<h1>J.I.M. Games</h1>
+		</div>
 
-			<h2>Like this</h2>
+		<div class="body-border">
+			<div>
+				<h1>Stuff Will Go Here Eventually</h1>
 
-			<div class="center">
-				<button onclick="document.getElementById('loginID').style.display='block'">Login</button>
+				<h2>Like this</h2>
+
+				<div class="center">
+					<button onclick="document.getElementById('loginID').style.display='block'">Login</button>
+				</div>
+
+				<div id="test">
+					<ul>
+						<li>one</li>
+						<li>two</li>
+						<li>three</li>
+						<li>four</li>
+					</ul>
+				</div>
+
+				<h2>And more stuff</h2>
 			</div>
 
-			<div id="test">
-				<ul>
-					<li>one</li>
-					<li>two</li>
-					<li>three</li>
-					<li>four</li>
-				</ul>
+			<div id="loginID" class="modal">
+				<form class="modal-content animate" action="/action_page.php" method="post">
+					<div class="imgcontainer">
+						<span onclick="document.getElementById('loginID').style.display='none'" class="close"
+							title="Close Modal">&times;</span>
+						<!-- <img src="img/space-invader-alien.svg" alt="Space Invader Image" class="space-invader"> -->
+						<img src="img/purple-alien.svg" alt="Space Invader Image" class="space-invader">
+					</div>
+
+					<div class="login-container">
+						<label for="uname"><b>Username</b></label>
+						<input type="text" placeholder="Enter Username" name="uname" required>
+
+						<label for="psw"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="psw" required>
+
+						<button type="submit">Login</button>
+						<label>
+							<input type="checkbox" checked="checked" name="remember"> Remember me
+						</label>
+					</div>
+
+					<div class="login-container">
+						<button type="button" onclick="document.getElementById('loginID').style.display='none'"
+							class="cancelbtn">Cancel</button>
+						<span class="psw">Forgot <a href="#">password?</a></span>
+					</div>
+				</form>
 			</div>
 
-			<h2>And more stuff</h2>
+			<script src="login.js"></script>
 		</div>
 
-		<div id="loginID" class="modal">
-			<form class="modal-content animate" action="/action_page.php" method="post">
-				<div class="imgcontainer">
-					<span onclick="document.getElementById('loginID').style.display='none'" class="close"
-						title="Close Modal">&times;</span>
-					<img src="img/space-invader-alien.svg" alt="Space Invader Image" class="space-invader">
-				</div>
+		<div class="body-border">
+			<div>
+				<h1>Antibody JS</h1>
 
-				<div class="login-container">
-					<label for="uname"><b>Username</b></label>
-					<input type="text" placeholder="Enter Username" name="uname" required>
-
-					<label for="psw"><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" required>
-
-					<button type="submit">Login</button>
-					<label>
-						<input type="checkbox" checked="checked" name="remember"> Remember me
-					</label>
-				</div>
-
-				<div class="login-container">
-					<button type="button" onclick="document.getElementById('loginID').style.display='none'"
-						class="cancelbtn">Cancel</button>
-					<span class="psw">Forgot <a href="#">password?</a></span>
-				</div>
-			</form>
+				<h2>line of pictures here</h2>
+			</div>
 		</div>
 
-		<script src="login.js"></script>
-	</div>
+		<div class="body-border">
+			<div>
+				<h1>Flappy Bird</h1>
 
-	<div class="body-border">
-		<div>
-			<h1>Put the pictures here maybe</h1>
+				<h2>line of pictures here</h2>
+			</div>
+		</div>
 
-			<h2>line of pictures here</h2>
+		<div class="body-border">
+			<div>
+				<h1>Space Invaders</h1>
+
+				<h2>line of pictures here</h2>
+			</div>
 		</div>
 	</div>
 
+	<div class="sidenav">
+		<h2>Our Games</h2>
+		<a href="antibody.html">Antibody</a>
+		<a href="flappybird.html">Flappy Bird</a>
+		<a href="spaceinvaders.html">Space Invaders</a>
+	</div>
+
+	<!--These have separate classes, but I don't think we need different colours for them-->
 	<footer>
-		The footer will go here!!!
+		<div>
+			<a href="https://www.facebook.com/JIM-107782680690362/" class="fa fa-facebook" target="_blank" title="Follow Us On Facebook"></a>
+			<a href="https://twitter.com/JIMGames6" class="fa fa-twitter" target="_blank"></a>
+			<a href="www.linkedin.com" class="fa fa-linkedin" target="_blank"></a>
+			<a href="https://youtu.be/HQiAlmhXLqA" class="fa fa-youtube" target="_blank"></a>
+		</div>
 	</footer>
 </body>
 
