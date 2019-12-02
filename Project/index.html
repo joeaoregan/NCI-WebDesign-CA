@@ -22,9 +22,10 @@
 </head>
 
 <body>
+	<!--The menu is created in the menu.js JavaScript file, and highlights the current page by comparing the page title to JSON used to create the menu items-->
 	<div class="menu stretch">
 		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
-		<script src="menu.js"></script>
+		<script src="menu.js"></script><!--The script is stored externally-->
 	</div>
 
 
@@ -33,6 +34,7 @@
 			<h1>J.I.M. Games</h1>
 		</div>
 
+		<!--The body-border class creates a black border and a shadow around the main div elements in the body-->
 		<div class="body-border">
 			<div>
 				<h1>Welcome to J.I.M Games</h1>
@@ -43,23 +45,26 @@
 					<p>We always do our best to make sure our website is as fast and reliable as possible however, sometimes issues may arise.  If you happen to come across anything that isn’t working please contact us viva our social media platforms so we can work on fixing this as soon as possible.  </p>
 				</div>
 
+				<!--Clicking the Login button reveals the login form-->
 				<div class="center">
 					<button onclick="document.getElementById('loginID').style.display='block'">Login</button>
 				</div>
-
-
 			</div>
 
+			<!--The Login element is activated by pressing the login button-->
 			<div id="loginID" class="modal">
+				<!--Animation is used to expand the login form on the screen-->
 				<form class="modal-content animate" action="/action_page.php" method="post">
 					<div class="imgcontainer">
 						<span onclick="document.getElementById('loginID').style.display='none'" class="close"
 							title="Close Modal">&times;</span>
-						<!-- <img src="img/space-invader-alien.svg" alt="Space Invader Image" class="space-invader"> -->
+						<!-- image with alt text, in case the image does not display in a browser-->
 						<img src="img/alien-purple.svg" alt="Space Invader Image" class="space-invader">
 					</div>
 
+					<!--Login form - Username and Password are required fields-->
 					<div class="login-container">
+						<!--Labels are attached to the text input fields-->
 						<label for="uname"><b>Username</b></label>
 						<input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -80,19 +85,23 @@
 				</form>
 			</div>
 
+			<!--The login script is used to handle user login-->
 			<script src="login.js"></script>
 		</div>
 
+		<!--Three sections are added to show screenshots and information about each game-->
 		<div class="body-border">
 			<div>
 				<h1>Antibody JS</h1>
-					<h2>2D Side-Scrolling Shooter Ported From C++</h2>
+				
+				<h2>2D Side-Scrolling Shooter Ported From C++</h2>
 
-
+				<!--Photos are formatted to look like polaroid pictures and rotate and change from black and white to colour when the mouse hovers-->
 				<div class="photos">
 					<!-- The title property is placed on the div instead of the image, as the div is use to create a polaroid effect-->
 					<div class="item" title="Antibody Screenshot 1 - Start">
 						<div class="polaroid">
+							<!--Three screenshots of each game are presented as inline elements, alternative text is used for accessibility-->
 							<img src="img/antibody1.jpg" alt="Antibody Image 1 - Start" />
 							<div class="caption">Antibody</div>
 						</div>
@@ -111,8 +120,10 @@
 					</div>
 				</div>
 
+				<!--An unordered list is used to show bullet point information about each game-->
 				<div>
 					<h2>Gameplay</h2>
+
 					<ul>
 						<li>Destroy Enemies</li>
 						<li>Collect Power Ups</li>
@@ -152,6 +163,7 @@
 
 				<div>
 					<h2>Gameplay</h2>
+
 					<ul>
 						<li>Stay Above Ground</li>
 						<li>Manoeuvre Between The Pipes</li>
@@ -192,6 +204,7 @@
 
 				<div>
 					<h2>Gameplay</h2>
+
 					<ul>
 						<li>Destroy The Aliens</li>
 						<li>Collect Bonus Points For Destroying The Alien Mothership</li>
@@ -204,6 +217,7 @@
 		</div>
 	</div>
 
+	<!--The side navigation bar has a list of all the games and links to their individual pages-->
 	<div class="sidenav">
 		<h2>Our Games</h2>
 		<a href="antibody.html">Antibody</a>
@@ -214,9 +228,11 @@
 		<a href="login.html">Login</a>
 	</div>
 
-	<!--These have separate classes, but I don't think we need different colours for them-->
+	<!--The footer is in a fixed position at the bottom of the screen-->
+	<!--It contains links to all the pages, social media buttons, copyright symbol-->
 	<footer>
 		<div class="footer">
+			<!--Links to site pages-->
 			<div style="float: left; width: 33%;">
 				<a href="index.html">Home</a> |
 				<a href="antibody.html">Antibody</a> |
@@ -228,7 +244,7 @@
 				<a href="login.html">Login</a>
 			</div>
 
-
+			<!--The social media icons have separate classes, but I don't think we need different colours for them-->
 			<div style="float: right; width: 33%;">
 				<a href="https://www.facebook.com/JIM-107782680690362/" class="fa fa-facebook" target="_blank"
 					title="Follow Us On Facebook"></a>
@@ -238,10 +254,15 @@
 			</div>
 		</div>
 
-		<div logo="width: 20%;"><img src="img/alien-grey.svg" alt="Space Invader Image" class="space-invader-grey">
+		<!--An svg space invader image glows when the mouse cover hovers, and links to homepage when clicked-->
+		<div>
+			<a href="index.html">
+				<img src="img/alien-grey.svg" alt="Space Invader Image" class="space-invader-grey" title="Return To Home Page" />
+			</a>
 		</div>
 
-		<div class="copyright"> &copy;2019 Joe, Ian, Martin</div>
+		<!--Copyright symbol-->
+		<div class="copyright">&copy;2019 Joe, Ian, Martin</div>
 	</footer>
 </body>
 
