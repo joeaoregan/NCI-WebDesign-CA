@@ -171,6 +171,10 @@ function startGame(){
 			//console.log('checking name');
 			currentPlayer=prompt("Please Enter Your Name:\n(Minimum 1 letter. Numbers, spaces, undercore, hyphen, and apostraphe allowed)","");//Show prompt to enter player name
 			
+			if(currentPlayer===null){
+				return;//leave function if cancel button is pressed
+			}
+
 			if(currentPlayer){
 				//console.log('entered: '+currentPlayer);
 
