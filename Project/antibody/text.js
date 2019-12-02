@@ -32,9 +32,14 @@ setInterval(function(){
 	//console.log('time: '+time.timer);
 },1000);
 
+/* Get the current high Score from the locally stored player JSON object*/
+var tempPlayer = { 'name': 'Unknown Player', 'score': 0 };
+var getScore = JSON.parse(localStorage.getItem('antibody-highscore-json')) || tempPlayer;
+console.log('antibody-highscore-json\n' + JSON.stringify(getScore));
+
 // Score text
 const score = {
-    high : parseInt(localStorage.getItem("antibody-highscore")) || 0,
+    high : getScore.score || 0,
     value : 0,
 	scoreTxt: '',
 	textWidth: 0,

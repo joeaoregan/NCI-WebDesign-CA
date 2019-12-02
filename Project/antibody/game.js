@@ -15,6 +15,16 @@ const state = {
     over : 2
 }
 
+const player = {
+	'name': 'Unknown Player',
+	'score': 0	
+}
+
+var tempPlayer = {
+	'name': 'Unknown Player',
+	'score': 0
+};
+
 // AABB Collisions
 function collision(o1, o2) {
 	return (o2.x < o1.x+o1.w &&
@@ -32,8 +42,10 @@ window.onload = function() {
 	}
 } 
 
-function updateScore(){	
-	document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("antibody-highscore")) || 0;
+function updateScore(){
+	var topPlayer = JSON.parse(localStorage.getItem('antibody-highscore-json')) || tempPlayer;
+	console.log(JSON.stringify(topPlayer));
+	document.getElementById("scoreID").innerHTML=topPlayer.score + ' (' + topPlayer.name + ')';//Top score is now stored as JSON with name and score attributes
 }
 
 function init(){
@@ -49,7 +61,9 @@ function init(){
 	bloodcells.push(b5);
 	
 	hud1=new hud();
-	powerupNewLife=new powerup('PowerUpLife');	
+	powerupNewLife=new powerup('PowerUpLife');
+	
+	updateScore();//Display the current top score on the scores accordion from the beginning of the game
 }
 
 init();
@@ -140,8 +154,40 @@ canvas.addEventListener("click", function(evt){
     }
 });
 
+/*
+When the player presses the fire button a prompt is displayed to enter their name.
+A regular expression is used to check the name string meets requirements.
+If the name doesn't meet the requirements a prompt is displayed with the requirements.
+Once a name has been accepted the game changes state, and begins to play.
+*/
 function startGame(){
-	state.current = state.game;
+	var letters = /^[A-Za-z0-9_-]*[A-Za-z][A-Za-z0-9 _'-]*$/; // Regular expression, allow letters, numbers, spaces,underscore,hyphen and apostraphe
+	var currentPlayer;
+
+	while(!currentPlayer || currentPlayer===''){
+		//Add check for player being logged in later
+		//console.log('check name 1');
+		if(player.name ==="Unknown Player" || player.name==""){//if the player name is unknown
+			//console.log('checking name');
+			currentPlayer=prompt("Please Enter Your Name:\n(Minimum 1 letter. Numbers, spaces, undercore, hyphen, and apostraphe allowed)","");//Show prompt to enter player name
+			
+			if(currentPlayer){
+				//console.log('entered: '+currentPlayer);
+
+				if(currentPlayer.match(letters)) {//Check the name entered contains letters, numbers, spaces,underscore,hyphen and apostraphe
+					console.log('characters ok');
+					if(currentPlayer!=null && currentPlayer!==''){
+						player.name=currentPlayer;//Set the player name to store high score
+						//console.log('set player name' + player.name);
+					}
+				} else {
+					currentPlayer=null;
+					alert("Name must begin with a letter, number, underscore, or hyphen\nAND\nContain at least one letter\nAND\nContain only letters, numbers, spaces, underscores, hyphens and apostraphe");
+				}
+			}
+		}
+	}
+	state.current = state.game;//Change the game state to playing the game
 }
 
 function reset(){
@@ -158,7 +204,7 @@ window.addEventListener('keydown',function(e){
         e.preventDefault();
 		switch(state.current){
 			case state.getReady:
-				state.current = state.game;
+				startGame();
 				break;
 			case state.game:
 				ship.fire();

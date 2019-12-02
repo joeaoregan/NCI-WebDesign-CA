@@ -32,9 +32,21 @@ class laser {
 				console.log('COLLISION!');
 				lasers.splice(i,1);
 				score.value++;
-                score.high = Math.max(score.value, score.high);
-                localStorage.setItem("antibody-highscore", score.high);
-				//console.log('lasers'+lasers.length);
+				player.score=score.value;//set the players score
+				console.log('checking high score  -  current high score: ' + score.high)
+				var newHighScore = Math.max(score.value, score.high);
+				console.log(newHighScore);
+
+				/*
+				If there is a new High Score the player's details are stored locally as a json object
+				The high score is updated on the accordion below the canvas
+				*/
+				if(newHighScore>score.high){
+					console.log('new high score')
+					player.score=newHighScore;
+					localStorage.setItem("antibody-highscore-json",JSON.stringify(player));
+					document.getElementById("scoreID").innerHTML=player.score + ' (' + player.name + ')';
+				}
 				
 				var ex = new explosion(this.x+this.w,this.y-enemyShip.h/2,96,12,'Explosion'); // create explosion
 				navigator.vibrate([500]);//vibrate mobile device if explosion

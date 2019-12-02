@@ -248,8 +248,14 @@
 			var testObject = { 'hard': 0, 'medium': 0, 'easy': 0 };
 			var storedScores = JSON.parse(localStorage.getItem('flappy-scores-json')) || testObject;
 
-			document.getElementById("flappyScoreID").innerHTML = "Hard: " + (storedScores.hard || 0) + "<br>Medium: " + (storedScores.medium || 0) + "<br>Easy: " + (storedScores.easy || 0);			
-			document.getElementById("antibodyScoreID").innerHTML=parseInt(localStorage.getItem("antibody-highscore")) || 0;
+			document.getElementById("flappyScoreID").innerHTML = "Hard: " + (storedScores.hard || 0) + "<br>Medium: " + (storedScores.medium || 0) + "<br>Easy: " + (storedScores.easy || 0);
+
+			var mockPlayer = { 'name': 'Unknown Player', 'score': 0 };
+			var topAntibodyPlayer = JSON.parse(localStorage.getItem('antibody-highscore-json')) || mockPlayer;
+			if(topAntibodyPlayer.name === ''){
+				topAntibodyPlayer.name = 'Unknown Player';
+			}
+			document.getElementById("antibodyScoreID").innerHTML=topAntibodyPlayer.name + ':<br>'+ parseInt(topAntibodyPlayer.score);
 			document.getElementById("spaceScoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;
 		</script>
 	</div>

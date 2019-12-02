@@ -36,8 +36,33 @@ class hud {
 		ctx.stroke();
 		
 		this.p1Lives();
+		this.name();
 		
 		bcCounter.bar();
+	}
+
+	/*
+	Show the name the player entered when prompted at the start of the game
+	*/
+	name() {
+		var xPos=1070;
+		var label='Name:';
+		ctx.lineWidth = 2;
+		ctx.font = "25px Teko";
+        ctx.fillStyle = "#FFF";
+		
+		var textWidth=ctx.measureText(label).width;
+
+		ctx.fillText(label,xPos - (textWidth/2), 640);
+		ctx.strokeText(label,xPos - (textWidth/2),640);
+		
+		ctx.font = "35px Teko";
+
+		var username= (player.name || 'No Name')
+		textWidth=ctx.measureText(username).width;
+		ctx.fillText(username,xPos - (textWidth/2), 675);
+		ctx.strokeText(username,xPos - (textWidth/2), 675);
+
 	}
 	
 	p1Lives(){
@@ -101,7 +126,7 @@ const bcCounter= {
         ctx.fillStyle = "#FFF";
 		
 		this.textWidth=ctx.measureText(this.barText).width;
-		
+				
 		ctx.fillText(this.barText, this.x+((this.w-this.textWidth)/2), this.y+35);
 		ctx.strokeText(this.barText, this.x+((this.w-this.textWidth)/2), this.y+35);
 	}
