@@ -33,7 +33,7 @@ class laser {
 				lasers.splice(i,1);
 				score.value++;
                 score.high = Math.max(score.value, score.high);
-                localStorage.setItem("highscore", score.high);
+                localStorage.setItem("antibody-highscore", score.high);
 				//console.log('lasers'+lasers.length);
 				
 				var ex = new explosion(this.x+this.w,this.y-enemyShip.h/2,96,12,'Explosion'); // create explosion

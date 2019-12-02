@@ -115,12 +115,12 @@ h1, h2 {
 	width: 1280px;
 	margin: 25px auto;
 	background-image: linear-gradient(to bottom right, purple, white);
-	box-shadow: 5px 10px 8px purple;
 }
 
 .body-border, .sidenav {
 	border: 2px solid black;
 	border-radius: 8px;
+	box-shadow: 5px 10px 8px grey;
 	/*background-color: lightyellow;*/
 	/*background-image: linear-gradient(white, rgb(245, 245, 229));*/
 }
@@ -199,7 +199,7 @@ button, .btn {
 	background-image: linear-gradient(#e032e6, #020314);
 	background-image: linear-gradient(to bottom right, #e032e6, white);
 	*/
-	background-color: purple;
+	background-color: #00FF00;
 	box-shadow: 5px 10px 18px white;
 	color: white;
 	padding: 14px 20px;
@@ -242,18 +242,29 @@ button:hover, .btn:hover {
 /*Left Side Navigation Bar*/
 
 .sidenav {
-	box-shadow: 5px 10px 8px lightblue;
 	background-color: #4455ff;
 	height: 75%;
-	width: 300px;
+	width: 250px;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 0;
 	overflow-x: hidden;
 	padding-top: 20px;
 	margin-top: 100px; /*Changed margin-top to 100px, as it moves when set as a percentage (previously 5%)*/
+}
+
+.leftnav {
+	left: 0;
 	margin-left: 0.5%;
+}
+
+.rightnav {
+	background-color: #ff5544;
+	right: 0;
+	padding-top: 20px;
+	margin-top: 100px; /*Changed margin-top to 100px, as it moves when set as a percentage (previously 5%)*/
+	margin-right: 0.5%;
+	text-align: center;
 }
 
 .sidenav a {
@@ -272,7 +283,8 @@ button:hover, .btn:hover {
 
 
 .main {
-	margin-left: 300px;
+	margin-left: 250px;
+	margin-right: 250px;
 	/* Same as the width of the left side navigation bar */
 	/*font-size: 28px;*/
 	/* Increased text to enable scrolling */

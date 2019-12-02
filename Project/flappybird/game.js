@@ -44,12 +44,28 @@ function muteAudio() {
     }
 }
 
-var storedScores = JSON.parse(localStorage.getItem('flappy-scores')) || { hard: 0, medium: 0, easy: 0 };
-console.log(storedScores);
-console.log(storedScores.hard);
-console.log(storedScores.medium);
-console.log(storedScores.easy);
+var testObject = { 'hard': 0, 'medium': 0, 'easy': 0 };
+var storedScores = JSON.parse(localStorage.getItem('flappy-scores-json')) || testObject;
 
+if(typeof storedScores !== 'undefined') {
+    console.log(storedScores);
+    console.log(storedScores.hard);
+    console.log(storedScores.medium);
+    console.log(storedScores.easy);
+}
+console.log(testObject.hard);
+
+/*
+console.log('test:')
+var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+
+testObject.two=4;
+// Put the object into storage
+localStorage.setItem('testObject', JSON.stringify(testObject));
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem('testObject');
+console.log('retrievedObject: ', JSON.parse(retrievedObject));
+*/
 const difficulty = {
     current: 1,
     easy: 0,
@@ -392,7 +408,7 @@ const pipes = {
                 }
 
                 //console.log(JSON.stringify(storedScores));
-                localStorage.setItem('flappy-scores', JSON.stringify(storedScores));
+                localStorage.setItem('flappy-scores-json', JSON.stringify(storedScores));
                 // console.log('read:');
                 //console.log(JSON.parse(localStorage.getItem('flappy-scores')));
             }

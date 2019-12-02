@@ -48,6 +48,9 @@
 		</div>
 
 		<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
+		<script>
+			document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;		
+		</script>
 		<div class="panel">
 			<p>
 				<h2>Top Scores</h2>

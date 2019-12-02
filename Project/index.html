@@ -222,7 +222,7 @@
 	</div>
 
 	<!--The side navigation bar has a list of all the games and links to their individual pages-->
-	<div class="sidenav">
+	<div class="sidenav leftnav">
 		<h2>Our Games</h2>
 		<a href="antibody.html">Antibody</a>
 		<a href="flappybird.html">Flappy Bird</a>
@@ -230,6 +230,28 @@
 		<a href="register.html">Register</a>
 		<a href="contact.html">Contact Us</a>
 		<a href="login.html">Login</a>
+	</div>
+
+	<div class="sidenav rightnav">
+		<h2>High Scores</h2>
+		
+		<div class="display-scores">
+			<a href="antibody.html">Antibody</a>
+			<span id="antibodyScoreID">0</span><br/>
+			<a href="flappybird.html">Flappy Bird</a>
+			<span id="flappyScoreID">0</span><br/>
+			<a href="spaceinvaders.html">Space Invaders</a>
+			<span id="spaceScoreID">0</span><br/>
+		</div>
+
+		<script>
+			var testObject = { 'hard': 0, 'medium': 0, 'easy': 0 };
+			var storedScores = JSON.parse(localStorage.getItem('flappy-scores-json')) || testObject;
+
+			document.getElementById("flappyScoreID").innerHTML = "Hard: " + (storedScores.hard || 0) + "<br>Medium: " + (storedScores.medium || 0) + "<br>Easy: " + (storedScores.easy || 0);			
+			document.getElementById("antibodyScoreID").innerHTML=parseInt(localStorage.getItem("antibody-highscore")) || 0;
+			document.getElementById("spaceScoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;
+		</script>
 	</div>
 
 	<!--The createFooter() function is called from the external footer.js file included in the head tag-->

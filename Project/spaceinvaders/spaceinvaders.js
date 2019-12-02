@@ -219,6 +219,7 @@ const Game = {
     animation: null,
     alives: 0,
     score: 0,
+    highscore: 0,
     level: 1,
     accuracy: 100,
     shotsfired: 0,
@@ -237,6 +238,7 @@ const Game = {
         this.play();
         Player.init();
         this.refreshScore(0, false);
+        this.highscore=localStorage.getItem("spaceinvaders-highscore");
     },
 
     changeDirection: function () { //change the direction (left or right)
@@ -323,6 +325,14 @@ const Game = {
     refreshScore: function (points, alien) { //display the score
         if (alien) this.alives--;
         this.score += points;
+
+        //Store high scores
+        var newScore = Math.max(this.score, this.highscore);
+        if (newScore>this.highscore){
+            this.highscore=newScore;
+            localStorage.setItem("spaceinvaders-highscore", this.highscore);
+			document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;
+        }
     },
     nextLevel: function () {
         //resurect aliens

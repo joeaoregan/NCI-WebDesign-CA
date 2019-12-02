@@ -34,7 +34,7 @@ setInterval(function(){
 
 // Score text
 const score = {
-    high : parseInt(localStorage.getItem("highscore")) || 0,
+    high : parseInt(localStorage.getItem("antibody-highscore")) || 0,
     value : 0,
 	scoreTxt: '',
 	textWidth: 0,

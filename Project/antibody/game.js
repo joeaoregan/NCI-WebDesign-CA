@@ -33,7 +33,7 @@ window.onload = function() {
 } 
 
 function updateScore(){	
-	document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("highscore")) || 0;
+	document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("antibody-highscore")) || 0;
 }
 
 function init(){
