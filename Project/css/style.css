@@ -99,8 +99,6 @@ body {
 	background-image: linear-gradient(white, rgb(245, 245, 229));
 	/*Gradient colour*/
 	font-size: 1.5em;
-	padding-bottom: 50px; /* need both margin and padding to clear footer */
-	margin-bottom: 50px;
 }
 
 h1, h2 {
@@ -269,6 +267,9 @@ button:hover, .btn:hover {
 	color: #f1f1f1;
 }
 
+
+
+
 .main {
 	margin-left: 300px;
 	/* Same as the width of the sidenav */
@@ -277,20 +278,21 @@ button:hover, .btn:hover {
 	padding: 0px 10px;
 }
 
-/*square*/
+
+
+
+
+/*FOOTER*/
+
+/*Round social media icon formatting*/
 .fa {
 	padding: 10px;
 	font-size: 30px;
-	width: 50px;
+	width: 30px;
 	text-align: center;
 	text-decoration: none;
 	margin: 5px 2px;
 	color: #CCC;
-}
-
-/*Round*/
-.fa {
-	width: 30px;
 	border-radius: 50%;
 	border: 2px solid #CCC;
 }
@@ -304,30 +306,46 @@ footer {
 	width: 100%;
 	border: 2px solid #333;
 	background-color: #222;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	color: white;
-	text-align: center;
 	color: #CCC;
+	text-align: center;
 	padding: 0 2%; /*top and bottom 0, right and left 2%*/
-	margin: auto;
-	font-size: 75%;
+	font-size: 75%; /*Make font smaller than body text*/
 	text-align: center;
 }
 
+/* need both margin to clear footer this is added to the last section in the index body*/
+.footer-spacer {	
+	margin-bottom: 100px;
+}
+
+/*The fixed-footer class creates a compact fixed position footer on the index page*/
+.fixed-footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+/*The regular-footer has padding and appears at the bottom of the body*/
+.regular-footer {
+	padding: 2% 2%;
+}
+
+/*The width needs to be set on the SVG space invader image in the footer*/
 .logo {
 	width: 20%;
 }
 
+/*Links have the same colour as other text in the footer*/
 footer a {
 	color: #CCC;
 }
 
+/*Links become opaque when the mouse cursor is over them to indicate they are links*/
 footer a:hover {
 	opacity: 0.5;
 }
 
+/*The copyright text in the footer is smaller than the rest of the footer*/
 .copyright {
 	width: 100%;
 	overflow: auto;
