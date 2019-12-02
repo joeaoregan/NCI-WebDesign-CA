@@ -8,6 +8,8 @@
 	position: fixed;
 	top: 0;
 	/* margin: 0 auto; */
+	/*Set the menu Z index higher than polaroid z-index so the pictures do not appear in front of the menu*/
+	z-index: 10;
 }
 
 .stretch {
@@ -114,14 +116,6 @@ h1, h2 {
 	margin: 25px auto;
 	background-image: linear-gradient(to bottom right, purple, white);
 	box-shadow: 5px 10px 8px purple;
-}
-
-.sidenav {
-	background-color: blue;
-	box-shadow: 5px 10px 8px lightblue;
-	background-color: #4433ff;
-	background-color: #8866ff;
-	background-color: #4455ff;
 }
 
 .body-border, .sidenav {
@@ -242,7 +236,14 @@ button:hover, .btn:hover {
 	background-color: black;
 }
 
+
+
+
+/*Left Side Navigation Bar*/
+
 .sidenav {
+	box-shadow: 5px 10px 8px lightblue;
+	background-color: #4455ff;
 	height: 75%;
 	width: 300px;
 	position: fixed;
@@ -251,7 +252,7 @@ button:hover, .btn:hover {
 	left: 0;
 	overflow-x: hidden;
 	padding-top: 20px;
-	margin-top: 5%;
+	margin-top: 100px; /*Changed margin-top to 100px, as it moves when set as a percentage (previously 5%)*/
 	margin-left: 0.5%;
 }
 
@@ -259,12 +260,12 @@ button:hover, .btn:hover {
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
 	font-size: 25px;
-	color: #818181;
+	color: #f1f1f1;
 	display: block;
 }
 
 .sidenav a:hover {
-	color: #f1f1f1;
+	color: #818181;
 }
 
 
@@ -272,7 +273,7 @@ button:hover, .btn:hover {
 
 .main {
 	margin-left: 300px;
-	/* Same as the width of the sidenav */
+	/* Same as the width of the left side navigation bar */
 	/*font-size: 28px;*/
 	/* Increased text to enable scrolling */
 	padding: 0px 10px;
