@@ -6,6 +6,8 @@ Group project for Web Design module of HDip in Science in Computing (Cyber Secur
 * CSS
 * JavaScript
 
+---
+
 Name | Email | GitHub
 --- | --- | ---
 Joe O'Regan | x19181051@student.ncirl.ie | [joeaoregan](https://github.com/joeaoregan)
