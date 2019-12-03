@@ -152,12 +152,11 @@ h1, h2 {
 	/*background-color: #eee;*/
 	margin: 0.5% 1%;
 	width: 98%;
-	font-family: 'Teko', cursive;
 	background-color: purple;
+	font-family: 'Teko', cursive;
 	color: white;
 	cursor: pointer;
 	padding: 18px;
-	border: none;
 	text-align: left;
 	outline: none;
 	font-size: 1.5em;
@@ -204,14 +203,21 @@ canvas {
 button, .btn {
 	background-color: #00FF00;
 	box-shadow: 5px 10px 18px white;
+	font-family: 'Teko', cursive;
 	color: white;
-	padding: 14px 20px;
+	padding: 10px 15px;
 	margin: 8px 0;
 	border: none;
 	cursor: pointer;
 	width: auto;
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px grey inset;
+	font-size: 1em;
+	/*White text with black outline*/
+	-webkit-text-fill-color: white;
+	/* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: black;
 }
 
 button:hover, .btn:hover {

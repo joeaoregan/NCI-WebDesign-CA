@@ -31,19 +31,6 @@ SWOOSHING.src = "flappybird/audio/sfx_swooshing.wav";
 const DIE = new Audio();
 DIE.src = "flappybird/audio/sfx_die.wav";
 
-var mute = false;
-
-function muteAudio() {
-    mute = !mute;
-    if (mute) {
-        document.getElementById("muteID").innerHTML = "FX On";
-        document.getElementById("muteID").classList.remove('cancelbtn');
-    } else {
-        document.getElementById("muteID").innerHTML = "FX Off";
-        document.getElementById("muteID").classList.add('cancelbtn');
-    }
-}
-
 var testObject = { 'hard': 0, 'medium': 0, 'easy': 0 };
 var storedScores = JSON.parse(localStorage.getItem('flappy-scores-json')) || testObject;
 

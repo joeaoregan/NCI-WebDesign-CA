@@ -44,7 +44,7 @@
 		<canvas id="antibody" width="1280" height="720"></canvas>
 	</div>
 
-	<!-- buttons -->
+	<!-- Controller buttons for mobile -->
 	<div class="body-border" id="controller-section">
 		<div class="controller-border" id="controller">
 
@@ -84,11 +84,16 @@
 	<!--This script is used to only display the controller if it is a mobile device-->
 	<script src="antibody/controller.js"></script>
 
+	<!--Game Settings Panel-->
 	<div class="body-border">
 		<div class="center">
 			<button id="muteID" onclick="muteAudio()" class="cancelbtn">FX Off</button>
 		</div>
+		<script src="scripts/game-buttons.js"></script>
+	</div>
 
+	<!--Info Accordion Panel-->
+	<div class="body-border">
 		<div>
 			<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
 			<div class="panel">
@@ -146,7 +151,6 @@
 			<script src="accordion.js"></script>
 		</div>
 	</div>
-
 
 	<!--Game Scripts-->
 	<script src="antibody/canvas.js"></script>

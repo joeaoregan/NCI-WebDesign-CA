@@ -39,13 +39,17 @@
 
 	<script src="flappybird/game.js"></script>
 
+	<!--Game Settings Panel-->
 	<div class="body-border">
-
 		<div class="center">
 			<button id="muteID" onclick="muteAudio()" class="cancelbtn">FX Off</button>
 			<button id="difficultyID" onclick="setDifficulty()">Difficulty: Medium</button>
 		</div>
+		<script src="scripts/game-buttons.js"></script>
+	</div>
 
+	<!--Info Accordion Panel-->
+	<div class="body-border">
 		<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
 		<div class="panel">
 			<p>
