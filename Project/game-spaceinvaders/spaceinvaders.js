@@ -4,13 +4,13 @@ const PLAYER_Y_POS = 650;//was 470, fixed on y axis
 const GAME_W = 720;
 const GAME_H = 680;
 
-//Audio
+//Audio - reused clips from Antibody game
 const FX_BONUS = new Audio();
-FX_BONUS.src = "game-spaceinvaders/audio/Bonus1.wav";
+FX_BONUS.src = "game-antibody/audio/Bonus1.wav";
 const FX_EXPLOSION = new Audio();
-FX_EXPLOSION.src = "game-spaceinvaders/audio/explosion.wav";
+FX_EXPLOSION.src = "game-antibody/audio/explosion.wav";
 const FX_LASER = new Audio();
-FX_LASER.src = "game-spaceinvaders/audio/laser1.wav";
+FX_LASER.src = "game-antibody/audio/laser1.wav";
 
 const Mothership = {
     x: 1500,//off screen
