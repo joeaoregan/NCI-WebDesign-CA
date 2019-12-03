@@ -42,12 +42,20 @@
 	<script src="game-flappybird/game.js"></script>
 
 	<!--Game Settings Panel-->
-	<div class="body-border">
+	<div class="body-border control-panel">
+		<h2 id="trackTitleID">Current Track: 1</h2>
+
 		<div class="center">
-			<button id="muteID" onclick="muteAudio()" class="cancelbtn">FX Off</button>
 			<button id="difficultyID" onclick="setDifficulty()">Difficulty: Medium</button>
+			<button id="muteID" onclick="muteAudio()" class="cancelbtn">FX Off</button>
+			<button id="backID" onclick="skipBackwards()" title="Skip Track Backwards"><<</button>
+			<button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music</button>
+			<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
+			<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random Track</button>
 		</div>
 		<script src="scripts/game-buttons.js"></script>
+		<!--Script for handling background music controls-->
+		<script src="scripts/music.js"></script>
 	</div>
 
 	<!--Info Accordion Panel-->

@@ -159,7 +159,7 @@ h1, h2 {
 	margin: 0;
 }
 /*Add different colour to game control panel to distinguish from other panels*/
-.music-panel{
+.control-panel{
 	/*background-image: linear-gradient(to bottom right, blue,#CCC);
 	background: rgb(0,212,255);
 	background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 78%, rgba(40,30,198,1) 100%);*/

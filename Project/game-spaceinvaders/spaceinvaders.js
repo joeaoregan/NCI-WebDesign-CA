@@ -172,7 +172,7 @@ const Player = {
                 this.alive = true;
                 this.animation = setInterval("Player.ray.animate()", this.speed);
                 Game.shotsfired++;
-                FX_LASER.play();
+                if(!mute) FX_LASER.play();
             }
         },
         animate: function () { //animate the ray
