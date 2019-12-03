@@ -29,17 +29,61 @@
 	</div>
 
 	<div class="heading">
-		<h1>Login Screen</h1>
+		<h1>Login And Password Reset</h1>
 	</div>
 
 	<div class="body-border">
 		<h1>User Login</h1>
-		<p>Need username and password fields etc.</p>
+
+		<!--Animation is used to expand the login form on the screen-->
+		<form class="modal-content" action="/action_page.php" method="post">
+			<!--Login form - Username and Password are required fields-->
+			<div class="login-container">
+				<!--Labels are attached to the text input fields-->
+				<label for="uname"><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" name="uname" required>
+
+				<label for="psw"><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" name="psw" required>
+
+				<button type="submit">Login</button>
+				<label>
+					<input type="checkbox" checked="checked" name="remember"> Remember me
+				</label>
+			</div>
+
+			<div class="login-container">
+				<button type="button" onclick="document.getElementById('loginID').style.display='none'"
+					class="cancelbtn">Cancel</button>
+				<span class="psw">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
 	</div>
 
 	<div class="body-border">
 		<h1>Password Reset</h1>
-		<p>Put reset password thingy here</p>
+
+		<!--Reset password form - email is a required field-->
+		<div>
+			<label for="uname"><b>Email</b></label>
+			<!--User must enter a valid email format and press "Reset Password" button-->
+			<input type="email" placeholder="Enter Email Address" name="email" required>
+
+			<button type="submit" onclick="resetPassword()">Reset Password</button>
+
+			<p id="resetPasswordID">Enter The Email Address You Registered With</p>
+		</div>
+		<script src="scripts/password-reset.js"></script>
+	</div>
+
+	<div class="body-border">
+		<h1>Register</h1>
+
+		<p>Head to our registration page to sign up</p>
+
+		<form class="modal-content" action="register.html">
+			<button type="submit">Register</button>
+		</form>
 	</div>
 
 	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
