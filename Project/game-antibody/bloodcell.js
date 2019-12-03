@@ -1,5 +1,5 @@
 const bcImg = new Image();
-bcImg.src = "antibody/art/BloodCell.png";
+bcImg.src = "game-antibody/art/BloodCell.png";
 
 class bloodcell{
 	constructor(){

@@ -1,9 +1,9 @@
 // Ship
 const player1 = new Image();
-player1.src="antibody/art/Player1Ship.png";
+player1.src="game-antibody/art/Player1Ship.png";
 
 const fireFX = new Audio();
-fireFX.src = "antibody/audio/laser1.wav";
+fireFX.src = "game-antibody/audio/laser1.wav";
 
 const MAX_HEALTH=5;
 const MAX_LIVES=3;

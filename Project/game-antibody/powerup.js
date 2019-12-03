@@ -5,7 +5,7 @@ class powerup{
 	constructor(sprite){
 		//sprite
 		this.sprite=new Image();
-		this.sprite.src="antibody/art/"+sprite+".png";
+		this.sprite.src="game-antibody/art/"+sprite+".png";
 		this.sX=0;
 		this.sY=0;
 		this.w=100;

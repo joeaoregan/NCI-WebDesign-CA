@@ -1,5 +1,5 @@
 const lifeP1 = new Image();
-lifeP1.src="antibody/art/Player1ShipSmall.png";
+lifeP1.src="game-antibody/art/Player1ShipSmall.png";
 
 const P1Box={
 	w: 200,
