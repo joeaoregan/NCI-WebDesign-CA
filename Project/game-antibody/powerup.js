@@ -1,5 +1,5 @@
 const powerupFX = new Audio();
-powerupFX.src = "antibody/audio/Bonus1.wav";
+powerupFX.src = "game-antibody/audio/Bonus1.wav";
 
 class powerup{
 	constructor(sprite){
