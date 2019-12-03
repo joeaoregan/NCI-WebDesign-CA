@@ -85,15 +85,16 @@
 	<script src="game-antibody/controller.js"></script>
 
 	<!--Game Settings Panel-->
-	<div class="body-border">
+	<div class="body-border music-panel">
+		<h2 id="trackTitleID">Current Track: 1</h2>
+
 		<div class="center">
-			<button id="muteID" onclick="muteAudio()" class="cancelbtn">FX Off</button>
-			<button id="backID" onclick="skipBackwards()"><<</button>
-			<button id="playID" onclick="playMusic()">Play Music</button>
-			<button id="forwardID" onclick="skipForwards()">>></button>
-			<button id="randomID" onclick="playRandomMusic()">Random Select</button>
+			<button id="muteID" onclick="muteAudio()" class="cancelbtn" title="Turn Game Effects On/Off">FX Off</button>
+			<button id="backID" onclick="skipBackwards()" title="Skip Track Backwards"><<</button>
+			<button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music</button>
+			<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
+			<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random Track</button>
 		</div>
-		<div class="center"><p id="trackTitleID">Track: 1</p></div>
 		<script src="scripts/game-buttons.js"></script>
 		<!--Script for handling background music controls-->
 		<script src="scripts/music.js"></script>

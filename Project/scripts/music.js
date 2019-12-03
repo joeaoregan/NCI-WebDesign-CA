@@ -55,7 +55,7 @@ function playMusic(trackNumber) {
 }
 
 function showTrackTitle(){
-    document.getElementById("trackTitleID").innerHTML = "Track: "+(currentTrack+1);
+    document.getElementById("trackTitleID").innerHTML = "Current Track: "+(currentTrack+1);
 }
 
 function skipForwards() {

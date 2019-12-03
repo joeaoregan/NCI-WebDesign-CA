@@ -146,6 +146,31 @@ h1, h2 {
 	text-align: center;
 }
 
+
+
+
+
+#trackTitleID{
+	font-family: 'Teko', cursive;
+	-webkit-text-fill-color: white;
+	/* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
+	margin: 0;
+}
+/*Add different colour to game control panel to distinguish from other panels*/
+.music-panel{
+	/*background-image: linear-gradient(to bottom right, blue,#CCC);
+	background: rgb(0,212,255);
+	background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 78%, rgba(40,30,198,1) 100%);*/
+	background: rgb(0,171,205);
+	background: radial-gradient(circle, rgba(0,171,205,1) 0%, rgba(41,41,231,1) 48%, rgba(40,30,198,1) 96%);
+}
+
+
+
+
+
 /*Accordian Panel*/
 
 .accordion {
@@ -218,10 +243,11 @@ button, .btn {
 	/* Will override color (regardless of order) */
 	-webkit-text-stroke-width: 1.5px;
 	-webkit-text-stroke-color: black;
+	border: 1.5px solid black;
 }
 
 button:hover, .btn:hover {
-	opacity: 0.8;
+	opacity: 0.75;
 }
 
 /* Extra styles for the cancel button */
