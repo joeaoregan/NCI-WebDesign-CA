@@ -4,6 +4,14 @@ const PLAYER_Y_POS = 650;//was 470, fixed on y axis
 const GAME_W = 720;
 const GAME_H = 680;
 
+//Audio
+const FX_BONUS = new Audio();
+FX_BONUS.src = "game-spaceinvaders/audio/Bonus1.wav";
+const FX_EXPLOSION = new Audio();
+FX_EXPLOSION.src = "game-spaceinvaders/audio/explosion.wav";
+const FX_LASER = new Audio();
+FX_LASER.src = "game-spaceinvaders/audio/laser1.wav";
+
 const Mothership = {
     x: 1500,//off screen
     y: 75,
@@ -54,7 +62,9 @@ function checkCollision(obj1, obj2) {
     if ((obj1.alive && obj2.alive) && (obj1.x >= obj2.x && obj1.x <= (obj2.x + obj2.w)) && (obj1.y >= obj2.y && obj1.y <= (obj2.y + obj2.h))) {
         obj1.destroy();
         obj2.destroy();
+        return true;
     }
+    return false;
 }
 
 const Alien = function (aType, aLine, aCol) {
@@ -162,6 +172,7 @@ const Player = {
                 this.alive = true;
                 this.animation = setInterval("Player.ray.animate()", this.speed);
                 Game.shotsfired++;
+                FX_LASER.play();
             }
         },
         animate: function () { //animate the ray
@@ -393,10 +404,10 @@ if (element.getContext) {
     var canvas = element.getContext('2d');
 
     var pic = new Image();
-    pic.src = 'spaceinvaders/spritesheet.png';
+    pic.src = 'game-spaceinvaders/spritesheet.png';
 
     var ship = new Image();
-    ship.src = 'spaceinvaders/mothershipred.png';
+    ship.src = 'game-spaceinvaders/mothershipred.png';
 
     Game.init(GAME_W, GAME_H);//1.38 scale, was 530x500
 
@@ -478,10 +489,14 @@ function update() {
 
     for (i = 0; i < 5; i++) {
         for (j = 0; j < 11; j++) {
-            checkCollision(Player.ray, Game.aliens[i][j]);
+            if(checkCollision(Player.ray, Game.aliens[i][j])){
+                if(!mute) FX_EXPLOSION.play();
+            }
         }
     }
-    checkCollision(Player.ray, Mothership);
+    if(checkCollision(Player.ray, Mothership)){
+        if(!mute) FX_BONUS.play();
+    }
 }
 
 function draw() {
@@ -491,9 +506,11 @@ function draw() {
     Player.draw();
     HUD.draw();//draw heads up display
 }
+
 function loop() {
     update();
     draw();
     requestAnimationFrame(loop);
 }
+
 loop();
