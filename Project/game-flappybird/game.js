@@ -13,23 +13,23 @@ const DEGREE = Math.PI / 180;
 
 // LOAD SPRITE IMAGE
 const sprite = new Image();
-sprite.src = "flappybird/img/sprite.png";
+sprite.src = "game-flappybird/img/sprite.png";
 
 // LOAD SOUNDS
 const SCORE_S = new Audio();
-SCORE_S.src = "flappybird/audio/sfx_point.wav";
+SCORE_S.src = "game-flappybird/audio/sfx_point.wav";
 
 const FLAP = new Audio();
-FLAP.src = "flappybird/audio/sfx_flap.wav";
+FLAP.src = "game-flappybird/audio/sfx_flap.wav";
 
 const HIT = new Audio();
-HIT.src = "flappybird/audio/sfx_hit.wav";
+HIT.src = "game-flappybird/audio/sfx_hit.wav";
 
 const SWOOSHING = new Audio();
-SWOOSHING.src = "flappybird/audio/sfx_swooshing.wav";
+SWOOSHING.src = "game-flappybird/audio/sfx_swooshing.wav";
 
 const DIE = new Audio();
-DIE.src = "flappybird/audio/sfx_die.wav";
+DIE.src = "game-flappybird/audio/sfx_die.wav";
 
 var testObject = { 'hard': 0, 'medium': 0, 'easy': 0 };
 var storedScores = JSON.parse(localStorage.getItem('flappy-scores-json')) || testObject;
