@@ -42,6 +42,19 @@ window.onload = function() {
 	}
 } 
 
+var mute = false;
+
+function muteAudio() {
+    mute = !mute;
+    if (mute) {
+        document.getElementById("muteID").innerHTML = "FX On";
+        document.getElementById("muteID").classList.remove('cancelbtn');
+    } else {
+        document.getElementById("muteID").innerHTML = "FX Off";
+        document.getElementById("muteID").classList.add('cancelbtn');
+    }
+}
+
 function updateScore(){
 	var topPlayer = JSON.parse(localStorage.getItem('antibody-highscore-json')) || tempPlayer;
 	console.log(JSON.stringify(topPlayer));

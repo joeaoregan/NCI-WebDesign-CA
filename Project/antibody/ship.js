@@ -125,7 +125,7 @@ const ship ={
 			var x = new laser(this.x+this.w-20,this.y+this.h/2,10,1,"LaserGreen");
 			lasers.push(x);
 			//console.log('lasers'+lasers.length);
-			fireFX.play();
+			if (!mute) fireFX.play();
 			this.lastFire=this.fireRate;
 			//console.log('fireRate: '+this.fireRate+' lastFire: '+this.lastFire);
 		}

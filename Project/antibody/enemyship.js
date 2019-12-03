@@ -59,7 +59,7 @@ const enemyShip = {
 			var x = new laser(this.x-20,this.y+this.h/2,10,-1,"LaserBlue");
 			lasers.push(x);
 			//console.log('lasers'+lasers.length);
-			enemyFireFX.play();
+			if (!mute) enemyFireFX.play();
 			this.lastFire=this.fireRate;
 			//console.log('fireRate: '+this.fireRate+' lastFire: '+this.lastFire);
 		}

@@ -51,7 +51,7 @@ class laser {
 				var ex = new explosion(this.x+this.w,this.y-enemyShip.h/2,96,12,'Explosion'); // create explosion
 				navigator.vibrate([500]);//vibrate mobile device if explosion
 				explosions.push(ex);
-				explosionFX.play();
+				if (!mute) explosionFX.play();
 				enemyShip.reset();
 			}
 			
@@ -60,7 +60,7 @@ class laser {
 					lasers.splice(i,1);
 					var ex = new explosion(this.x+this.w,this.y-bloodcells[j].h,128,16,'ExplosionBlood'); // create explosion
 					explosions.push(ex);
-					splashFX.play();
+					if (!mute) splashFX.play();
 					bloodcells[j].reset();
 					
 					bloodcellsDestroyed++;

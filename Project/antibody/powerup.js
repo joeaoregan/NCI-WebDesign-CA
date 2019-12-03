@@ -51,7 +51,7 @@ class powerup{
 				this.reset();
 				if(ship.lives<3){
 					ship.lives++;
-					powerupFX.play();
+					if (!mute) powerupFX.play();
 				}
 			}
 		}
