@@ -14,6 +14,7 @@
 
 .stretch {
 	/* min-width: 80%; */
+	/*Grey 2 pixel solid border*/
 	border: 2px solid #555;
 	background-color: purple;
 }
@@ -44,30 +45,35 @@
 }
 
 /* Heading */
-
+/*Add a space between the H1 Heading at the top of each page and the menu*/
 .heading {
 	padding-top: 16px;
 	margin-top: 30px;
 }
 
-/*Highlight current page*/
-
+/*Menu - Highlight current page background colour*/
 .highlighted {
-	background-color: #888;
+	background-color: rgb(150, 20, 70);
 }
 
+/*Menu - Current page highlighted text colour*/
 li.highlighted a {
 	color: #ae31f1;
 }
+
+
+
+
 
 /* Register a new user */
 
 .register table {
 	border: 2px solid black;
-	background-color: red;
 	/* For browsers that do not support gradients */
-	background-image: linear-gradient(#08da6d, #ae31f1);
+	background-color: red;
 	/*Gradient colour*/
+	/*background-image: linear-gradient(#08da6d, #ae31f1);*/
+	background-image: linear-gradient(#EEE, #08da6d);
 	/*width: 100%;*/
 }
 
@@ -84,17 +90,20 @@ li.highlighted a {
 	width: 50%;
 }
 
-/* Form field width */
+select option:hover {
+	background-color: green;
+}
 
-input[type=text], input[type=submit], input[type=password], select {
-	width: 200px;
+/* Form field width */
+input[type=text], input[type=email], input[type=submit], input[type=password], select {
+	width: 250px;
 }
 
 body {
 	box-sizing: border-box;
 	font-family: 'Atomic Age', cursive;
-	min-height: max-content;
 	/*min-height stops the gradient background colour repeating*/
+	min-height: max-content;
 	background-color: purple;
 	/* For browsers that do not support gradients */
 	/*background-image: linear-gradient(#e032e6, #020314);*/
@@ -193,12 +202,6 @@ canvas {
 /* Buttons */
 
 button, .btn {
-	/*background-color: rgb(61, 161, 228);*/
-	/*Old blue colour*/
-	/*
-	background-image: linear-gradient(#e032e6, #020314);
-	background-image: linear-gradient(to bottom right, #e032e6, white);
-	*/
 	background-color: #00FF00;
 	box-shadow: 5px 10px 18px white;
 	color: white;
@@ -279,9 +282,7 @@ button:hover, .btn:hover {
 	color: #818181;
 }
 
-
-
-
+/*main body section on index page, positioned between two side nav bars*/
 .main {
 	margin-left: 250px;
 	margin-right: 250px;
@@ -349,14 +350,20 @@ footer {
 }
 
 /*Links have the same colour as other text in the footer*/
-footer a {
+footer a:link {
 	color: #CCC;
 }
-
+footer a:visited {
+	color: #999;
+}
 /*Links become opaque when the mouse cursor is over them to indicate they are links*/
 footer a:hover {
 	opacity: 0.5;
 }
+footer a:active {
+	color: purple;
+}
+
 
 /*The copyright text in the footer is smaller than the rest of the footer*/
 .copyright {
@@ -365,9 +372,9 @@ footer a:hover {
 	font-size: 75%;
 }
 
+/*Format space invader image in footer*/
 img.space-invader-grey {
   width: 60px;
-  /*filter:drop-shadow(0 0 10px #0F0)*/
   filter:drop-shadow(0 0 10px #CCC)
 }
 
@@ -378,11 +385,6 @@ img.space-invader-grey:hover {
 	transition: all 0.35s;	
 	filter:drop-shadow(0 0 10px purple)
   }
-
-
-
-
-
 
 
 

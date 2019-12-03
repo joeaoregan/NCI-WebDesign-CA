@@ -150,10 +150,10 @@ function resetForm() {
 				<td class="lbl"><label>My favourite game</label></td>
 				<td>
 					<select name="games" size="4" id="favouriteInput">
-						<option value="game1">Game 1</option>
-						<option value="game2">Game 2</option>
-						<option value="game3">Game 3</option>
-						<option value="game4">Game 4</option>
+						<option value="game1">Antibody</option>
+						<option value="game2">Flappy Bird</option>
+						<option value="game3">Space Invaders</option>
+						<option value="game4" selected="selected">N/A</option>
 					</select>
 				</td>
 				<td></td>
