@@ -53,9 +53,7 @@
 
 	<div class="body-border">
 		<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
-		<script>
-			document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;		
-		</script>
+
 		<div class="panel">
 			<p>
 				<h2>Top Scores</h2>
@@ -92,7 +90,11 @@
 			</p>
 		</div>
 
-		<script src="accordion.js"></script>
+		<script src="scripts/accordion.js"></script>	
+		<!--Get the stored high score and display it-->	
+		<script>
+			document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;		
+		</script>
 	</div>
 
 	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
