@@ -1,3 +1,11 @@
+/*
+menu.js
+
+This file uses a JSON object containing the name, url, and title of each page to add each menu item
+as a list item in an unordered list using a for loop and places the menu at the top of each page using
+document.getElementById() and setting the innerHTML at the DIV with ID menu at the top of each page
+*/
+
 // JSON object with page names and links
 var menuItems = [
 	{
@@ -47,24 +55,24 @@ createMenu(menuItems);
 // Function to create menu and highlight the current page
 function createMenu(arr) {
 	var out = "";//Output html
-	var titleTxt=document.title;//The title of the current page
-	var classTxt="";//Set the class for highlighted menu item
-	
-	out+="<ul>"; // start of unordered list
+	var titleTxt = document.title;//The title of the current page
+	var classTxt = "";//Set the class for highlighted menu item
+
+	out += "<ul>"; // start of unordered list
 
 	//Loop through menu items in the menuItems array JSON object
 	//Add as line to unordered list used by the menu
-	for(var i = 0; i < arr.length; i++) {
-		if(titleTxt===arr[i].name){//If the name of the object matches the title of the current page
-			classTxt="highlighted";//Add highlighted to the class so the current page is highlighted in the menu
-		}else{
-			classTxt="";//Otherwise the page does not need to be highlighted
+	for (var i = 0; i < arr.length; i++) {
+		if (titleTxt === arr[i].name) {//If the name of the object matches the title of the current page
+			classTxt = "highlighted";//Add highlighted to the class so the current page is highlighted in the menu
+		} else {
+			classTxt = "";//Otherwise the page does not need to be highlighted
 		}
-		
-		out += '<li class='+classTxt+'><a href="' + arr[i].url + '" title="'+arr[i].title+'">' + arr[i].name + '</a></li>'; // add each object as list item
+
+		out += '<li class=' + classTxt + '><a href="' + arr[i].url + '" title="' + arr[i].title + '">' + arr[i].name + '</a></li>'; // add each object as list item
 	}
-	
-	out+="</ul>"; // end of unordered list
-	
+
+	out += "</ul>"; // end of unordered list
+
 	document.getElementById("menu").innerHTML = out;//Add the menu to the menu ID at the top of each page
 }
