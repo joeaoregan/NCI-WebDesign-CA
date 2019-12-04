@@ -311,13 +311,34 @@ button:hover, .btn:hover {
 	.body-border {
 		width: 95%;
 	}
+	.menu {
+		width: 100%;
+		font-size: 80%;
+		min-width: initial;
+	}
+	.menu li a {
+		padding: 11px 13px;/*padding 80% of original*/
+	}
+}
+@media screen and (max-width: 1000px) {
+	.menu {
+		width: 100%;
+		font-size: 50%;
+		min-width: initial;
+	}
+	.menu li a {
+		padding: 7px 8px;/*padding 50% of original*/
+	}
 }
 @media screen and (max-width: 1600px) {
 	.leftnav {
 		display: none;
 	}
-	canvas{
+	canvas {
 		width: 99.9%;
+	}
+	.menu-container {
+		width: 100%;
 	}
 }
 @media screen and (max-width: 1850px) {
