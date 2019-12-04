@@ -333,6 +333,9 @@ button:hover, .btn:hover {
 	#googleMap, .about-vid, .menu {
 		width:100%;
 	}
+	#googleMap, .about-vid {
+		height: 540px;
+	}
 }
 @media screen and (max-width: 1000px) {
 	body {
@@ -345,6 +348,9 @@ button:hover, .btn:hover {
 	.menu li a {
 		padding: 7px 8px;/*padding 50% of original*/
 	}
+	#googleMap, .about-vid {
+		height: 360px;
+	}
 }
 @media screen and (max-width: 650px) {
 	body {
@@ -356,6 +362,9 @@ button:hover, .btn:hover {
 	}
 	.menu li a {
 		padding: 5px 6px;/*padding 50% of original*/
+	}
+	#googleMap, .about-vid {
+		height: 240px;
 	}
 }
 @media screen and (max-width: 1600px) {
