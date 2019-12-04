@@ -99,6 +99,10 @@ input[type=text], input[type=email], input[type=submit], input[type=password], s
 	width: 250px;
 }
 
+
+
+
+
 body {
 	box-sizing: border-box;
 	font-family: 'Atomic Age', cursive;
@@ -288,12 +292,12 @@ button:hover, .btn:hover {
 	margin-top: 100px; /*Changed margin-top to 100px, as it moves when set as a percentage (previously 5%)*/
 }
 
-.leftnav {
-	left: 0;
-	margin-left: 0.5%;
-}
+
+
+
 
 .rightnav {
+	min-height: max-content;
 	background-color: #ff5544;
 	right: 0;
 	padding-top: 20px;
@@ -301,6 +305,44 @@ button:hover, .btn:hover {
 	margin-right: 0.5%;
 	text-align: center;
 }
+
+@media screen and (max-width: 1350px) {
+	/*If the screen is */
+	.body-border {
+		width: 95%;
+	}
+}
+@media screen and (max-width: 1600px) {
+	.leftnav {
+		display: none;
+	}
+}
+@media screen and (max-width: 1850px) {
+	.rightnav {
+		display: none;
+	}
+}
+@media screen and (min-width: 1850px) {	
+
+
+	.main {
+		margin-right: 250px;
+	}
+}
+@media screen and (min-width: 1600px) {
+	.leftnav {
+		left: 0;
+		margin-left: 0.5%;
+	}
+	.main {
+		margin-left: 250px;
+	}
+}
+
+
+
+
+
 
 .sidenav a {
 	padding: 6px 8px 6px 16px;
@@ -316,8 +358,6 @@ button:hover, .btn:hover {
 
 /*main body section on index page, positioned between two side nav bars*/
 .main {
-	margin-left: 250px;
-	margin-right: 250px;
 	/* Same as the width of the left side navigation bar */
 	/*font-size: 28px;*/
 	/* Increased text to enable scrolling */
