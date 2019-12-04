@@ -1,61 +1,70 @@
 // JSON object with page names and links
-var menuNames = [
+var menuItems = [
 	{
-		"name": "Home",
-		"url": "index.html"
+		"name": "Home",//Name of the page
+		"url": "index.html",//Url the menu item links to
+		"title": "Return To Homepage"//Title to display when the mouse cursor hovers over the menu item
 	},
 	{
 		"name": "Antibody JS",
-		"url": "antibody.html"
+		"url": "antibody.html",
+		"title": "Play Antibody"
 	},
 	{
 		"name": "Flappy Bird JS",
-		"url": "flappybird.html"
+		"url": "flappybird.html",
+		"title": "Play Flappy Bird"
 	},
 	{
 		"name": "Space Invaders JS",
-		"url": "spaceinvaders.html"
+		"url": "spaceinvaders.html",
+		"title": "Play Space Invaders"
 	},
 	{
 		"name": "Register",
-		"url": "register.html"
+		"url": "register.html",
+		"title": "Register With Us"
 	},
 	{
 		"name": "Contact Us",
-		"url": "contact.html"
+		"url": "contact.html",
+		"title": "Contact Us"
 	},
 	{
 		"name": "About",
-		"url": "about.html"
+		"url": "about.html",
+		"title": "About J.I.M. Games"
 	},
 	{
 		"name": "Login",
-		"url": "login.html"
+		"url": "login.html",
+		"title": "User Login"
 	}
 ];
 
-createMenu(menuNames);
+createMenu(menuItems);
 
 // Function to create menu and highlight the current page
 function createMenu(arr) {
-	var out = "";
-	var i;
+	var out = "";//Output html
 	var titleTxt=document.title;//The title of the current page
 	var classTxt="";//Set the class for highlighted menu item
 	
 	out+="<ul>"; // start of unordered list
 
-	for(i = 0; i < arr.length; i++) {
-		if(titleTxt===arr[i].name){
-			classTxt="highlighted";
+	//Loop through menu items in the menuItems array JSON object
+	//Add as line to unordered list used by the menu
+	for(var i = 0; i < arr.length; i++) {
+		if(titleTxt===arr[i].name){//If the name of the object matches the title of the current page
+			classTxt="highlighted";//Add highlighted to the class so the current page is highlighted in the menu
 		}else{
-			classTxt="";
+			classTxt="";//Otherwise the page does not need to be highlighted
 		}
 		
-		out += '<li class='+classTxt+'><a href="' + arr[i].url + '">' + arr[i].name + '</a></li>'; // add each as list item
+		out += '<li class='+classTxt+'><a href="' + arr[i].url + '" title="'+arr[i].title+'">' + arr[i].name + '</a></li>'; // add each object as list item
 	}
 	
 	out+="</ul>"; // end of unordered list
 	
-	document.getElementById("menu").innerHTML = out;
+	document.getElementById("menu").innerHTML = out;//Add the menu to the menu ID at the top of each page
 }
