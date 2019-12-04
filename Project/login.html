@@ -69,15 +69,14 @@
 		<h1>Password Reset</h1>
 
 		<!--Reset password form - email is a required field-->
-		<div>
-			<label for="uname"><b>Email</b></label>
-			<!--User must enter a valid email format and press "Reset Password" button-->
-			<input type="email" placeholder="Enter Email Address" name="email" required>
+		<label for="uname"><b>Email</b></label>
+		<!--User must enter a valid email format and press "Reset Password" button-->
+		<input type="email" placeholder="Enter Email Address" name="email" required>
 
-			<button type="submit" onclick="resetPassword()">Reset Password</button>
+		<button type="submit" onclick="resetPassword()">Reset Password</button>
 
-			<p id="resetPasswordID">Enter The Email Address You Registered With</p>
-		</div>
+		<p id="resetPasswordID">Enter The Email Address You Registered With</p>
+		
 		<script src="scripts/password-reset.js"></script>
 	</div>
 
@@ -86,11 +85,13 @@
 
 		<p>Head to our registration page to sign up</p>
 
-		<form class="modal-content" action="register.html">
-			<button type="submit">Register</button>
-		</form>
+		<div class="center">
+			<form class="modal-content" action="register.html">
+				<button type="submit">Register</button>
+			</form>
+		</div>
 
-		<div>
+		<div class="backtotop">
 			<p><a href="#topofpage">Back To Top</a></p>
 		</div>
 	</div>

@@ -131,7 +131,7 @@ function resetForm() {
 
 		formFields += `<tr>
 			<td class="lbl"><label>`+ formJSON[i].label + star + `</label></td>
-			<td><input type="`+ formJSON[i].type + `" name="` + formJSON[i].name + `" placeholder="` + formJSON[i].placeholder + `" id="` + formJSON[i].id + `" /></td>
+			<td><input class="reg-form" type="`+ formJSON[i].type + `" name="` + formJSON[i].name + `" placeholder="` + formJSON[i].placeholder + `" id="` + formJSON[i].id + `" /></td>
 			<td></td>
 		</tr>`;
 	}

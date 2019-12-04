@@ -67,6 +67,9 @@ li.highlighted a {
 
 /* Register a new user */
 
+table {	
+	padding-bottom: 2%;
+}
 .register table {
 	border: 2px solid black;
 	/* For browsers that do not support gradients */
@@ -76,7 +79,9 @@ li.highlighted a {
 	background-image: linear-gradient(#EEE, #08da6d);
 	/*width: 100%;*/
 }
-
+.contact td {
+	padding: 10px 20px;/*add padding to space out table text, 10px top & bottom, 20 pixels either side*/
+}
 .register thead {
 	background-color: #08da6d;
 	/* green */
@@ -95,11 +100,23 @@ select option:hover {
 }
 
 /* Form field width */
-input[type=text], input[type=email], input[type=submit], input[type=password], select {
+input.reg-form[type=text], input.reg-form[type=email], input.reg-form[type=submit], input.reg-form[type=password], select {
 	width: 250px;
 }
 
-
+/*Login page forms*/
+input[type=text], input[type=password], input[type=email] {
+	width: 96%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border-radius: 10px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+  margin-right: 10px;
+}
 
 
 
@@ -120,6 +137,7 @@ h1, h2 {
 	text-align: center;
 }
 
+/*Each section within the body*/
 .body-border {
 	/*Shadow around body sections*/
 	padding: 10px;
@@ -129,7 +147,6 @@ h1, h2 {
 	margin: 25px auto;
 	background-image: linear-gradient(to bottom right, purple, white);
 }
-
 .body-border, .sidenav {
 	border: 2px solid black;
 	border-radius: 8px;
@@ -137,7 +154,6 @@ h1, h2 {
 	/*background-color: lightyellow;*/
 	/*background-image: linear-gradient(white, rgb(245, 245, 229));*/
 }
-
 .body-border h2, h1 {
 	/*outline text*/
 	-webkit-text-fill-color: rgb(5, 5, 5);
@@ -145,12 +161,12 @@ h1, h2 {
 	-webkit-text-stroke-width: 2px;
 	-webkit-text-stroke-color: purple;
 }
-
 .body-border h2, p {
 	text-align: center;
 }
-
-
+.yellow-section {
+	background-image: linear-gradient(to top right, yellow, #CCC);
+}
 
 
 
@@ -428,6 +444,10 @@ button:hover, .btn:hover {
 
 
 /*FOOTER*/
+
+.backtotop{
+	border-top: 2px solid #777;
+}
 
 /*Round social media icon formatting*/
 .fa {
