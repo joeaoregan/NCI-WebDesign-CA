@@ -316,17 +316,17 @@ button:hover, .btn:hover {
 	height: 720px;
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1375px) {
 	/*If the screen is */
 	.body-border {
 		width: 95%;
 	}
 	.menu {
-		font-size: 80%;
+		font-size: 75%;
 		min-width: initial;
 	}
 	.menu li a {
-		padding: 11px 13px;/*padding 80% of original*/
+		padding: 11px 13px;/*padding 75% of original*/
 	}
 	#googleMap, .about-vid, .menu {
 		width:100%;
