@@ -306,18 +306,30 @@ button:hover, .btn:hover {
 	text-align: center;
 }
 
+#googleMap {
+	width:1280px;
+	height:720px;
+}
+
+.about-vid {
+	width: 1280px;
+	height: 720px;
+}
+
 @media screen and (max-width: 1350px) {
 	/*If the screen is */
 	.body-border {
 		width: 95%;
 	}
 	.menu {
-		width: 100%;
 		font-size: 80%;
 		min-width: initial;
 	}
 	.menu li a {
 		padding: 11px 13px;/*padding 80% of original*/
+	}
+	#googleMap, .about-vid, .menu {
+		width:100%;
 	}
 }
 @media screen and (max-width: 1000px) {
