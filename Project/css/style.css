@@ -321,8 +321,10 @@ button:hover, .btn:hover {
 	.body-border {
 		width: 95%;
 	}
+	body {
+		font-size: 1.125em;
+	}
 	.menu {
-		font-size: 75%;
 		min-width: initial;
 	}
 	.menu li a {
@@ -333,13 +335,27 @@ button:hover, .btn:hover {
 	}
 }
 @media screen and (max-width: 1000px) {
+	body {
+		font-size: .75em;
+	}
 	.menu {
 		width: 100%;
-		font-size: 50%;
 		min-width: initial;
 	}
 	.menu li a {
 		padding: 7px 8px;/*padding 50% of original*/
+	}
+}
+@media screen and (max-width: 650px) {
+	body {
+		font-size: .55em;
+	}
+	.menu {
+		width: 100%;
+		min-width: initial;
+	}
+	.menu li a {
+		padding: 5px 6px;/*padding 50% of original*/
 	}
 }
 @media screen and (max-width: 1600px) {
