@@ -30,6 +30,9 @@
 </head>
 
 <body>
+	<!--Anchor to return to top of page from bottom-->
+	<a id="topofpage"></a>
+	
 	<div class="menu stretch">
 		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
 		<script src="scripts/menu.js"></script>
@@ -107,6 +110,10 @@
 		<script>
 			document.getElementById("scoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;		
 		</script>
+
+		<div>
+			<p><a href="#topofpage">Back To Top</a></p>
+		</div>
 	</div>
 
 	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
