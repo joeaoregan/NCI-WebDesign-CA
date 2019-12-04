@@ -316,6 +316,9 @@ button:hover, .btn:hover {
 	.leftnav {
 		display: none;
 	}
+	canvas{
+		width: 99.9%;
+	}
 }
 @media screen and (max-width: 1850px) {
 	.rightnav {
@@ -323,8 +326,6 @@ button:hover, .btn:hover {
 	}
 }
 @media screen and (min-width: 1850px) {	
-
-
 	.main {
 		margin-right: 250px;
 	}
