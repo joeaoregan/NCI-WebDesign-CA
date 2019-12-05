@@ -262,11 +262,12 @@ button, .btn {
 	box-shadow: 5px 10px 18px white;
 	font-family: 'Teko', cursive;
 	color: white;
-	padding: 10px 15px;
+	padding: 8px 10px;
 	margin: 8px 0;
 	border: none;
 	cursor: pointer;
 	width: auto;
+	min-width: 100px;
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px grey inset;
 	font-size: 1em;

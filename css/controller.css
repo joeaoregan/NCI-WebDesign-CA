@@ -6,13 +6,9 @@ Styling for mobile controller used with Antibody game
 */
 
 .controller-border {
-	font-family: 'Teko', cursive;
-	-webkit-text-fill-color: white;/* Will override color (regardless of order) */
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
 	color: white;
 	border: 2px solid black;
-	width: 1200px;/*padding: 40px;*/
+	width: 1200px;
 	background-color: lightyellow;
 	padding: 40px 40px 60px;
 	touch-action: manipulation;/*Stop screen zooming when double tapping buttons*/
@@ -23,14 +19,14 @@ Styling for mobile controller used with Antibody game
 /* Mobile Game Controller */
 
 .controller {
-	font-family: 'Teko', cursive;
 	background-color: #b2b4b2;
-	border: 2px solid black;
+	border: 3px solid black;
 	width: 1150px;
 	text-align: center;
 	border-radius: 200px;
 	padding: 25px;
 	margin: 0 auto;
+	filter:drop-shadow(0 0 10px purple);
 }
 
 .button-box {
@@ -39,19 +35,24 @@ Styling for mobile controller used with Antibody game
 	text-align: center;
 	width: 360px;
 	border-radius: 200px;
-	padding: 10px;
+	padding: 5px;
 	background-color: #707372;
 }
 
-.button {
+.controller-border .button {
+	font-family: 'Teko', cursive;
+	-webkit-text-fill-color: white;/* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: black;
 	border: 3px solid black;
-	border-radius: 60px;
-	font-size: 40px;
-	padding: 25px;
+	border-radius: 120px;
+	font-size: 60px;
 }
 
 .button-start {
 	background-color: #999;/*Grey*/
+	margin: 0 95px;
+	padding: 10px 25px;
 }
 
 .button-round {
@@ -60,20 +61,27 @@ Styling for mobile controller used with Antibody game
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	margin: 4px 2px;/* Stop button text highlighting when buttons pressed repeatedly */
+	margin: 5px 2px;/* Stop button text highlighting when buttons pressed repeatedly */
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
+	padding: 10px 25px;
+}
+
+.btn-direction {
+	font-size: 50px;
+	padding: 10px 12px;
 }
 
 .button-divider {
-	width: 75px;
+	width: 70px;
 	height: auto;
 	display: inline-block;
 }
 
+/* Action Button Colours */
 .buttonA {
 	background-color: #F14;/*Red*/
 }

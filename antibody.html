@@ -9,12 +9,8 @@
 	<!--meta name="viewport" content="width=500, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"-->
 	<title>Antibody JS</title>
 	
-	<!-- Font used in antibody game -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" /> -->
 	<!-- Gamepad style sheet for mobile game controller -->
 	<link href="css/controller.css" rel="stylesheet" />
-	<!--Google Retro Font-->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet"> -->
 	<!--Main style sheet -->
 	<link href="css/style.css" rel="stylesheet" />
 	<!--Social Media Icons-->
@@ -73,26 +69,29 @@
 
 	<!-- Controller buttons for mobile device -->
 	<!-- Stylesheet = controller.css -->
-	<div class="body-border" id="controller-section">
+	<div class="body-border yellow-section" id="controller-section">
 		<div class="controller-border" id="controller">
 			<h1>Double-Tapping Outside This Zone Will Lose Focus</h1>
 
 			<div class="controller">
+				<!-- Direction Buttons -->
 				<div class="button-box">
 					<!-- handle touch events for buttons -->
-					<button class="button button-round" ontouchstart="moveUp()" onmousedown="moveUp()"
+					<button class="button button-round btn-direction" ontouchstart="moveUp()" onmousedown="moveUp()"
 						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
-					<button class="button button-round" ontouchstart="moveLeft()" onmousedown="moveLeft()"
+					<button class="button button-round btn-direction" ontouchstart="moveLeft()" onmousedown="moveLeft()"
 						onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8592;&nbsp;</button>
 					<span class="button-divider"></span>
-					<button class="button button-round" ontouchstart="moveRight()" onmousedown="moveRight()"
+					<button class="button button-round btn-direction" ontouchstart="moveRight()" onmousedown="moveRight()"
 						onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
-					<button class="button button-round" ontouchstart="moveDown()" onmousedown="moveDown()"
+					<button class="button button-round btn-direction" ontouchstart="moveDown()" onmousedown="moveDown()"
 						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
 				</div>
-				<span class="button-divider"></span><!-- spacer -->
+				
+				<!-- Menu Button -->
 				<button class="button button-start" onmousedown="moveleft()" onmouseup="startGame()">START</button>
-				<span class="button-divider"></span><!-- spacer -->
+				
+				<!-- Action Buttons -->
 				<div class="button-box">
 					<!-- handle mouse events for buttons (used during testing) -->
 					<button class="button button-round buttonX" onmousedown="moveup()"
