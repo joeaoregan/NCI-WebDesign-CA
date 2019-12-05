@@ -63,6 +63,7 @@ Ian Fitzpatrick | x19175400@student.ncirl.ie | [ianfitzpatrick52](https://github
 * **Responsive Design**: [W3Schools responsive web design](https://www.w3schools.com/css/css_rwd_intro.asp). See Code: [CSS](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/css/style.css#L347-L427)
 * **Social Media Icons**: [W3Schools: How TO - Social Media Buttons](https://www.w3schools.com/howto/howto_css_social_media_buttons.asp). See Code: [CSS](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/css/style.css#L465-L487), [HTML/JS](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/scripts/footer.js#L28-L39)
 * **Scalable Vector Graphics (SVG)** - Space Invader Alien: [W3Schools: HTML5 SVG](https://www.w3schools.com/html/html5_svg.asp). See code: [Footer HTML/JS](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/scripts/footer.js#L41-L52), [Modal Login HTML](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/index.html#L90-L95)
+* **Web Fonts**: External fonts used in both games and regular html. 
 * **YouTube Videos**: Antibody trailer from third-year project. [W3Schools](https://www.w3schools.com/html/html_youtube.asp). [See Code](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/730d979a4948ede2e7f042befe31556b5b3edcd5/about.html#L48-L52)
 
 ---
