@@ -5,7 +5,6 @@ https://www.w3schools.com/howto/howto_js_popup.asp
 */
 
 /* Popup container - can be anything you want */
-
 .popup {
     position: relative;
     display: inline-block;
@@ -14,7 +13,7 @@ https://www.w3schools.com/howto/howto_js_popup.asp
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 h3 {
@@ -22,21 +21,27 @@ h3 {
 }
 
 /* The actual popup */
-
 .popup .popuptext {
     font-family: "Times New Roman", Times, serif;
     visibility: hidden;
-    width: 275px;
-    background-color: #555;
+    width: 280px;
+    background-color: rgb(18, 119, 214);
     color: #fff;
-    border-radius: 8px;
-    padding: 6px 0;
+    border-radius: 10px;
+    padding: 3px 0;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -135px;/*x position of popup*/
     font-size: 75%;
+}
+
+.below {
+    top: 120%;
+}
+
+.above {       
+    bottom: 120%;
 }
 
 b {
@@ -45,20 +50,34 @@ b {
 }
 
 /* Popup arrow */
-
-.popup .popuptext::after {
+.popuptext::after {
+    background-color: rgb(18, 119, 214);
     content: "";
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    left: 120px;/*Position arrow half way across bottom of popup*/
 }
+.below::after {
+    background-color: rgb(18, 119, 214, 0);
+    bottom: 100%;
 
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    
+    border-bottom: 15px solid rgb(18, 119, 214);
+}
+.above::after {
+    background-color: rgb(18, 119, 214, 0);
+    top: 100%;    
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    
+    border-top: 15px solid rgb(18, 119, 214);
+}
 /* Toggle this class - hide and show the popup */
-
 .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
@@ -66,7 +85,6 @@ b {
 }
 
 /* Add animation (fade in the popup) */
-
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;

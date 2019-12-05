@@ -50,6 +50,24 @@
 	</div>	  
 
 	<div class="body-border">
+		
+		<div class="info-panel">
+			<div class="float-top-right">
+				<div class="popup" onclick="showPopup('antibodyPopupID')" title="Information popup">
+					<i class="fa fa-info fa-small"></i><!--fontawesome info icon-->
+					<div class="popuptext below" id="antibodyPopupID">
+						<h3>Game Controls</h3>
+						<ul>
+							<li><b>Right-Click/Spacebar:</b><br/>Fire</li>
+							<li><b>A / &#8592;:</b><br/>Move Left</li>
+							<li><b>D / &#8594;:</b><br/>Move Right</li>
+							<li><b>W / &#8593;:</b><br/>Move Up</li>
+							<li><b>S / &#8595;:</b><br/>Move Down</li>
+						</ul>
+					</div>
+				</div>
+			</div>			
+		</div>
 		<canvas id="antibody" width="1280" height="720"></canvas>
 	</div>
 
@@ -98,9 +116,9 @@
 
 		<div class="info-panel">
 			<div class="float-top-right">
-				<div class="popup" onclick="showPopup()" title="Information popup">
-					<i class="fa fa-info"></i><!--fontawesome info icon-->
-					<div class="popuptext" id="myPopup">
+				<div class="popup" onclick="showPopup('popupID')" title="Information popup">
+					<i class="fa fa-info fa-small"></i><!--fontawesome info icon-->
+					<div class="popuptext above" id="popupID">
 						<h3>Control Panel</h3>
 						<ul>
 							<li><b>FX On/Off:</b><br/>Game sound effects on/off</li>

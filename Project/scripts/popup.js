@@ -7,8 +7,8 @@ https://www.w3schools.com/howto/howto_js_popup.asp
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup
 */
 
-function showPopup() {
+function showPopup(id) {
     console.log('popup')
-    var popup = document.getElementById("myPopup");
+    var popup = document.getElementById(id);
     popup.classList.toggle("show");
 }
