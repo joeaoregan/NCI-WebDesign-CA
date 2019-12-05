@@ -20,11 +20,14 @@ Ian Fitzpatrick | x19175400@student.ncirl.ie | [ianfitzpatrick52](https://github
 
 * Accordion - collapsible with panels: [W3Schools collapsibles/accordion](https://www.w3schools.com/howto/howto_js_accordion.asp). [See code example](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/antibody.html#L156-L213).
 * Address: [W3Schools: HTML <address> Tag](https://www.w3schools.com/tags/tag_address.asp), used on contact.html page. [See code](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/contact.html#L53-L65).
+* Anchor Name: Bookmark a section of the page. [W3Schools: HTML <a> name](https://www.w3schools.com/tags/att_a_name.asp). See code: [Anchor name](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3f97dd3712e9a535f1f36efe04e8f0793c6d4c24/index.html#L36), [corresponding link](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3f97dd3712e9a535f1f36efe04e8f0793c6d4c24/index.html#L274-L277) in same page
+* Animation: modal login and popover CSS animatons
 * Canvas (For games): [W3Schools HTML5 Canvas](https://www.w3schools.com/html/html5_canvas.asp). [See code example](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/antibody.html#L71)
 * Footer (Created in JavaScript with DOM write()): [W3Schools DOM write()](https://www.w3schools.com/jsref/met_doc_write.asp). [See code example](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/scripts/footer.js#L10-L52)
 * Forms: [W3Schools: HTML Forms](https://www.w3schools.com/html/html_forms.asp), [CSS Forms](https://www.w3schools.com/css/css_form.asp) created using DOM innerHTML in JavaScript from a JSON object containing the field names and properties. [See code example here](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/scripts/register.js#L12-L186)
 * Google Map: [Adding a Google Map with a Marker to Your Website](https://developers.google.com/maps/documentation/javascript/adding-a-google-map). [See code](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/scripts/map.js#L8-L23)
 * HTML5 Audio: [W3Schools HTML Audio/Video DOM Reference](https://www.w3schools.com/tags/ref_av_dom.asp). [See code](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/scripts/music.js#L8-L180)
+* IFrame: YouTube video container on about.html page. [W3Schools: HTML <iframe> tag](https://www.w3schools.com/tags/tag_iframe.asp). [See code]()
 * JavaScript Games
   - **Antibody**: Ported from [C++ 3rd-year college project](https://github.com/joeaoregan/LIT-Yr3-Project-Antibody) to JavaScript for this project
     * High Scores saved as JSON in local storage: [W3Schools localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp), [theshravan.net](https://theshravan.net/blog/
