@@ -50,12 +50,12 @@
 	</div>	  
 
 	<div class="body-border">
-		
-		<div class="info-panel">
-			<div class="float-top-right">
-				<div class="popup" onclick="showPopup('antibodyPopupID')" title="Information popup">
+		<!--UTF-8 Arrows: https://www.w3schools.com/charsets/ref_utf_arrows.asp-->
+		<div class="info-panel"><!--relative positioning-->
+			<div class="float-top-right"><!--absolute positioning-->
+				<div class="popup" onclick="showPopup('antibodyPopupID')" title="Information popup"><!--Area to respond to click event-->
 					<i class="fa fa-info fa-small"></i><!--fontawesome info icon-->
-					<div class="popuptext below" id="antibodyPopupID">
+					<div class="popuptext below" id="antibodyPopupID"><!--message to display in popup-->
 						<h3>Game Controls</h3>
 						<ul>
 							<li><b>Right-Click/Spacebar:</b><br/>Fire</li>
@@ -68,17 +68,18 @@
 				</div>
 			</div>			
 		</div>
-		<canvas id="antibody" width="1280" height="720"></canvas>
+		<canvas id="antibody" width="1280" height="720"></canvas><!--game canvas for antibody-->
 	</div>
 
-	<!-- Controller buttons for mobile -->
+	<!-- Controller buttons for mobile device -->
+	<!-- Stylesheet = controller.css -->
 	<div class="body-border" id="controller-section">
 		<div class="controller-border" id="controller">
-
 			<h1>Double-Tapping Outside This Zone Will Lose Focus</h1>
 
 			<div class="controller">
 				<div class="button-box">
+					<!-- handle touch events for buttons -->
 					<button class="button button-round" ontouchstart="moveUp()" onmousedown="moveUp()"
 						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
 					<button class="button button-round" ontouchstart="moveLeft()" onmousedown="moveLeft()"
@@ -89,10 +90,11 @@
 					<button class="button button-round" ontouchstart="moveDown()" onmousedown="moveDown()"
 						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
 				</div>
-				<span class="button-divider"></span>
+				<span class="button-divider"></span><!-- spacer -->
 				<button class="button button-start" onmousedown="moveleft()" onmouseup="startGame()">START</button>
-				<span class="button-divider"></span>
+				<span class="button-divider"></span><!-- spacer -->
 				<div class="button-box">
+					<!-- handle mouse events for buttons (used during testing) -->
 					<button class="button button-round buttonX" onmousedown="moveup()"
 						onmouseup="fire()">&nbsp;X&nbsp;</button><br>
 					<button class="button button-round buttonY" onmousedown="moveleft()"

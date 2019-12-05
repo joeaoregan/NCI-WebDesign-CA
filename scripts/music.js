@@ -77,9 +77,10 @@ function pause() {
 
 // Show the track title of the current track, and the audio files current time and duration
 function showTrackInfo() {
-    if(isNaN(tracks[currentTrack].duration)) {
-        document.getElementById("trackTitleID").innerHTML="Press Play";
-        return;
+    //isNan(): https://www.mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
+    if(isNaN(tracks[currentTrack].duration)) {//If there is no track selected, can't show a duration
+        document.getElementById("trackTitleID").innerHTML="Press Play";//So show "Press Play" instead
+        return;// and return out of the function
     }
     var trackTime = tracks[currentTrack].currentTime;//Current time of the audio file being played
     console.log('track time '+trackTime)
@@ -87,16 +88,16 @@ function showTrackInfo() {
     var seconds = parseInt(trackTime % 60);//Get the number of seconds
     var secStr = String(seconds).padStart(2, '0');//Add leading zero to seconds
     document.getElementById("trackTitleID").innerHTML = "Current Track: " + (currentTrack + 1);//Show track number
-    document.getElementById("trackTitleID").innerHTML += " (" + minutes + ":" + secStr + "/" + trackLength();
+    document.getElementById("trackTitleID").innerHTML += " (" + minutes + ":" + secStr + "/" + trackLength();//Show track current minute and second "(mm:ss/"" and trackLength returns duration "mm:ss)"
 }
 
-showTrackInfo();
-/*
+showTrackInfo();//Update the track information at "trackTitleId" in each game html file when the script is first called it shows "Press Play"
+
 //Every 1000 milliseconds (1 second) update the track information
 window.setInterval(function () {
-    showTrackInfo();
-}, 1000);
-*/
+    showTrackInfo();//Update the track information
+}, 1000);//Every 1 second
+
 /*
 Get the length of the track, and format for output
 https://www.w3schools.com/tags/av_prop_duration.asp

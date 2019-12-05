@@ -1,100 +1,126 @@
 /* 
 popup.css
 05/12/2019
-https://www.w3schools.com/howto/howto_js_popup.asp
+Popup: https://www.w3schools.com/howto/howto_js_popup.asp
+Arrows: https://css-tricks.com/snippets/css/css-triangle/
+Animations: https://www.w3schools.com/css/css3_animations.asp
 */
 
 /* Popup container - can be anything you want */
+
 .popup {
     position: relative;
-    display: inline-block;
-    cursor: pointer;
+    display: inline-block;/*Stack elements*/
+    cursor: pointer;/*Change cursor so it is clear the element can be clicked*/
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    opacity: 0.85;
+    opacity: 0.85;/*Make slightly transparent, but still clear enough to read text*/
 }
 
 h3 {
-    text-align: center;
+    text-align: center;/*Center the popup heading*/
 }
 
 /* The actual popup */
+
 .popup .popuptext {
-    font-family: "Times New Roman", Times, serif;
-    visibility: hidden;
-    width: 280px;
-    background-color: rgb(18, 119, 214);
-    color: #fff;
-    border-radius: 10px;
-    padding: 3px 0;
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    margin-left: -135px;/*x position of popup*/
-    font-size: 75%;
+    text-align: left;/*Override centered text*/
+    font-family: "Times New Roman", Times, serif;/*Times New Roman easier to read*/
+    visibility: hidden;/*initially hidden, and show when element is clicked*/
+    width: 280px;/*width of popup element*/
+    background-color: rgb(18, 119, 214);/*light blue background colour*/
+    color: #fff;/*Text Colour*/
+    border-radius: 10px;/*Rounded corners of popup element*/
+    padding: 3px 0;/*Internal spacing between content and border*/
+    position: absolute;/*absolute positioning*/
+    z-index: 1;/*display in front of element that creates popup*/
+    left: 50%;/*Center the object*/
+    margin-left: -140px;/*x position of popup, 50% of the width of the popup to the left, to center*/
+    font-size: 75%;/*Decrease the font to 75% size of body text*/
 }
+
+/*Display centered horizontally and below the element displaying a popup*/
 
 .below {
-    top: 120%;
+    top: 120%;/*Place below the calling div, with room for arrow pointing up*/
 }
 
-.above {       
-    bottom: 120%;
+/*Display centered vertically and to the left of the element displaying a popup*/
+/*NOT USED YET*/
+.mid-left {
+    top: 20%;
+    top: 0;
+    margin-left: -320px;/*x position of popup, place to left of info icon*/
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/*Display centered horizontally and above the element displaying a popup*/
+
+.above {
+    bottom: 120%;/*Place popup above the calling div, with room for arrow pointing down towards info icon*/
 }
 
 b {
-    color: #222;
-    font-size: 110%;
+    color: #222;/*Set bold text to dark grey in the popup window*/
+    font-size: 110%;/*Make larger than white text for emphasis (could use h4/h5 maybe and decrease padding/margin)*/
 }
 
 /* Popup arrow */
+/*https://www.w3schools.com/cssref/sel_after.asp*/
 .popuptext::after {
-    background-color: rgb(18, 119, 214);
-    content: "";
-    position: absolute;
-    left: 120px;/*Position arrow half way across bottom of popup*/
+    content: "";/*Add no text, just an arrow pointing down*/
+    position: absolute;/*Position relative to parent element*/
+    left: 125px;/*half of 280px width -15px border*/
+    /*Position arrow half way across bottom of popup*/
 }
-.below::after {
-    background-color: rgb(18, 119, 214, 0);
-    bottom: 100%;
 
-    width: 0; 
-    height: 0; 
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    
-    border-bottom: 15px solid rgb(18, 119, 214);
+/*Adds to popuptext::after to create arrow above popup element that appears below the info icon*/
+.below::after {
+    background-color: rgb(18, 119, 214, 0);/*hide background around top arrow*/
+    bottom: 100%;/*place arrow at top of popup element (maybe use ::before instead of after)*/
+    width: 0;/*width 0, to create point*/
+    height: 0;/*height 0, to create point*/
+    border-left: 15px solid transparent;/*creates left right-angled triangle of arrow*/
+    border-right: 15px solid transparent;/*creates right right-angled triangle of arrow*/
+    border-bottom: 15px solid rgb(18, 119, 214);/*Use same colour as popup element*/
 }
+
+
+/*Adds to popuptext::after to create arrow below popup element that appears above the info icon*/
 .above::after {
-    background-color: rgb(18, 119, 214, 0);
-    top: 100%;    
-    width: 0; 
-    height: 0; 
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    
+    background-color: rgb(18, 119, 214, 0);/*hide the background colour to see arrow*/
+    top: 100%;
+    width: 0;
+    height: 0;
+    /*create downward facing arrow out of the bottom border*/
+    border-left: 15px solid transparent;/*create left half of downward arrow*/
+    border-right: 15px solid transparent;/*create right half of downward arrow*/
     border-top: 15px solid rgb(18, 119, 214);
 }
+
 /* Toggle this class - hide and show the popup */
 .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+    visibility: visible;/*Show the popup*/
+    -webkit-animation: fadeIn 1s;/*animate for older browsers*/
+    animation: fadeIn 1s;/*animate for newer browsers*/
 }
 
 /* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
+/*https://www.w3schools.com/css/css3_animations.asp*/
+
+@-webkit-keyframes fadeIn {/*Fade in effect animation frames older browsers*/
     from {
-        opacity: 0;
+        opacity: 0;/*start completely transparent*/
     }
     to {
-        opacity: 1;
+        opacity: 1;/*progress to solid colour*/
     }
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn {/*Fade in effect*/
     from {
         opacity: 0;
     }
