@@ -6,6 +6,7 @@ J O'Regan
 This file uses a JSON object containing the name, url, and title of each page to add each menu item
 as a list item in an unordered list using a for loop and places the menu at the top of each page using
 document.getElementById() and setting the innerHTML at the DIV with ID menu at the top of each page
+https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 */
 
 // JSON object with page names, links, and title
@@ -76,5 +77,5 @@ function createMenu(arr) {
 
 	out += "</ul>"; // end of unordered list
 
-	document.getElementById("menu").innerHTML = out;//Add the menu to the menu ID at the top of each page
+	document.getElementById("menu").innerHTML = out;//Add the menu to the menu ID at the top of each page https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 }

@@ -19,7 +19,11 @@ Ian Fitzpatrick | x19175400@student.ncirl.ie | [ianfitzpatrick52](https://github
 ## Features
 
 * Accordion - collapsible with panels: [W3Schools collapsibles/accordion](https://www.w3schools.com/howto/howto_js_accordion.asp)
+* Address: [W3Schools: HTML <address> Tag](https://www.w3schools.com/tags/tag_address.asp), used on contact.html page
 * Canvas (For games): [W3Schools HTML5 Canvas](https://www.w3schools.com/html/html5_canvas.asp)
+* Footer (Created in JavaScript with DOM write()): [W3Schools DOM write()](https://www.w3schools.com/jsref/met_doc_write.asp)
+* Forms: [W3Schools: HTML Forms](https://www.w3schools.com/html/html_forms.asp), [CSS Forms](https://www.w3schools.com/css/css_form.asp) created using DOM innerHTML in JavaScript from a JSON object containing the field names and properties
+* Google Map: [Adding a Google Map with a Marker to Your Website](https://developers.google.com/maps/documentation/javascript/adding-a-google-map)
 * HTML5 Audio: [W3Schools HTML Audio/Video DOM Reference](https://www.w3schools.com/tags/ref_av_dom.asp)
 * JavaScript Games
   - **Antibody**: Ported from [C++ 3rd-year college project](https://github.com/joeaoregan/LIT-Yr3-Project-Antibody) to JavaScript for this project
@@ -40,16 +44,21 @@ Ian Fitzpatrick | x19175400@student.ncirl.ie | [ianfitzpatrick52](https://github
     * Save and display high score
     * Shooting accuracy calculated
     * Sound effects (With on/off toggle button)
+* JSON: Used to store and load highscores, and create form html. [W3Schools: JavaScript JSON](https://www.w3schools.com/js/js_json.asp), [JSON Objects](https://www.w3schools.com/js/js_json_objects.asp)
+* Modal Login Form: [W3Schools: Login Form](https://www.w3schools.com/html/html5_svg.asp)
+* Mailto: [W3Schools: HTML <address> Tag](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto).
 * Music Player (On game pages)
   - Play/pause
   - Skip forwards/backwards
   - Fast forward/rewind
   - Play random track
-* Navigation bar menu: [W3Schools CSS navigation bar](https://www.w3schools.com/css/css_navbar.asp)
+* Navigation bar menu: [W3Schools CSS navigation bar](https://www.w3schools.com/css/css_navbar.asp), created in JavaScript with [DOM innerHTML Property](https://www.w3schools.com/jsref/prop_html_innerhtml.asp)
 * Polaroid image effect: [Pen By Wanderson](https://codepen.io/Wandersonsc/pen/RMerRy), [W3Schools tutorial](https://www.w3schools.com/css/css3_images.asp), and [Zurb](https://zurb.com/playground/css3-polaroids)
 * Popups: [W3schools tutorial](https://www.w3schools.com/howto/howto_js_popup.asp), [W3Schools CSS animation](https://www.w3schools.com/css/css3_animations.asp)
   - top and bottom of info icons (Antibody game page)
 * Responsive Design: [W3Schools responsive web design](https://www.w3schools.com/css/css_rwd_intro.asp)
+* Social Media Icons: [W3Schools: How TO - Social Media Buttons](https://www.w3schools.com/howto/howto_css_social_media_buttons.asp)
+* SVG Space Invader Alien: [W3Schools: HTML5 SVG](https://www.w3schools.com/html/html5_svg.asp)
 
 ---
 

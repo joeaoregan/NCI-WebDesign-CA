@@ -1,7 +1,7 @@
 /*
 footer.js
 
-This file uses document.write to add a footer that can be re-used across multiple pages.
+This file uses document.write() to add a footer that can be re-used across multiple pages.
 This keeps the code modular and allows the code to be edited once but used in many pages.
 
  Using backticks (`) allows the code to be spread across multiple lines and keep the formatting
@@ -9,6 +9,7 @@ This keeps the code modular and allows the code to be edited once but used in ma
 */
 function createFooter(className) {
     // The first part of the footer on the left shows text links to each page of the website
+    // W3Schools Dom Write(): https://www.w3schools.com/jsref/met_doc_write.asp
     document.write(`
         <footer class="`+className+`">
             <div>

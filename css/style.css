@@ -73,6 +73,12 @@ li.highlighted a {
 
 /* Register a new user */
 
+/*Add space between address and back to top link on contact.html page*/
+address {
+	margin-bottom: 20px;
+	padding-bottom: 20px;	
+}
+
 table {	
 	padding-bottom: 2%;
 }

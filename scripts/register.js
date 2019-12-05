@@ -2,6 +2,11 @@
 register.js
 J O'Regan
 15/11/2019
+
+User innerhtml to create a form from a JSON object specifying the fields and their properties
+
+https://www.w3schools.com/html/html_forms.asp
+https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 */
 
 var surveyArr = [];

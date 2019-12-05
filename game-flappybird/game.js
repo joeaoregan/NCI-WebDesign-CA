@@ -173,32 +173,31 @@ const fg = {
 
 // BIRD
 const bird = {
-    animation: [
+    animation: [//Create bird sprite sheet
         { sX: 276, sY: 112 },
         { sX: 276, sY: 139 },
         { sX: 276, sY: 164 },
         { sX: 276, sY: 139 }
     ],
-    x: cvs.width / 2,
+    x: cvs.width / 2,//Bird is positioned in the middle of the canvas
     y: 150,
     w: 34,
     h: 26,
 
     radius: 12,
-
-    frame: 0,
+    frame: 0,//Start animation on first frame from sprite sheet
 
     gravity: 0.25,
     jump: 4.6,
-    speed: 0,
-    rotation: 0,
+    speed: 0,//Start with no speed
+    rotation: 0,//Start with no rotation
 
     draw: function () {
-        let bird = this.animation[this.frame];
+        let bird = this.animation[this.frame];//Use the current frame from the sprite sheet
 
         ctx.save();
         ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
+        ctx.rotate(this.rotation);//Rotate the sprite
         ctx.drawImage(sprite, bird.sX, bird.sY, this.w, this.h, - this.w / 2, - this.h / 2, this.w, this.h);
         ctx.restore();
     },
@@ -215,35 +214,35 @@ const bird = {
         // FRAME GOES FROM 0 To 4, THEN AGAIN TO 0
         this.frame = this.frame % this.animation.length;
 
-        if (state.current == state.getReady) {
+        if (state.current == state.getReady) {//If the game is at the start menu state
             this.y = 150; // RESET POSITION OF THE BIRD AFTER GAME OVER
             this.rotation = 0 * DEGREE;
         } else {
-            this.speed += this.gravity;
-            this.y += this.speed;
+            this.speed += this.gravity;//Increase speed
+            this.y += this.speed;//Increase y position
 
             // bird moves off screen, or hits ground
-            if (this.y + this.h / 2 >= cvs.height - fg.h) {
-                this.y = cvs.height - fg.h - this.h / 2;
-                if (state.current == state.game) {
-                    state.current = state.over;
-                    if (!mute) DIE.play();
-                    document.getElementById("difficultyID").classList.remove('not-in-use-btn');
+            if (this.y + this.h / 2 >= cvs.height - fg.h) {//If the bird moves off the top of the screen - die
+                this.y = cvs.height - fg.h - this.h / 2;//If the bird hits the ground at the bottom of the screen - die
+                if (state.current == state.game) {//If the game state is active
+                    state.current = state.over;//Set the game state to over
+                    if (!mute) DIE.play();//If the sound isn't muted play the Die sound effect
+                    document.getElementById("difficultyID").classList.remove('not-in-use-btn');//Remove not-in-use-btn class from element
                 }
             }
 
             // IF THE SPEED IS GREATER THAN THE JUMP MEANS THE BIRD IS FALLING DOWN
             if (this.speed >= this.jump) {
                 this.rotation = 90 * DEGREE;
-                this.frame = 1;
+                this.frame = 1;//Change sprite animation
             } else {
-                this.rotation = -25 * DEGREE;
+                this.rotation = -25 * DEGREE;//Rotate 25 degrees anti-clockwise
             }
         }
 
     },
     speedReset: function () {
-        this.speed = 0;
+        this.speed = 0;//Stop moving
     }
 }
 
@@ -284,7 +283,7 @@ const gameOver = {
 
             var text= "Hard: "+(storedScores.hard || 0)+" Med: "+(storedScores.medium || 0)+" Easy: "+(storedScores.easy || 0);
 
-            this.scoreTextWidth = ctx.measureText(score.value).width;
+            this.scoreTextWidth = ctx.measureText(score.value).width;//Get width of text
             this.highScoreTextWidth = ctx.measureText(text).width;
 
             // SCORE VALUE
@@ -374,7 +373,7 @@ const pipes = {
             if ((bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.h) ||
                 (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w && bird.y + bird.radius > bottomPipeYPos && bird.y - bird.radius < bottomPipeYPos + this.h)) {
                 state.current = state.over;
-                document.getElementById("difficultyID").classList.remove('not-in-use-btn');
+                document.getElementById("difficultyID").classList.remove('not-in-use-btn');//Edit the CSS classes by removing the specified class
                 if (!mute) HIT.play();
             }
 
@@ -422,7 +421,7 @@ function setDifficulty() {
         }
         //Set button label
         if (difficulty.current == difficulty.easy) {
-            document.getElementById("difficultyID").innerHTML = "Difficulty: Easy";
+            document.getElementById("difficultyID").innerHTML = "Difficulty: Easy";//Display difficulty level
             pipes.gap = 125;
         } else if (difficulty.current == difficulty.medium) {
             document.getElementById("difficultyID").innerHTML = "Difficulty: Medium";
@@ -431,9 +430,9 @@ function setDifficulty() {
             document.getElementById("difficultyID").innerHTML = "Difficulty: Hard";
             pipes.gap = 85;
         }
-        document.getElementById("difficultyID").classList.remove('not-in-use-btn');
+        document.getElementById("difficultyID").classList.remove('not-in-use-btn');//Remove CSS class
     } else {
-        document.getElementById("difficultyID").classList.add('not-in-use-btn');
+        document.getElementById("difficultyID").classList.add('not-in-use-btn');//Add CSS class
     }
 }
 
