@@ -21,6 +21,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--Add favicon-->
 	<link rel="icon" href="game-antibody/favicon.ico" type="image/x-icon" />
+	<!--popup style sheet-->
+	<link href="css/popup.css" rel="stylesheet" />
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,6 +32,8 @@
 	<script language="JavaScript" type="text/javascript" src="game-antibody/scores.json"></script>	
 	<!--The footer.js external file uses document.write() to create a footer element that can be included across multiple pages and edited once to update-->
 	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
+	<!--Script to show/hide the information popup-->
+	<script language="JavaScript" type="text/javascript" src="scripts/popup.js"></script>
 </head>
 
 <body>
@@ -43,7 +47,7 @@
 
 	<div class="heading">
 		<h1>Antibody JavaScript</h1>
-	</div>
+	</div>	  
 
 	<div class="body-border">
 		<canvas id="antibody" width="1280" height="720"></canvas>
@@ -90,18 +94,40 @@
 	<script src="game-antibody/controller.js"></script>
 
 	<!--Game Settings Panel-->
-	<div class="body-border control-panel">		
-		<h2 id="trackTitleID">Press Play</h2>
+	<div class="body-border control-panel">
 
-		<div class="center">
-			<button id="muteID" onclick="muteAudio()" class="cancelbtn" title="Turn Game Effects On/Off">FX Off</button>
-			<button id="backID" onclick="skipBackwards()" title="Skip Track Backwards"><<</button>
-			<button id="rewindID" onclick="rewindTrack()" title="Rewind 5 Seconds"><</button>
-			<button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music</button>
-			<button id="fastforwardID" onclick="fastForwardTrack()" title="Fast Forward 5 Seconds">></button>
-			<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
-			<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random Track</button>
-		</div>
+		<div class="info-panel">
+			<div class="float-top-right">
+				<div class="popup" onclick="showPopup()" title="Information popup">
+					<i class="fa fa-info"></i><!--fontawesome info icon-->
+					<div class="popuptext" id="myPopup">
+						<h3>Control Panel</h3>
+						<ul>
+							<li><b>FX On/Off:</b><br/>Game sound effects on/off</li>
+							<li><b><<:</b><br/>Play the previous track</li>
+							<li><b><:</b><br/>Rewind 5 seconds</li>
+							<li><b>Play/Pause Music:</b><br/>Play or Pause the audio</li>
+							<li><b>>:</b><br/>Fast forward 5 seconds</li>
+							<li><b>>>:</b><br/>Skip forward to the next track</li>
+							<li><b>Random Track:</b><br/>Selects a random audio file</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<h2 id="trackTitleID">Press Play</h2>
+
+			<div class="center">
+				<button id="muteID" onclick="muteAudio()" class="cancelbtn" title="Turn Game Effects On/Off">FX Off</button>
+				<button id="backID" onclick="skipBackwards()" title="Skip Track Backwards"><<</button>
+				<button id="rewindID" onclick="rewindTrack()" title="Rewind 5 Seconds"><</button>
+				<button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music</button>
+				<button id="fastforwardID" onclick="fastForwardTrack()" title="Fast Forward 5 Seconds">></button>
+				<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
+				<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random Track</button>
+			</div>
+		</div>		
+
 		<script src="scripts/game-buttons.js"></script>
 		<!--Script for handling background music controls-->
 		<script language="JavaScript" type="text/javascript" src="scripts/music.js"></script>

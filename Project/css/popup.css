@@ -1,0 +1,86 @@
+/* 
+popup.css
+05/12/2019
+https://www.w3schools.com/howto/howto_js_popup.asp
+*/
+
+/* Popup container - can be anything you want */
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 0.9;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* The actual popup */
+
+.popup .popuptext {
+    font-family: "Times New Roman", Times, serif;
+    visibility: hidden;
+    width: 275px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    font-size: 75%;
+}
+
+b {
+    color: #222;
+    font-size: 110%;
+}
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

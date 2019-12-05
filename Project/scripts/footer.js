@@ -12,7 +12,7 @@ function createFooter(className) {
     document.write(`
         <footer class="`+className+`">
             <div>
-                <div style="float: left; width: 33%;">
+                <div class="footer-left">
                     <a href="index.html" title="Return To Homepage">Home</a> |
                     <a href="antibody.html" title="Play Antibody">Antibody</a> |
                     <a href="flappybird.html" title="Play Flappy Bird">Flappy Bird</a> |
@@ -26,7 +26,7 @@ function createFooter(className) {
     
     //Shows the social media icons on the right of the footer
     document.write(`
-                <div style="float: right; width: 33%;">
+                <div class="footer-right">
                     <a href="https://www.facebook.com/JIM-107782680690362/" class="fa fa-facebook" target="_blank"
                         title="Follow Us On Facebook"></a>
                     <a href="https://twitter.com/JIMGames6" class="fa fa-twitter" target="_blank" title="Follow Us On Twitter"></a>

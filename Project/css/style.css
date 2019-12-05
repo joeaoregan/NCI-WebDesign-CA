@@ -455,6 +455,7 @@ button:hover, .btn:hover {
 	border-top: 2px solid #777;
 }
 
+
 /*Round social media icon formatting*/
 .fa {
 	padding: 10px;
@@ -464,8 +465,19 @@ button:hover, .btn:hover {
 	text-decoration: none;
 	margin: 5px 2px;
 	color: #CCC;
-	border-radius: 50%;
+	border-radius: 60%;
 	border: 2px solid #CCC;
+}
+/*Set the positioning of the audio control panel*/
+.info-panel {
+	position: relative;
+}
+/*Used to set the information icon in the top right corner of the panel*/
+.float-top-right {
+	position: absolute;
+	padding: 10px;
+	right: 0px;
+	top: 0px;
 }
 
 footer {
@@ -482,6 +494,15 @@ footer {
 	padding: 0 2%; /*top and bottom 0, right and left 2%*/
 	font-size: 75%; /*Make font smaller than body text*/
 	text-align: center;
+}
+
+.footer-left {
+	float: left;
+	width: 33%;
+}
+.footer-right {
+	float: right;
+	width: 33%;
 }
 
 /* need both margin to clear footer this is added to the last section in the index body*/
