@@ -19,7 +19,7 @@ Ian Fitzpatrick | x19175400@student.ncirl.ie | [ianfitzpatrick52](https://github
 ## Features
 
 * **Accordion** - collapsible with panels: [W3Schools collapsibles/accordion](https://www.w3schools.com/howto/howto_js_accordion.asp). [See code example](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/antibody.html#L156-L213).
-* **Address**: [W3Schools: HTML <address> Tag](https://www.w3schools.com/tags/tag_address.asp), used on contact.html page. [See code](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/contact.html#L53-L65).
+* **Address**: [W3Schools: HTML address Tag](https://www.w3schools.com/tags/tag_address.asp), used on contact.html page. [See code](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/contact.html#L53-L65).
 * **Anchor Name**: Bookmark a section of the page. [W3Schools: HTML a name](https://www.w3schools.com/tags/att_a_name.asp). See code: [Anchor name](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3f97dd3712e9a535f1f36efe04e8f0793c6d4c24/index.html#L36), [corresponding link](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3f97dd3712e9a535f1f36efe04e8f0793c6d4c24/index.html#L274-L277) in same page
 * **Animation**: modal login and popover CSS animatons
 * **Canvas** (For games): [W3Schools HTML5 Canvas](https://www.w3schools.com/html/html5_canvas.asp). [See code example](https://github.com/joeaoregan/NCI-WebDesign-CA/blob/3d1e4809410300685c4cc9fb748b155917eaa6ae/antibody.html#L71)
