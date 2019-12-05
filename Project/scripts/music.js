@@ -47,13 +47,13 @@ function playMusic(trackNumber) {
     } else {
         play();//Play the current track
     }
-
     console.log("> Current Track: " + currentTrack);
 }
 
 /*
 Play the audio file and update the play/pause button
 Parameter is the start time to play from, if not selected it plays from the beginning
+https://www.w3schools.com/tags/av_prop_currenttime.asp
 */
 function play(startTime) {
     document.getElementById("playID").innerHTML = "Pause Music";//Set the play/pause button text
@@ -77,7 +77,12 @@ function pause() {
 
 // Show the track title of the current track, and the audio files current time and duration
 function showTrackInfo() {
+    if(isNaN(tracks[currentTrack].duration)) {
+        document.getElementById("trackTitleID").innerHTML="Press Play";
+        return;
+    }
     var trackTime = tracks[currentTrack].currentTime;//Current time of the audio file being played
+    console.log('track time '+trackTime)
     var minutes = parseInt(trackTime / 60);//Get the number of minutes
     var seconds = parseInt(trackTime % 60);//Get the number of seconds
     var secStr = String(seconds).padStart(2, '0');//Add leading zero to seconds
@@ -85,18 +90,23 @@ function showTrackInfo() {
     document.getElementById("trackTitleID").innerHTML += " (" + minutes + ":" + secStr + "/" + trackLength();
 }
 
+showTrackInfo();
+/*
 //Every 1000 milliseconds (1 second) update the track information
 window.setInterval(function () {
     showTrackInfo();
 }, 1000);
-
-// Get the length of the track, and format for output
+*/
+/*
+Get the length of the track, and format for output
+https://www.w3schools.com/tags/av_prop_duration.asp
+*/
 function trackLength() {
     var secs = Math.floor(tracks[currentTrack].duration);//Convert the track duration to seconds
+    if(isNaN(secs)) return "0:00)"//If secs is not a number
     var minutes = parseInt(secs / 60);//Get the number of minutes
     var seconds = parseInt(secs % 60);//Get the number of seconds
     var secStr = String(seconds).padStart(2, '0');//Add leading zero
-    console.log('m ' + minutes + ' s ' + secStr)
     return minutes + ":" + secStr + ")";//Return (mm:ss)
 }
 
