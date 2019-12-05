@@ -1,3 +1,10 @@
+/*
+    Space Invaders JS
+
+    Adapted adding shooting accuracy, larger sprites, mothership bonus, sound effects, move level, score, and alien count to canvas
+    Original Version by ARTsinn: http://jsfiddle.net/ARTsinn/GgxjY/
+*/
+
 const SPRITE_WIDTH = 40;//was 28
 const SPRITE_HEIGHT = 28;//was 20
 const PLAYER_Y_POS = 650;//was 470, fixed on y axis
