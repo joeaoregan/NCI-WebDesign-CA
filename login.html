@@ -18,7 +18,8 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	
-	<!--The footer.js external file uses document.write() to create a footer element that can be included across multiple pages and edited once to update-->
+	<!-- The footer.js external file uses document.write() to create a footer -->
+	<!-- It can then be included across multiple pages and edited once for consistency -->
 	<script src="scripts/footer.js"></script>
 </head>
 
@@ -94,8 +95,9 @@
 			<p><a href="#topofpage" title="Scroll back to top of this page">Back To Top</a></p>
 		</div>
 
-	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
-	<!--The createFooter() function takes a class name parameter, the index page footer is fixed, other pages are not and have different formatting-->
+	<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
+	<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
+	<!-- All other pages are not fixed, and have different formatting -->
 	<script>createFooter("regular-footer")</script>
 </body>
 

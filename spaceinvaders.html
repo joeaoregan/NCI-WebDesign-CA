@@ -8,16 +8,10 @@
 
 	<title>HTML5 Template</title>
 
-	<!-- <link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet"> -->
-	
-	<!--Google Retro Font-->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet"> -->
 	<!--Main style sheet -->
 	<link href="css/style.css" rel="stylesheet" />
 	<!--Social Media Icons-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- Font used in antibody game -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" /> -->
 	<!--Add favicon-->
 	<link rel="icon" href="game-spaceinvaders/favicon.ico" type="image/x-icon" />
 
@@ -25,7 +19,8 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	
-	<!--The footer.js external file uses document.write() to create a footer element that can be included across multiple pages and edited once to update-->
+	<!-- The footer.js external file uses document.write() to create a footer -->
+	<!-- It can then be included across multiple pages and edited once for consistency -->
 	<script src="scripts/footer.js"></script>
 </head>
 
@@ -63,6 +58,7 @@
 			<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
 			<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random Track</button>
 		</div>
+
 		<script src="scripts/game-buttons.js"></script>
 		<!--Script for handling background music controls-->
 		<script src="scripts/music.js"></script>
@@ -118,8 +114,9 @@
 		</div>
 	</div>
 
-	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
-	<!--The createFooter() function takes a class name parameter, the index page footer is fixed, other pages are not and have different formatting-->
+	<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
+	<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
+	<!-- All other pages are not fixed, and have different formatting -->
 	<script>createFooter("regular-footer")</script>
 </body>
 

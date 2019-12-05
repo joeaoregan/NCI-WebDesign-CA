@@ -5,8 +5,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no, initial-scale=0.275, maximum-scale=0.275, minimum-scale=0.275">
-	<!--meta name="viewport" content="width=device-width, user-scalable=no" /-->
-	<!--meta name="viewport" content="width=500, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"-->
 	<title>Antibody JS</title>
 	
 	<!-- Gamepad style sheet for mobile game controller -->
@@ -26,7 +24,8 @@
 
 	<!--Score data stored in external json file-->
 	<script language="JavaScript" type="text/javascript" src="game-antibody/scores.json"></script>	
-	<!--The footer.js external file uses document.write() to create a footer element that can be included across multiple pages and edited once to update-->
+	<!-- The footer.js external file uses document.write() to create a footer -->
+	<!-- It can then be included across multiple pages and edited once for consistency -->
 	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
 	<!--Script to show/hide the information popup-->
 	<script language="JavaScript" type="text/javascript" src="scripts/popup.js"></script>
@@ -229,8 +228,9 @@
 	<script src="game-antibody/hud.js"></script>
 	<script src="game-antibody/game.js"></script>
 
-	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
-	<!--The createFooter() function takes a class name parameter, the index page footer is fixed, other pages are not and have different formatting-->
+	<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
+	<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
+	<!-- All other pages are not fixed, and have different formatting -->
 	<script>createFooter("regular-footer")</script>
 </body>
 

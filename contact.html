@@ -7,8 +7,6 @@
 
 	<title>Contact Us</title><!-- title text must match json names attribute of menuNames in menu.js -->
 
-	<!--Google Retro Font-->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet"> -->
 	<!--Main style sheet -->
 	<link href="css/style.css" rel="stylesheet" />
 	<!--Social Media Icons-->
@@ -22,7 +20,8 @@
 
 	<!-- Google maps key stored here - not uploaded to github -->
 	<script src="scripts/goople-maps-api-key.js"></script>
-	<!--The footer.js external file uses document.write() to create a footer element that can be included across multiple pages and edited once to update-->
+	<!-- The footer.js external file uses document.write() to create a footer -->
+	<!-- It can then be included across multiple pages and edited once for consistency -->
 	<script src="scripts/footer.js"></script>
 </head>
 
@@ -95,8 +94,9 @@
 		</div>
 	</div>
 
-	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
-	<!--The createFooter() function takes a class name parameter, the index page footer is fixed, other pages are not and have different formatting-->
+	<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
+	<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
+	<!-- All other pages are not fixed, and have different formatting -->
 	<script>createFooter("regular-footer")</script>
 </body>
 
