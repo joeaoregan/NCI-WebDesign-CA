@@ -25,6 +25,7 @@ const time ={
 	}
 }
 
+// Timer: https://www.w3schools.com/jsref/met_win_setinterval.asp
 setInterval(function(){
 	if(state.current == state.game){
 		time.timer++;

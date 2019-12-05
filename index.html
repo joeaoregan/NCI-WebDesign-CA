@@ -25,9 +25,9 @@
 		<![endif]-->
 	
 	<!--The footer.js external file uses document.write() to create a footer element that can be included across multiple pages and edited once to update-->
-	<script src="scripts/footer.js"></script>
+	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>	
 	<!--The login script is used to handle user login-->
-	<script src="scripts/login.js"></script>
+	<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>	
 </head>
 
 <body>
@@ -37,7 +37,8 @@
 	<!--The menu is created in the menu.js JavaScript file, and highlights the current page by comparing the page title to JSON used to create the menu items-->
 	<div class="menu stretch">
 		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
-		<script src="scripts/menu.js"></script><!--The script is stored externally-->
+		<!-- External menu script to display top navigation bar-->
+		<script language="JavaScript" type="text/javascript" src="scripts/menu.js"></script>	
 	</div>
 
 
@@ -295,20 +296,8 @@
 			<span id="spaceScoreID">0</span><br/>
 		</div>
 
-		<script>
-			var testObject = { 'hard': 0, 'medium': 0, 'easy': 0 };
-			var storedScores = JSON.parse(localStorage.getItem('flappy-scores-json')) || testObject;
-
-			document.getElementById("flappyScoreID").innerHTML = "Hard: " + (storedScores.hard || 0) + "<br>Medium: " + (storedScores.medium || 0) + "<br>Easy: " + (storedScores.easy || 0);
-
-			var mockPlayer = { 'name': 'Unknown Player', 'score': 0 };
-			var topAntibodyPlayer = JSON.parse(localStorage.getItem('antibody-highscore-json')) || mockPlayer;
-			if(topAntibodyPlayer.name === ''){
-				topAntibodyPlayer.name = 'Unknown Player';
-			}
-			document.getElementById("antibodyScoreID").innerHTML=topAntibodyPlayer.name + ':<br>'+ parseInt(topAntibodyPlayer.score);
-			document.getElementById("spaceScoreID").innerHTML=parseInt(localStorage.getItem("spaceinvaders-highscore")) || 0;
-		</script>
+		<!-- Script to display high-scores for each game on right panel -->
+		<script language="JavaScript" type="text/javascript" src="scripts/high-scores.js"></script>	
 	</div>
 
 	<!--The createFooter() function is called from the external footer.js file included in the head tag-->

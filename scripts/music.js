@@ -19,7 +19,7 @@ track5.src = "game-antibody/audio/05.mp3";
 
 var tracks = [track1, track2, track3, track4, track5];//Array of tracks
 
-//Event listener checks if audio has finished, then plays the next track
+//Event listener checks if audio has finished, then plays the next track: https://www.w3schools.com/tags/av_event_ended.asp
 for (var i = 0; i < tracks.length; i++) {//Add event listener to each track
     tracks[i].addEventListener('ended', function () {//Event listener for when the audio file has finished playing
         console.log('TRACK HAS ENDED')
