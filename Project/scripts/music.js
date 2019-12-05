@@ -19,9 +19,16 @@ track5.src = "game-antibody/audio/05.mp3";
 
 var tracks = [track1, track2, track3, track4, track5];//Array of tracks
 
+//Event listener checks if audio has finished, then plays the next track
+for (var i = 0; i < tracks.length; i++) {//Add event listener to each track
+    tracks[i].addEventListener('ended', function () {//Event listener for when the audio file has finished playing
+        console.log('TRACK HAS ENDED')
+        skipForwards();//If the track is ended play the next one
+    });
+}
 
-var currentTrack = 0;
-var paused = true;
+var currentTrack = 0;//First track in the array
+var paused = true;//Music doesn't start until the user presses play
 
 /*
 Start Playing music
@@ -44,6 +51,10 @@ function playMusic(trackNumber) {
     console.log("> Current Track: " + currentTrack);
 }
 
+/*
+Play the audio file and update the play/pause button
+Parameter is the start time to play from, if not selected it plays from the beginning
+*/
 function play(startTime) {
     document.getElementById("playID").innerHTML = "Pause Music";//Set the play/pause button text
     document.getElementById("playID").classList.add('cancelbtn');//Set the play/pause button background colour red
@@ -55,6 +66,7 @@ function play(startTime) {
     console.log("> Music Play");
 }
 
+//Pause the audio file and update the play/pause button
 function pause() {
     //Change the Pause button to Play Button
     document.getElementById("playID").innerHTML = "Play Music";//Set the play/pause button text
@@ -63,27 +75,22 @@ function pause() {
     console.log("|| Music Paused");
 }
 
-// Show the track title of the current track
+// Show the track title of the current track, and the audio files current time and duration
 function showTrackInfo() {
-    var trackTime = tracks[currentTrack].currentTime;
-    var minutes = parseInt(trackTime / 60);
-    var seconds = parseInt(trackTime % 60);
-    var secStr = String(seconds).padStart(2, '0');//Add leading zero
-    document.getElementById("trackTitleID").innerHTML = "Current Track: " + (currentTrack + 1);
+    var trackTime = tracks[currentTrack].currentTime;//Current time of the audio file being played
+    var minutes = parseInt(trackTime / 60);//Get the number of minutes
+    var seconds = parseInt(trackTime % 60);//Get the number of seconds
+    var secStr = String(seconds).padStart(2, '0');//Add leading zero to seconds
+    document.getElementById("trackTitleID").innerHTML = "Current Track: " + (currentTrack + 1);//Show track number
     document.getElementById("trackTitleID").innerHTML += " (" + minutes + ":" + secStr + "/" + trackLength();
 }
 
+//Every 1000 milliseconds (1 second) update the track information
 window.setInterval(function () {
-    var trackTime = tracks[currentTrack].currentTime;
-    var minutes = parseInt(trackTime / 60);
-    var seconds = parseInt(trackTime % 60);
-    var secStr = String(seconds).padStart(2, '0');//Add leading zero
-
-    document.getElementById("trackTitleID").innerHTML = "Current Track: " + (currentTrack + 1);
-    document.getElementById("trackTitleID").innerHTML += " (" + minutes + ":" + secStr + "/" + trackLength();
-
+    showTrackInfo();
 }, 1000);
 
+// Get the length of the track, and format for output
 function trackLength() {
     var secs = Math.floor(tracks[currentTrack].duration);//Convert the track duration to seconds
     var minutes = parseInt(secs / 60);//Get the number of minutes
@@ -93,6 +100,7 @@ function trackLength() {
     return minutes + ":" + secStr + ")";//Return (mm:ss)
 }
 
+// Fast forward an audio file 5 seconds
 function fastForwardTrack() {
     var duration = Math.floor(tracks[currentTrack].duration);//Audio file length
     if (tracks[currentTrack].currentTime + 5 < duration) {//If adding 5 seconds is less than the track duration
@@ -103,6 +111,7 @@ function fastForwardTrack() {
     }
 }
 
+// Rewind an audio file 5 seconds
 function rewindTrack(){
     if (tracks[currentTrack].currentTime - 5 > 0) {//If subtracting 5 seconds is greater than zero (start time)
         tracks[currentTrack].currentTime -= 5;//Skip backwards 5 seconds
@@ -112,6 +121,7 @@ function rewindTrack(){
     }
 }
 
+// Select the next track in the array, or first track if it is already the last track
 function skipForwards() {
     tracks[currentTrack].pause();//Pause the current track
 
@@ -128,23 +138,24 @@ function skipForwards() {
     console.log(">> Current Track: " + currentTrack);
 }
 
+// Select the previous track in the array, or last track if it is already the first track
 function skipBackwards() {
     tracks[currentTrack].pause();//Pause the current track
-    currentTrack--;
+    currentTrack--;//Select the previous track
     console.log("SKIP BACKWARDS PRESSED >>" + currentTrack);
-    if (currentTrack < 0) {
+    if (currentTrack < 0) {//If the current track now a number lower than the first track
         currentTrack = tracks.length - 1;//go to last track in array if already on first track
     }
     tracks[currentTrack].currentTime = 0;//Play form the beginning
-    showTrackInfo();
-    if (!paused) {
+    showTrackInfo();//Update the current track information
+    if (!paused) {//If the game isn't paused
         tracks[currentTrack].play();//Play the next track
     }
     console.log("<< Current Track: " + currentTrack);
 }
 
+// Pick a random track and play immediately
 function playRandomMusic() {
-    // Pick a random track
     tracks[currentTrack].pause();//Pause the current track
     var previousTrack = currentTrack;//Store the previous track so the same song isn't restarted
 
@@ -155,12 +166,4 @@ function playRandomMusic() {
     paused = false;//Track plays straight away
     play(0);//Play the new randomly selected track from the beginning
     console.log("Random Track Selected: " + currentTrack);
-}
-
-//Event listener checks if audio has finished, then plays the next track
-for (var i = 0; i < tracks.length; i++) {
-    tracks[i].addEventListener('ended', function () {
-        console.log('TRACK HAS ENDED')
-        skipForwards();
-    });
 }
