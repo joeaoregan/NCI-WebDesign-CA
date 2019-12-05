@@ -8,6 +8,7 @@ This keeps the code modular and allows the code to be edited once but used in ma
  This would not be allowed with double or single quotes
 */
 function createFooter(className) {
+    // The first part of the footer on the left shows text links to each page of the website
     document.write(`
         <footer class="`+className+`">
             <div>
@@ -21,8 +22,10 @@ function createFooter(className) {
                     <a href="about.html" title="About J.I.M. Games">About</a> |
                     <a href="login.html" title="Login And Reset User Details">Login</a>
                 </div>
-
-
+    `);
+    
+    //Shows the social media icons on the right of the footer
+    document.write(`
                 <div style="float: right; width: 33%;">
                     <a href="https://www.facebook.com/JIM-107782680690362/" class="fa fa-facebook" target="_blank"
                         title="Follow Us On Facebook"></a>
@@ -32,7 +35,10 @@ function createFooter(className) {
                     <a href="https://github.com/joeaoregan/NCI-WebDesign-CA" class="fa fa-github target="_blank" title="View The GitHub Repository"></a>
                 </div>
             </div>
+    `);
 
+    //Shows the Space Invader alien logo and copyright symbol in the center of the footer
+    document.write(`
             <div>
                 <a href="index.html">
                     <img src="img/alien-grey.svg" alt="Space Invader Image" class="space-invader-grey" title="Return To Home Page" />

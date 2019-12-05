@@ -1,12 +1,14 @@
 /*
 menu.js
 
+J O'Regan
+
 This file uses a JSON object containing the name, url, and title of each page to add each menu item
 as a list item in an unordered list using a for loop and places the menu at the top of each page using
 document.getElementById() and setting the innerHTML at the DIV with ID menu at the top of each page
 */
 
-// JSON object with page names and links
+// JSON object with page names, links, and title
 var menuItems = [
 	{
 		"name": "Home",//Name of the page

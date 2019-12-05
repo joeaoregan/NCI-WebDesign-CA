@@ -1,3 +1,9 @@
+/*
+style.css
+
+Main style sheet for the project
+*/
+
 /* Top Menu */
 
 .menu {
@@ -216,7 +222,7 @@ h1, h2 {
 }
 
 .active, .accordion:hover {
-	background-color: rgb(195, 0, 255);
+	background-color: rgb(195, 0, 255);/*Set the accordion button background colour when it has been clicked or hovered over*/
 }
 
 .panel {

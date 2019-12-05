@@ -1,4 +1,9 @@
+/*
+controller.css
+J O'Regan
 
+Styling for mobile controller used with Antibody game
+*/
 
 .controller-border {
 	font-family: 'Teko', cursive;
@@ -13,7 +18,6 @@
 	touch-action: manipulation;/*Stop screen zooming when double tapping buttons*/
 	text-align: center;
 	margin: 0 auto;
-	/*font-size: 0.6em;*/
 }
 
 /* Mobile Game Controller */
