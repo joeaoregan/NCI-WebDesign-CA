@@ -7,27 +7,26 @@
 
 	<title>Home</title><!-- title text must match json names attribute of menuNames in menu.js -->
 
-	<!--Google Retro Font-->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Atomic+Age&display=swap" rel="stylesheet"> -->
 	<!--Main style sheet -->
 	<link href="css/style.css" rel="stylesheet" />
 	<!--Login style sheet -->
 	<link href="css/login.css" rel="stylesheet" />
 	<!--Social Media Icons-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- Font used in antibody game -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" /> -->
 	<!--Add favicon-->
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	
-	<!--The footer.js external file uses document.write() to create a footer element that can be included across multiple pages and edited once to update-->
-	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>	
+	<![endif]-->
+
+	<!-- The footer.js external file uses document.write() to create a footer -->
+	<!-- It can then be included across multiple pages and edited once for consistency -->
+	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
 	<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
-	<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>	
+	<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>
+	<!-- Script to display high-scores for each game on right panel -->
+	<script language="JavaScript" type="text/javascript" src="scripts/high-scores.js"></script>
 </head>
 
 <body>
@@ -35,11 +34,12 @@
 	<!-- Anchor name: https://www.w3schools.com/tags/att_a_name.asp -->
 	<a name="topofpage"></a>
 
-	<!--The menu is created in the menu.js JavaScript file, and highlights the current page by comparing the page title to JSON used to create the menu items-->
+	<!-- The menu is created in the menu.js JavaScript file -->
+	<!-- It highlights the current page by comparing the page title to JSON used to create the menu items-->
 	<div class="menu stretch">
 		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
 		<!-- External menu script to display top navigation bar-->
-		<script language="JavaScript" type="text/javascript" src="scripts/menu.js"></script>	
+		<script language="JavaScript" type="text/javascript" src="scripts/menu.js"></script>
 	</div>
 
 	<div class="main">
@@ -50,37 +50,55 @@
 		<!--The body-border class creates a black border and a shadow around the main div elements in the body-->
 		<div class="body-border yellow-section">
 			<div>
+				<div class="center">
+					<img src="img/logo.jpg" alt="J.I.M Games Logo Image" class="logo" title="J.I.M. Games Logo" />
+				</div>
+
 				<h1>Welcome to J.I.M Games</h1>
 
 				<div id="welcome">
-					<p> Our goal here at JIM games is to provide you with the best free online games available on the internet right now!  By selecting only the highest-quality games we pride ourselves as being the best website for all your online gaming needs.    </p>
+					<p>
+						Our goal here at JIM games is to provide you with the best free online games available on the
+						internet right now! By selecting only the highest-quality games we pride ourselves as being the
+						best website for all your online gaming needs.
+					</p>
 
-					<p>We always do our best to make sure our website is as fast and reliable as possible however, sometimes issues may arise.
-						If you happen to come across anything that isn’t working please contact us viva our social media platforms so we can work on fixing this as soon as possible. 
-						Or contact one of our admins by  <a href="contact.html#email" title="See List Of Admin Contact Email Addresses">email</a>.
-						We are located in Ireland, and can be found <a href="contact.html#address" title="See Address On Contacts Page">here</a>.
+					<p>
+						We always do our best to make sure our website is as fast and reliable as possible however,
+						sometimes issues may arise.
+						If you happen to come across anything that isn’t working please contact us viva our social media
+						platforms so we can work on fixing this as soon as possible.
+						Or contact one of our admins by <a href="contact.html#email"
+							title="See List Of Admin Contact Email Addresses">email</a>.
+						We are located in Ireland, and can be found <a href="contact.html#address"
+							title="See Address On Contacts Page">here</a>.
 					</p>
 				</div>
 
 				<div>
 					<h2>Our Games</h2>
-					
+
 					<div class="center">
 						<ol>
-							<li>Antibody JS (<a href="#antibody" title="Antibody Information">Information</a>, <a href="antibody.html" title="Antibody Game">Play Now</a>)</li>
-							<li>Flappy Bird JS (<a href="#flappybird" title="Flappy Bird Information">Information</a>, <a href="flappybird.html" title="Flappy Bird Game">Play Now</a>)</li>
-							<li>Space Invaders JS (<a href="#spaceinvaders" title="Space Invaders Information">Information</a>, <a href="spaceinvaders.html" title="Space Invaders Game">Play Now</a>)</li>
+							<li>Antibody JS (<a href="#antibody" title="Antibody Information">Information</a>, <a
+									href="antibody.html" title="Antibody Game">Play Now</a>)</li>
+							<li>Flappy Bird JS (<a href="#flappybird" title="Flappy Bird Information">Information</a>,
+								<a href="flappybird.html" title="Flappy Bird Game">Play Now</a>)</li>
+							<li>Space Invaders JS (<a href="#spaceinvaders"
+									title="Space Invaders Information">Information</a>, <a href="spaceinvaders.html"
+									title="Space Invaders Game">Play Now</a>)</li>
 						</ol>
 					</div>
 				</div>
-								
+
 				<div>
 					<h2>Already Registered</h2>
 					<!--Clicking the Login button reveals the login form: https://www.w3schools.com/html/html5_svg.asp-->
 					<div class="center">
-						<button onclick="document.getElementById('loginID').style.display='block'" title="Click To Login">Login</button>
+						<button onclick="document.getElementById('loginID').style.display='block'"
+							title="Click To Login">Login</button>
 					</div>
-				</div>				
+				</div>
 			</div>
 
 			<!--The Login element is activated by pressing the login button-->
@@ -91,7 +109,7 @@
 						<span onclick="document.getElementById('loginID').style.display='none'" class="close"
 							title="Close Modal">&times;</span>
 						<!-- image with alt text, in case the image does not display in a browser-->
-						<img src="img/alien-purple.svg" alt="Space Invader Image" class="space-invader">
+						<img src="img/alien-purple.svg" alt="Space Invader Image" class="space-invader" />
 					</div>
 
 					<!--Login form - Username and Password are required fields-->
@@ -118,24 +136,27 @@
 			</div>
 		</div>
 
-		<!--Three sections are added to show screenshots and information about each game-->
+		<!-- Three sections are added to show screenshots and information about each game -->
+		<!-- Antibody information section -->
 		<div class="body-border">
-			<!--Anchor to move from top of page to Antibody info section-->
+			<!-- Anchor to move from top of page to Antibody info section -->
 			<a name="antibody"></a>
 
 			<div>
 				<h1>Antibody JS</h1>
-				
+
 				<h2>2D Side-Scrolling Shooter Ported From C++</h2>
 
-				<!--Photos are formatted to look like polaroid pictures and rotate and change from black and white to colour when the mouse hovers-->
+				<!-- Photos are formatted to look like polaroid pictures -->
+				<!-- They rotate and change from black and white to colour when the mouse hovers -->
 				<div class="photos">
-					<!-- The title property is placed on the div instead of the image, as the div is use to create a polaroid effect-->
+					<!-- The title property is placed on the div instead of the image. The div is use to create a polaroid effect -->
 					<div class="item" title="Antibody Screenshot 1 - Start">
 						<div class="polaroid">
-							<!--Three screenshots of each game are presented as inline elements, alternative text is used for accessibility-->
+							<!-- Three screenshots of each game are presented as inline elements -->
+							<!-- Alternative text is used for accessibility -->
 							<img src="img/antibody1.jpg" alt="Antibody Image 1 - Start" />
-							<!--Adds a caption at the bottom of each polaroid image-->
+							<!-- Adds a caption at the bottom of each polaroid image -->
 							<div class="caption">Antibody</div>
 						</div>
 					</div>
@@ -166,17 +187,18 @@
 
 				<div>
 					<h2>Play The Game</h2>
-					
+
 					<p><a href="antibody.html" title="Go To Antibody Game">Click Here</a> to play Antibody</p>
 				</div>
 
 			</div>
 		</div>
 
+		<!-- Flappy Bird information section -->
 		<div class="body-border yellow-section">
 			<!--Anchor to move from top of page to flappy bird info section-->
 			<a name="flappybird"></a>
-			
+
 			<div>
 				<h1>Flappy Bird</h1>
 
@@ -223,10 +245,11 @@
 			</div>
 		</div>
 
+		<!-- Space Invaders information section -->
 		<div class="body-border footer-spacer">
 			<!--Anchor to move from top of page to Space Invaders info section-->
 			<a id="spaceinvaders"></a>
-				
+
 			<div>
 				<h1>Space Invaders</h1>
 
@@ -266,8 +289,9 @@
 
 				<div>
 					<h2>Play The Game</h2>
-					
-					<p><a href="spaceinvaders.html" title="Go To Space Invaders Game">Click Here</a> to play Space Invaders</p>
+
+					<p><a href="spaceinvaders.html" title="Go To Space Invaders Game">Click Here</a> to play Space
+						Invaders</p>
 				</div>
 			</div>
 
@@ -278,9 +302,10 @@
 		</div>
 	</div>
 
-	<!--The side navigation bar has a list of all the games and links to their individual pages-->
+	<!-- The left side navigation bar has a list of all the games and links to their individual pages -->
 	<div class="sidenav leftnav">
 		<h2>Our Games</h2>
+
 		<a href="antibody.html">Antibody</a>
 		<a href="flappybird.html">Flappy Bird</a>
 		<a href="spaceinvaders.html">Space Invaders</a>
@@ -289,24 +314,25 @@
 		<a href="login.html">Login</a>
 	</div>
 
+	<!-- High Scores panel on right side of page -->
 	<div class="sidenav rightnav">
 		<h2>High Scores</h2>
-		
+
 		<div class="display-scores">
 			<a href="antibody.html">Antibody</a>
-			<span id="antibodyScoreID">0</span><br/>
-			<a href="flappybird.html">Flappy Bird</a>
-			<span id="flappyScoreID">0</span><br/>
-			<a href="spaceinvaders.html">Space Invaders</a>
-			<span id="spaceScoreID">0</span><br/>
-		</div>
+			<span id="antibodyScoreID">0</span><br />
 
-		<!-- Script to display high-scores for each game on right panel -->
-		<script language="JavaScript" type="text/javascript" src="scripts/high-scores.js"></script>	
+			<a href="flappybird.html">Flappy Bird</a>
+			<span id="flappyScoreID">0</span><br />
+
+			<a href="spaceinvaders.html">Space Invaders</a>
+			<span id="spaceScoreID">0</span><br />
+		</div>
 	</div>
 
-	<!--The createFooter() function is called from the external footer.js file included in the head tag-->
-	<!--The createFooter() function takes a class name parameter, the index page footer is fixed, other pages are not and have different formatting-->
+	<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
+	<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
+	<!-- All other pages are not fixed, and have different formatting -->
 	<script>createFooter("fixed-footer")</script>
 </body>
 
