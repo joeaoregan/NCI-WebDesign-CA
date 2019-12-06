@@ -582,7 +582,7 @@ img.space-invader-grey:hover {
 	filter: none;
 	transform: scale(1, 1) rotate(0deg) !important;
 	transition: all 0.35s;	
-	filter:drop-shadow(0 0 10px purple);
+	filter:drop-shadow(0 0 15px red);
   }
 img.logo {
 	padding-top: 10px;
