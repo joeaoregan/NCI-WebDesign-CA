@@ -365,6 +365,11 @@ button:hover, .btn:hover {
 	width:1280px;
 	height:720px;
 }
+iframe {
+	border:0;/*replaces frameborder*/
+	width:"1280";
+	height:"720";
+}
 
 .about-vid {
 	width: 1280px;
