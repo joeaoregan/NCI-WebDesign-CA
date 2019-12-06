@@ -25,8 +25,7 @@
 	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
 	<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
 	<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>
-	<!-- Script to display high-scores for each game on right panel -->
-	<script language="JavaScript" type="text/javascript" src="scripts/high-scores.js"></script>
+
 </head>
 
 <body>
@@ -40,6 +39,8 @@
 		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
 		<!-- External menu script to display top navigation bar-->
 		<script language="JavaScript" type="text/javascript" src="scripts/menu.js"></script>
+		<!-- Picture gallery change picture on click -->
+		<script language="JavaScript" type="application/javascript" src="scripts/gallery.js"></script>
 	</div>
 
 	<div class="main">
@@ -147,11 +148,21 @@
 
 				<h2>2D Side-Scrolling Shooter Ported From C++</h2>
 
+				<div class="center gallery">
+					<img id="gallery1" src="img/antibody1.jpg" alt="Antibody Picture Gallery" />
+					<p id="caption1">Antibody1</p>
+				</div>
+
+				<div class="center">
+					<span>Choose A Polaroid Below:</span>
+				</div>
+
 				<!-- Photos are formatted to look like polaroid pictures -->
 				<!-- They rotate and change from black and white to colour when the mouse hovers -->
 				<div class="photos">
 					<!-- The title property is placed on the div instead of the image. The div is use to create a polaroid effect -->
-					<div class="item" title="Antibody Screenshot 1 - Start">
+					<div class="item" title="Antibody Screenshot 1 - Start" onclick="changePic('gallery1','img/antibody1.jpg','caption1')">
+
 						<div class="polaroid">
 							<!-- Three screenshots of each game are presented as inline elements -->
 							<!-- Alternative text is used for accessibility -->
@@ -160,13 +171,15 @@
 							<div class="caption">Antibody</div>
 						</div>
 					</div>
-					<div class="item" title="Antibody Screenshot 2 - Destroy Enemies">
+
+					<div class="item" title="Antibody Screenshot 2 - Destroy Enemies" onclick="changePic('gallery1','img/antibody2.jpg','caption1')">
 						<div class="polaroid">
 							<img src="img/antibody2.jpg" alt="Antibody Image 2 Destroy Enemies" />
 							<div class="caption">Antibody: Enemies</div>
 						</div>
 					</div>
-					<div class="item" title="Antibody Screenshot 3 - Collect Power Ups">
+
+					<div class="item" title="Antibody Screenshot 3 - Collect Power Ups"  onclick="changePic('gallery1','img/antibody3.jpg','caption1')">
 						<div class="polaroid">
 							<img src="img/antibody3.jpg" alt="Antibody Image 3 Power Up" />
 							<div class="caption">Antibody: Power Ups</div>
@@ -204,20 +217,29 @@
 
 				<h2>Simple 2D Side-Scroller In JavaScript</h2>
 
+				<div class="center gallery">
+					<img id="gallery2" src="img/flappybird1.jpg" alt="Flappy Bird Picture Gallery" />
+					<p id="caption2">Flappybird1</p>
+				</div>
+
+				<div class="center">
+					<span>Choose A Polaroid Below:</span>
+				</div>
+
 				<div class="photos">
-					<div class="item" title="Flappy Bird Screenshot 1 - Start Menu">
+					<div class="item" title="Flappy Bird Screenshot 1 - Start Menu" onclick="changePic('gallery2','img/flappybird1.jpg','caption2')">
 						<div class="polaroid">
 							<img src="img/flappybird1.jpg" alt="Flappybird Image 1 Start Menu" />
 							<div class="caption">Flappy Bird</div>
 						</div>
 					</div>
-					<div class="item" title="Flappy Bird Screenshot 2 - Levels Of Difficulty">
+					<div class="item" title="Flappy Bird Screenshot 2 - Levels Of Difficulty"  onclick="changePic('gallery2','img/flappybird2.jpg','caption2')">
 						<div class="polaroid">
 							<img src="img/flappybird2.jpg" alt="Flappybird Image 2 - Levels Of Difficulty" />
 							<div class="caption">Flappy Bird: Difficulty</div>
 						</div>
 					</div>
-					<div class="item" title="Flappy Bird Screenshot 3 - Avoid Pipes">
+					<div class="item" title="Flappy Bird Screenshot 3 - Avoid Pipes" onclick="changePic('gallery2','img/flappybird3.jpg','caption2')">
 						<div class="polaroid">
 							<img src="img/flappybird3.jpg" alt="Flappybird Image 3 - Avoid Pipes" />
 							<div class="caption">Flappy Bird: Avoid Pipes</div>
@@ -255,20 +277,29 @@
 
 				<h2>Classic Arcade Game Action In JavaScript</h2>
 
+				<div class="center gallery">
+					<img id="gallery3" src="img/spaceinvaders1.jpg" alt="Space Invader Picture Gallery" />
+					<p id="caption3">Spaceinvaders1</p>
+				</div>
+
+				<div class="center">
+					<span>Choose A Polaroid Below:</span>
+				</div>
+
 				<div class="photos">
-					<div class="item" title="Space Invaders Screenshot 1 - Start">
+					<div class="item" title="Space Invaders Screenshot 1 - Start" onclick="changePic('gallery3','img/spaceInvaders1.jpg','caption3')">
 						<div class="polaroid">
 							<img src="img/spaceInvaders1.jpg" alt="Space Invaders Image 1 - Start" />
 							<div class="caption">Space Invaders</div>
 						</div>
 					</div>
-					<div class="item" title="Space Invaders Screenshot 2 - Destroy Aliens">
+					<div class="item" title="Space Invaders Screenshot 2 - Destroy Aliens" onclick="changePic('gallery3','img/spaceInvaders2.jpg','caption3')">
 						<div class="polaroid">
 							<img src="img/spaceInvaders2.jpg" alt="Space Invaders Image 2 - Destroy Aliens" />
 							<div class="caption">Space Invaders: Kill Aliens</div>
 						</div>
 					</div>
-					<div class="item" title="Space Invaders Screenshot 3 - Mothership Bonus Points">
+					<div class="item" title="Space Invaders Screenshot 3 - Mothership Bonus Points" onclick="changePic('gallery3','img/spaceInvaders3.jpg','caption3')">
 						<div class="polaroid">
 							<img src="img/spaceInvaders3.jpg" alt="Space Invaders Image 3 - Mothership Bonus Points" />
 							<div class="caption">Space Invaders: Mothership</div>
@@ -300,40 +331,41 @@
 				<p><a href="#topofpage" title="Scroll back to top of this page">Back To Top</a></p>
 			</div>
 		</div>
-	</div>
 
-	<!-- The left side navigation bar has a list of all the games and links to their individual pages -->
-	<div class="sidenav leftnav">
-		<h2>Our Games</h2>
+		<!-- The left side navigation bar has a list of all the games and links to their individual pages -->
+		<div class="sidenav leftnav">
+			<h2>Our Games</h2>
 
-		<a href="antibody.html">Antibody</a>
-		<a href="flappybird.html">Flappy Bird</a>
-		<a href="spaceinvaders.html">Space Invaders</a>
-		<a href="register.html">Register</a>
-		<a href="contact.html">Contact Us</a>
-		<a href="login.html">Login</a>
-	</div>
-
-	<!-- High Scores panel on right side of page -->
-	<div class="sidenav rightnav">
-		<h2>High Scores</h2>
-
-		<div class="display-scores">
 			<a href="antibody.html">Antibody</a>
-			<span id="antibodyScoreID">0</span><br />
-
 			<a href="flappybird.html">Flappy Bird</a>
-			<span id="flappyScoreID">0</span><br />
-
 			<a href="spaceinvaders.html">Space Invaders</a>
-			<span id="spaceScoreID">0</span><br />
+			<a href="register.html">Register</a>
+			<a href="contact.html">Contact Us</a>
+			<a href="login.html">Login</a>
 		</div>
-	</div>
 
-	<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
-	<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
-	<!-- All other pages are not fixed, and have different formatting -->
-	<script>createFooter("fixed-footer")</script>
+		<!-- High Scores panel on right side of page -->
+		<div class="sidenav rightnav">
+			<h2>High Scores</h2>
+
+			<div class="display-scores">
+				<a href="antibody.html">Antibody</a>
+				<span id="antibodyScoreID">0</span><br />
+
+				<a href="flappybird.html">Flappy Bird</a>
+				<span id="flappyScoreID">0</span><br />
+
+				<a href="spaceinvaders.html">Space Invaders</a>
+				<span id="spaceScoreID">0</span><br />
+			</div>
+			<!-- Script to display high-scores for each game on right panel -->
+			<script language="JavaScript" type="text/javascript" src="scripts/high-scores.js"></script>
+		</div>
+
+		<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
+		<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
+		<!-- All other pages are not fixed, and have different formatting -->
+		<script>createFooter("fixed-footer")</script>
 </body>
 
 </html>
