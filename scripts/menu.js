@@ -14,42 +14,50 @@ var menuItems = [
 	{
 		"name": "Home",//Name of the page
 		"url": "index.html",//Url the menu item links to
-		"title": "Return To Homepage"//Title to display when the mouse cursor hovers over the menu item
+		"title": "Return To Homepage",//Title to display when the mouse cursor hovers over the menu item
+		"id": "menu-index"
 	},
 	{
 		"name": "Antibody JS",
 		"url": "antibody.html",
-		"title": "Play Antibody"
+		"title": "Play Antibody",
+		"id": "menu-antibody"
 	},
 	{
 		"name": "Flappy Bird JS",
 		"url": "flappybird.html",
-		"title": "Play Flappy Bird"
+		"title": "Play Flappy Bird",
+		"id": "menu-flappybird"
 	},
 	{
 		"name": "Space Invaders JS",
 		"url": "spaceinvaders.html",
-		"title": "Play Space Invaders"
+		"title": "Play Space Invaders",
+		"id": "menu-spaceinvaders"
 	},
 	{
 		"name": "Register",
 		"url": "register.html",
-		"title": "Register With Us"
+		"title": "Register With Us",
+		"id": "menu-register"
 	},
 	{
 		"name": "Contact Us",
 		"url": "contact.html",
-		"title": "Contact Us"
+		"title": "Contact Us",
+		"id": "menu-contact"
 	},
 	{
 		"name": "About",
 		"url": "about.html",
-		"title": "About J.I.M. Games"
+		"title": "About J.I.M. Games",
+		"id": "menu-about"
 	},
 	{
 		"name": "Login",
 		"url": "login.html",
-		"title": "User Login"
+		"title": "User Login",
+		"id": "menu-login"
 	}
 ];
 
@@ -72,7 +80,7 @@ function createMenu(arr) {
 			classTxt = "";//Otherwise the page does not need to be highlighted
 		}
 
-		out += '<li class=' + classTxt + '><a href="' + arr[i].url + '" title="' + arr[i].title + '">' + arr[i].name + '</a></li>'; // add each object as list item
+		out += '<li class=' + classTxt + '><a href="' + arr[i].url + '" title="' + arr[i].title + '" id="'+arr[i].id+'">' + arr[i].name + '</a></li>'; // add each object as list item
 	}
 
 	out += "</ul>"; // end of unordered list
