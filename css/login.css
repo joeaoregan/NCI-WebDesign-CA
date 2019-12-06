@@ -7,6 +7,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
 */
 
 /* Full-width input fields */
+
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -18,6 +19,7 @@ input[type=text], input[type=password] {
 }
 
 /* Center the image and position the close button */
+
 .imgcontainer {
   padding: 12px;
   text-align: center;
@@ -31,7 +33,7 @@ input[type=text], input[type=password] {
 img.space-invader {
   width: 10%;
   /*filter:drop-shadow(0 0 10px #0F0)*/
-  filter:drop-shadow(0 0 10px purple)
+  filter: drop-shadow(0 0 10px purple)
 }
 
 .login-container {
@@ -44,30 +46,44 @@ span.psw {
 }
 
 /* The Modal (background) - Surrounds the password popup*/
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
   padding-top: 60px;
 }
 
+
 /* Modal Content/Box */
+
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 50%;
+  /* Could be more or less, depending on screen size */
   border-radius: 20px;
 }
 
 /* The Close Button (x) */
+
 .close {
   position: absolute;
   right: 25px;
@@ -77,35 +93,51 @@ span.psw {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: red;
+.close:hover, .close:focus {
+  color: purple;
+  /*X icon in top right changes to purple on hover*/
   cursor: pointer;
 }
 
 /* Add Zoom Animation */
+
 .animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+  -webkit-animation: animatezoom 1.0s;
+  /*Time in seconds*/
+  animation: animatezoom 1.0s
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
+  from {
+    -webkit-transform: scale(0)
+  }
+  /*Scale from small to large*/
+  to {
+    -webkit-transform: scale(1)
+  }
 }
-  
+
 @keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+  from {
+    transform: scale(0)
+  }
+  /*2D transform scale from nothing*/
+  to {
+    transform: scale(1)
+  }
+  /*To full size*/
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
+@media screen and (max-width: 600px) {
+  span.ps {
+    display: block;
+    float: none;
+    width: 100%;
   }
-  .cancelbtn {
-     width: 100%;
+
+  .login-container button  {
+    width: 100%;/*Fill the panel*/
+    font-size: 200%;/*Increase font size*/
   }
 }

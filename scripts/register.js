@@ -105,8 +105,9 @@ function submitForm() {
 		}
 	}
 
+	/* Confirm Form Details Table */
 	document.getElementById("formdiv").innerHTML = `
-		<div class="center">
+		<div class="center confirm-form">
 			<table>
 				<thead>
 					<tr><th colspan="2"><h2>User Registration Confirmation</h2></th></tr>
@@ -127,7 +128,7 @@ function submitForm() {
 	// Add individually stored surveys to be displayed
 	var dataEntered = "";
 	for (var i in formJSON) {
-		dataEntered += `<tr><td class="lbl"><label><b>` + formJSON[i].label + `:</b></label></td><td colspan="2">` + formJSON[i].value + `</td></tr>`;
+		dataEntered += `<tr><td class="lbl"><label><b>` + formJSON[i].label + `:</b></label></td><td colspan>` + formJSON[i].value + `</td></tr>`;
 	}
 	dataEntered += `<tr>&nbsp;</tr>`;
 	document.getElementById("add").outerHTML = dataEntered;//display the survey data at the specified id

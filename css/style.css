@@ -98,7 +98,6 @@ table {
 .contact td {
 	padding: 10px 20px;/*add padding to space out table text, 10px top & bottom, 20 pixels either side*/
 }
-
 thead th {	
 	background-color: #08da6d;
 	padding: 15px;
@@ -124,9 +123,23 @@ select option:hover {
 	background-color: green;
 }
 
+/* Use outline font for labels */
+label {
+	font-family: 'Teko', cursive;
+	font-size: 200%;
+	-webkit-text-fill-color: white;
+	/* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
+  }
+
 /* Form field width */
 input.reg-form[type=text], input.reg-form[type=email], input.reg-form[type=submit], input.reg-form[type=password], select {
 	width: 250px;
+}
+
+select {
+	width: 300px;/* Stays smaller than other inputs when set to 250px*/
 }
 
 /*Login page forms*/
