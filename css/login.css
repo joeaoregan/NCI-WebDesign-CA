@@ -130,7 +130,7 @@ span.psw {
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 600px) {
-  span.ps {
+  .ps span{
     display: block;
     float: none;
     width: 100%;
