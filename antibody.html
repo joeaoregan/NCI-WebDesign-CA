@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no, initial-scale=0.275, maximum-scale=0.275, minimum-scale=0.275">
 	<title>Antibody JS</title>
-	
+
 	<!-- Gamepad style sheet for mobile game controller -->
 	<link href="css/controller.css" rel="stylesheet" />
 	<!--Main style sheet -->
@@ -23,7 +23,7 @@
 		<![endif]-->
 
 	<!--Score data stored in external json file-->
-	<script language="JavaScript" type="text/javascript" src="game-antibody/scores.json"></script>	
+	<script language="JavaScript" type="text/javascript" src="game-antibody/scores.json"></script>
 	<!-- The footer.js external file uses document.write() to create a footer -->
 	<!-- It can then be included across multiple pages and edited once for consistency -->
 	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
@@ -42,28 +42,35 @@
 
 	<div class="heading">
 		<h1>Antibody JavaScript</h1>
-	</div>	  
+	</div>
 
 	<div class="body-border">
 		<!--UTF-8 Arrows: https://www.w3schools.com/charsets/ref_utf_arrows.asp-->
-		<div class="info-panel"><!--relative positioning-->
-			<div class="float-top-right"><!--absolute positioning-->
-				<div class="popup" onclick="showPopup('antibodyPopupID')" title="Information popup"><!--Area to respond to click event-->
-					<i class="fa fa-info fa-small"></i><!--fontawesome info icon-->
-					<div class="popuptext below" id="antibodyPopupID"><!--message to display in popup-->
+		<div class="info-panel">
+			<!--relative positioning-->
+			<div class="float-top-right">
+				<!--absolute positioning-->
+				<div class="popup" onclick="showPopup('antibodyPopupID')" title="Information popup">
+					<!--Area to respond to click event-->
+					<i class="fa fa-info fa-small"></i>
+					<!--fontawesome info icon-->
+
+					<div class="popuptext below" id="antibodyPopupID">
+						<!--message to display in popup-->
 						<h3>Game Controls</h3>
 						<ul>
-							<li><b>Right-Click/Spacebar:</b><br/>Fire</li>
-							<li><b>A / &#8592;:</b><br/>Move Left</li>
-							<li><b>D / &#8594;:</b><br/>Move Right</li>
-							<li><b>W / &#8593;:</b><br/>Move Up</li>
-							<li><b>S / &#8595;:</b><br/>Move Down</li>
+							<li><b>Right-Click/Spacebar:</b><br />Fire</li>
+							<li><b>A / &#8592;:</b><br />Move Left</li>
+							<li><b>D / &#8594;:</b><br />Move Right</li>
+							<li><b>W / &#8593;:</b><br />Move Up</li>
+							<li><b>S / &#8595;:</b><br />Move Down</li>
 						</ul>
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
-		<canvas id="antibody" width="1280" height="720"></canvas><!--game canvas for antibody-->
+		<canvas id="antibody" width="1280" height="720"></canvas>
+		<!--game canvas for antibody-->
 	</div>
 
 	<!-- Controller buttons for mobile device -->
@@ -81,15 +88,16 @@
 					<button class="button button-round btn-direction" ontouchstart="moveLeft()" onmousedown="moveLeft()"
 						onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8592;&nbsp;</button>
 					<span class="button-divider"></span>
-					<button class="button button-round btn-direction" ontouchstart="moveRight()" onmousedown="moveRight()"
-						onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
+					<button class="button button-round btn-direction" ontouchstart="moveRight()"
+						onmousedown="moveRight()" onmouseup="moveXClear()"
+						ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
 					<button class="button button-round btn-direction" ontouchstart="moveDown()" onmousedown="moveDown()"
 						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
 				</div>
-				
+
 				<!-- Menu Button -->
 				<button class="button button-start" onmousedown="moveleft()" onmouseup="startGame()">START</button>
-				
+
 				<!-- Action Buttons -->
 				<div class="button-box">
 					<!-- handle mouse events for buttons (used during testing) -->
@@ -113,38 +121,41 @@
 
 	<!--Game Settings Panel-->
 	<div class="body-border control-panel">
-
 		<div class="info-panel">
+			<h2 id="trackTitleID">Press Play</h2>
+
+			<div class="center">
+				<button id="muteID" onclick="muteAudio()" class="cancelbtn" title="Turn Game Effects On/Off">FX
+					Off</button>
+				<button id="backID" onclick="skipBackwards()" title="Skip Track Backwards">
+					<<</button> <button id="rewindID" onclick="rewindTrack()" title="Rewind 5 Seconds">
+						<</button> <button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music
+				</button>
+				<button id="fastforwardID" onclick="fastForwardTrack()" title="Fast Forward 5 Seconds">></button>
+				<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
+				<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random</button>
+			</div>
+
 			<div class="float-top-right">
 				<div class="popup" onclick="showPopup('popupID')" title="Information popup">
-					<i class="fa fa-info fa-small"></i><!--fontawesome info icon-->
+					<!--fontawesome info icon-->
+					<i class="fa fa-info fa-small"></i>
+
 					<div class="popuptext above" id="popupID">
 						<h3>Control Panel</h3>
 						<ul>
-							<li><b>FX On/Off:</b><br/>Game sound effects on/off</li>
-							<li><b><<:</b><br/>Play the previous track</li>
-							<li><b><:</b><br/>Rewind 5 seconds</li>
-							<li><b>Play/Pause Music:</b><br/>Play or Pause the audio</li>
-							<li><b>>:</b><br/>Fast forward 5 seconds</li>
-							<li><b>>>:</b><br/>Skip forward to the next track</li>
-							<li><b>Random Track:</b><br/>Selects a random audio file</li>
+							<li><b>FX On/Off:</b><br />Game sound effects on/off</li>
+							<li><b><<:</b> <br />Play the previous track</li>
+							<li><b><:</b> <br />Rewind 5 seconds</li>
+							<li><b>Play/Pause Music:</b><br />Play or Pause the audio</li>
+							<li><b>>:</b><br />Fast forward 5 seconds</li>
+							<li><b>>>:</b><br />Skip forward to the next track</li>
+							<li><b>Random Track:</b><br />Selects a random audio file</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-
-			<h2 id="trackTitleID">Press Play</h2>
-
-			<div class="center">
-				<button id="muteID" onclick="muteAudio()" class="cancelbtn" title="Turn Game Effects On/Off">FX Off</button>
-				<button id="backID" onclick="skipBackwards()" title="Skip Track Backwards"><<</button>
-				<button id="rewindID" onclick="rewindTrack()" title="Rewind 5 Seconds"><</button>
-				<button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music</button>
-				<button id="fastforwardID" onclick="fastForwardTrack()" title="Fast Forward 5 Seconds">></button>
-				<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
-				<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random Track</button>
-			</div>
-		</div>		
+		</div>
 
 		<script src="scripts/game-buttons.js"></script>
 		<!--Script for handling background music controls-->

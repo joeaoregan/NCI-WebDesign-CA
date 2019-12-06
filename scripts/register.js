@@ -9,178 +9,218 @@ https://www.w3schools.com/html/html_forms.asp
 https://www.w3schools.com/jsref/prop_html_innerhtml.asp
 */
 
-var surveyArr = [];
+var users = [];
 
 //Form field attributes
 const formJSON = [
 	// Required fields
-	{ "label": "Username", "type": "text", "name": "username", "placeholder": "Enter username (required)", "id": "usernameInput", "required": true },
-	{ "label": "Password", "type": "password", "name": "password1", "placeholder": "Enter password (required)", "id": "password1Input", "required": true },//type password
-	{ "label": "Confirm Password", "type": "password", "name": "password2", "placeholder": "Confirm password (required)", "id": "password2Input", "required": true },//type password
-	{ "label": "First Name", "type": "text", "name": "firstname", "placeholder": "Enter first name (required)", "id": "fnameInput", "required": true },
-	{ "label": "Last Name", "type": "text", "name": "lastname", "placeholder": "Enter last name (required)", "id": "lnameInput", "required": true },
-	{ "label": "Email", "type": "email", "name": "email", "placeholder": "Enter email (required)", "id": "emailInput", "required": "true" },//type email
-	// Optional address
-	{ "label": "Street", "type": "text", "name": "street", "placeholder": "Enter street", "id": "steetInput", "required": false },
-	{ "label": "Area", "type": "text", "name": "area", "placeholder": "Enter area", "id": "areaInput", "required": false },
-	{ "label": "Town/City", "type": "text", "name": "city", "placeholder": "Enter town/city", "id": "cityInput", "required": false },
-	{ "label": "County", "type": "text", "name": "county", "placeholder": "Enter county", "id": "countyInput", "required": false },
-	{ "label": "Postcode", "type": "text", "name": "postcode", "placeholder": "Enter postcode", "id": "postcodeInput", "required": false }
+	{ "label": "Username", "value": "", "type": "text", "id": "username", "required": true },//username
+	{ "label": "Password", "value": "", "type": "password", "id": "password1", "required": true },//password
+	{ "label": "Confirm Password", "value": "", "type": "password", "id": "password2", "required": true },//confirm password
+	{ "label": "First Name", "value": "", "type": "text", "id": "firstname", "required": true },//firstname
+	{ "label": "Last Name", "value": "", "type": "text", "id": "lastname", "required": true },//lastname
+	{ "label": "Email", "value": "", "type": "email", "id": "email", "required": true },//email
+	// Optional address, has default
+	{ "label": "Street", "value": "", "type": "text", "id": "street", "required": false, "default": "" },
+	{ "label": "Area", "value": "", "type": "text", "id": "area", "required": false, "default": "" },
+	{ "label": "Town/City", "value": "", "type": "text", "id": "city", "required": false, "default": "" },
+	{ "label": "County", "value": "", "type": "text", "id": "county", "required": false, "default": "" },
+	{ "label": "Postcode", "value": "", "type": "text", "id": "postcode", "required": false, "default": "" },
+	//Check, added in function, has default
+	{
+		"label": "How many of our games have you played?", "type": "radio", "id": "amount", "required": false, "multiple": true,
+		"options": [{ "value": 0, "label": "0" }, { "value": 1, "label": "1" }, { "value": 2, "label": "2" }, { "value": 3, "label": "More Than 2" }], "default": 0
+	},
+	{
+		"label": "My favourite game", "type": "select", "id": "favourite", "multiple": true, "required": false, "default": 0,
+		"options": [{ "value": "none", "label": "N/A", "selected": true }, { "value": "Antibody", "label": "Antibody", "selected": false },
+		{ "value": "Flappy Bird", "label": "Flappy Bird", "selected": false }, { "value": "Space Invaders", "label": "Space Invaders", "selected": false }],
+	},
+	{
+		"label": "Would you like us to email you our newsletter?", "type": "checkbox", "id": "newsletter", "multiple": false, "required": false, "default": "No"
+	}
 ];
 
-function submitForm() {
-	// Store the survey data as JSON object
-	var surveyJSON = {
+function createNewUser() {
+	var newUser = {
 		"username": "",
 		"password": "",
 		"firstname": "",
 		"lastname": "",
 		"email": "",
-		"street": "",
-		"area": "",
-		"city": "",
-		"county": "",
-		"postcode": "",
-		"amount": "",
-		"favourite": "",
-		"newsletter": ""
+		"address": { "street": "", "area": "", "city": "", "county": "", "postcode": "" },
+		"survey": { "gamesPlayed": "", "favourite": "", "newsletter": "" }
 	};
 
-	// Set the attributes of the JSON
-	surveyJSON.username = document.getElementById("usernameInput").value;
-	surveyJSON.password = document.getElementById("password1Input").value;
-	surveyJSON.firstname = document.getElementById("fnameInput").value;
-	surveyJSON.lastname = document.getElementById("lnameInput").value;
-	surveyJSON.email = document.getElementById("emailInput").value;
-	surveyJSON.street = document.getElementById("steetInput").value;
-	surveyJSON.area = document.getElementById("areaInput").value;
-	surveyJSON.city = document.getElementById("cityInput").value;
-	surveyJSON.county = document.getElementById("countyInput").value;
-	surveyJSON.postcode = document.getElementById("postcodeInput").value;
-	surveyJSON.amount = document.querySelector('input[type=radio]:checked').value;
-	surveyJSON.favourite = document.getElementById("favouriteInput").value;
-	surveyJSON.newsletter = (document.getElementById("newsletterInput").checked) ? "Yes" : "No";
-
-	/* alert(JSON.stringify(surveyJSON,'',4)); */
-
-	surveyArr.push(surveyJSON);
-
-	/* console.log(JSON.stringify(surveyJSON,'',4)); */
-
-	console.log(JSON.stringify(surveyArr, '', 4));
-
-	// Create the table template to display surveys
-	document.getElementById("formdiv").innerHTML = `
-		<table>
-			<thead>
-				<tr>
-					<th colspan="2">New User Registration</th>
-				</tr>
-			</thead>	
-			<tr>				
-				<th colspan="2">New User Added</th>
-			</tr>
-			
-			<tr id="add"></tr>
-								
-			<tfoot>
-				<tr><td colspan="2"><input type="submit" class="btn" value="Add New" onclick="resetForm()"/></td><tr>
-			</tfoot>
-		</table>`;
-
-	// Add individually stored surveys to be displayed
-	var surveyData = "";
-
-	for (var fs in surveyArr) {
-		surveyData += `<tr><th colspan="2">Survey: ${parseInt(fs) + 1}</th></tr>`;
-
-		// Display variable name and value
-		for (var i in surveyJSON) {
-			surveyData += `<tr>
-					<td class="lbl"><label><b>`+ i + `:</b></label></td>
-					<td>` + surveyJSON[i] + `</td>
-				</tr>`;
+	for (var i in formJSON) {
+		if (formJSON[i].id == "username") {
+			newUser.username = formJSON[i].value;
+		} else if (formJSON[i].id == "password1") {
+			newUser.password = formJSON[i].value;
+		} else if (formJSON[i].id == "firstname") {
+			newUser.firstname = formJSON[i].value;
+		} else if (formJSON[i].id == "lastname") {
+			newUser.lastname = formJSON[i].value;
+		} else if (formJSON[i].id == "email") {
+			newUser.email = formJSON[i].value;
+		} else if (formJSON[i].id == "street") {
+			newUser.address.street = formJSON[i].value;
+		} else if (formJSON[i].id == "area") {
+			newUser.address.area = formJSON[i].value;
+		} else if (formJSON[i].id == "city") {
+			newUser.address.city = formJSON[i].value;
+		} else if (formJSON[i].id == "county") {
+			newUser.address.county = formJSON[i].value;
+		} else if (formJSON[i].id == "postcode") {
+			newUser.address.postcode = formJSON[i].value;
+		} else if (formJSON[i].id == "amount") {
+			newUser.survey.gamesPlayed = formJSON[i].value;
+		} else if (formJSON[i].id == "favourite") {
+			newUser.survey.favourite = formJSON[i].value;
+		} else if (formJSON[i].id == "newsletter") {
+			newUser.survey.newsletter = formJSON[i].value;
 		}
+	}
+	//console.log(newUser);
+	console.log(JSON.stringify(newUser, '', 4));
 
-		surveyData += `<tr>&nbsp;</tr>`;
+	return newUser;
+}
+
+function submitForm() {
+	//Set the values passed in from the form
+	for (var i in formJSON) {
+		if (formJSON[i].required) {
+			formJSON[i].value = document.getElementById(formJSON[i].id).value;
+		}
+		if (!formJSON[i].required && !formJSON[i].multiple) {
+			formJSON[i].value = document.getElementById(formJSON[i].id).value || formJSON[i].default;
+		}
+		if (formJSON[i].id == "amount") {
+			formJSON[i].value = document.querySelector('input[type=radio]:checked') != null ? document.querySelector('input[type=radio]:checked').value : formJSON[i].default;
+		} else if (formJSON[i].id == "favourite") {
+			formJSON[i].value = document.getElementById(formJSON[i].id) != null ? document.getElementById(formJSON[i].id).value : formJSON[i].default;
+		} else if (formJSON[i].id == "newsletter") {
+			formJSON[i].value = document.getElementById(formJSON[i].id) != null ? (document.getElementById(formJSON[i].id).checked) ? "Yes" : "No" : formJSON[i].default;
+		}
 	}
 
-	document.getElementById("add").outerHTML = surveyData;//display the survey data at the specified id
+	document.getElementById("formdiv").innerHTML = `
+		<div class="center">
+			<table>
+				<thead>
+					<tr><th colspan="2"><h2>User Registration Confirmation</h2></th></tr>
+				</thead>
+				<tr id="add"></tr>
+				<tfoot>
+					<tr><td colspan="2">
+						<div class="center">
+							<input type="submit" class="btn" value="Confirm" onclick="confirmPressed()"/>
+							<input type="submit" class="btn" value="Edit" onclick="resetForm(true)"/>
+							<input type="submit" class="btn cancelbtn" value="Cancel" onclick="resetForm()"/>
+						</div>
+					</td><tr>
+				</tfoot>
+			</table>
+		</div>`;
+
+	// Add individually stored surveys to be displayed
+	var dataEntered = "";
+	for (var i in formJSON) {
+		dataEntered += `<tr><td class="lbl"><label><b>` + formJSON[i].label + `:</b></label></td><td colspan="2">` + formJSON[i].value + `</td></tr>`;
+	}
+	dataEntered += `<tr>&nbsp;</tr>`;
+	document.getElementById("add").outerHTML = dataEntered;//display the survey data at the specified id
+}
+
+
+function confirmPressed() {
+	console.log('User Registered')
+	//console.log(JSON.stringify(users, '', 4));
+	var newUser = createNewUser();
+	users.push(newUser);
+	console.log('number of users: ' + users.length);
+	resetForm();//Reset the form
 }
 
 // Make sure both passwords match
 function validatePassword() {
-	//console.log('password1 '+document.getElementById('password1Input').value + ' password2 '+document.getElementById('password2Input').value)
-	document.getElementById('password1Input').setCustomValidity('');
+	//console.log('password1 ' + document.getElementById('password1Input').value + ' password2 ' + document.getElementById('password2Input').value)
 
-	if (document.getElementById('password1Input').value != document.getElementById('password2Input').value) {
-		document.getElementById('password2Input').setCustomValidity('Passwords must match.');
+	document.getElementById('password1').setCustomValidity('');
+
+	if (document.getElementById('password1').value != document.getElementById('password2').value) {
+		document.getElementById('password2').setCustomValidity('Passwords must match.');
 	} else {
-		document.getElementById('password2Input').setCustomValidity('');
+		document.getElementById('password2').setCustomValidity('');
+	}
+}
+
+function validateUsername() {
+	document.getElementById('username').setCustomValidity('');
+
+	for (var i in users) {
+		if (users[i].username == document.getElementById('username').value) {
+			document.getElementById('username').setCustomValidity('The Username Is Already taken');
+		} else {
+			document.getElementById('username').setCustomValidity('');
+		}
 	}
 }
 
 // This function creates the form HTML in a table
-function resetForm() {
-	var formFields = `<form onsubmit="submitForm()">
-	<h1>New User Registration</h1>
-	<h2>Please Complete This Form</h2>
+function resetForm(editForm) {
+	var formFields = `<h1>New User Registration</h1>
+	<h2>Please Complete This Form</h2><div class="center">
+	<form onsubmit="submitForm()">
 		<table>
-			<thead>
-				<th colspan="3">Enter Your Details</th>
-			</thead>`;
+			<thead><th colspan="2"><h2>Enter Your Details</h2></th></thead>`;
 
 	//Concatenate each form field
 	for (i in formJSON) {
 		var star = (formJSON[i].required) ? ' * ' : '';//If it is a required field show an asterix
 
-		formFields += `<tr>
-			<td class="lbl"><label>`+ formJSON[i].label + star + `</label></td>
-			<td><input class="reg-form" type="`+ formJSON[i].type + `" name="` + formJSON[i].name + `" placeholder="` + formJSON[i].placeholder + `" id="` + formJSON[i].id + `" /></td>
-			<td></td>
-		</tr>`;
+		if (formJSON[i].type != "radio" && formJSON[i].type != "select") {
+			formFields += `<tr><td class="lbl"><label>` + formJSON[i].label + star + `</label></td>
+			<td><input class="reg-form" type="`+ formJSON[i].type + `" placeholder="` + formJSON[i].label + ((formJSON[i].required) ? " (Required Field)" : "") + `" id="` + formJSON[i].id + `" `;
+
+			formFields += (editForm) ? `value="` + formJSON[i].value + `"` : ``;
+
+			if (formJSON[i].required) formFields += ` required`;
+			formFields += `/></td></tr>`;
+		} else if (formJSON[i].type == "radio") {
+			formFields += `<tr><td class="lbl"><label>` + formJSON[i].label + `</label></td><td>`;
+
+			for (var j in formJSON[i].options) {
+				formFields += `<input type="` + formJSON[i].type + `" id="` + formJSON[i].id + `" value="` + formJSON[i].options[j].value + `" />` + formJSON[i].options[j].label + `<br/>`;
+			}
+			formFields += `</td></tr>`;
+		} else if (formJSON[i].type == "select") {
+			formFields += `<tr><td class="lbl"><label>` + formJSON[i].label + `</label></td>
+			<td><select size="`+ formJSON[i].options.length + `" id="` + formJSON[i].id + `">`;
+
+			for (var k in formJSON[i].options) {
+				formFields += `<option value="` + formJSON[i].options[k].value;
+				formFields += (formJSON[i].options[k].selected) ? `" selected="selected">` : `" >`;
+				formFields += formJSON[i].options[k].label + `</option>`;
+			}
+			formFields += `</select></td></tr>`;
+		}
 	}
 
-	formFields += `<tr>
-				<td class="lbl"><label>How many of our games have you played?</label></td>
-				<td>
-					<input type="radio" name="number" value="0" />0<br/>
-					<input type="radio" name="number" value="1" />1<br/>
-					<input type="radio" name="number" value="2" />2<br/>
-					<input type="radio" name="number" value="3" />More than 2<br/>
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td class="lbl"><label>My favourite game</label></td>
-				<td>
-					<select name="games" size="4" id="favouriteInput">
-						<option value="game1">Antibody</option>
-						<option value="game2">Flappy Bird</option>
-						<option value="game3">Space Invaders</option>
-						<option value="game4" selected="selected">N/A</option>
-					</select>
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td class="lbl"><label>Would you like us to email you our newsletter?</label></td>
-				<td><input type="checkbox" id="newsletterInput" /><br/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><input name="submit"  class="btn" type="submit" value="Submit" /></td>
-				<td></td>
-			</tr>
-		</table>
-	</form>`;
+	formFields += `<tfoot>
+						<tr>
+							<td colspan="2">
+								<div class="center">
+									<input name="submit" class="btn" type="submit" value="Submit" onclick="submitForm()"/>	
+									<input type="submit" class="btn cancelbtn" value="Cancel" onclick="resetForm()"/>
+								</div>
+							</td>
+						</tr>
+					</tfoot></table></form></div>`;// close the table
 
 	document.getElementById("formdiv").innerHTML = formFields;
 	document.getElementsByName("submit")[0].onclick = validatePassword;//needs to be here for password validation to work
-
-	//Set required fields
-	for (i in formJSON) {
-		document.getElementById(formJSON[i].id).required = formJSON[i].required;//Find field by id, and set required form field or not
-	}
+	document.getElementsByName("submit")[0].onclick = validateUsername;
+	//console.log(formFields)
 }

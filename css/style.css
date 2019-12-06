@@ -80,8 +80,9 @@ address {
 }
 
 table {	
-	padding-bottom: 2%;
+	margin: 20px;
 }
+
 .register table {
 	border: 2px solid black;
 	/* For browsers that do not support gradients */
@@ -91,12 +92,16 @@ table {
 	background-image: linear-gradient(#EEE, #08da6d);
 	/*width: 100%;*/
 }
+.userdetails td {
+	width: 50%;
+}
 .contact td {
 	padding: 10px 20px;/*add padding to space out table text, 10px top & bottom, 20 pixels either side*/
 }
-.register thead {
+
+thead th {	
 	background-color: #08da6d;
-	/* green */
+	padding: 15px;
 }
 
 .register .lbl {
@@ -105,6 +110,14 @@ table {
 
 .register td {
 	width: 50%;
+}
+
+tfoot tr {
+	background-color: lightgreen;
+	border-radius: 15px;
+}
+tfoot td {
+	padding: 15px;
 }
 
 select option:hover {
@@ -240,10 +253,6 @@ h1, h2 {
 	font-size: 1em;
 	color: black;
 	box-shadow: 0 0 30px darkgrey inset;
-}
-
-table {
-	margin: 20px;
 }
 
 /* Game Canvas */
@@ -493,6 +502,7 @@ button:hover, .btn:hover {
 /*Set the positioning of the audio control panel*/
 .info-panel {
 	position: relative;
+	z-index: 100;
 }
 /*Used to set the information icon in the top right corner of the panel*/
 .float-top-right {
@@ -754,4 +764,10 @@ h1, h2 {
 	font-weight: 700;
 	src: local('Teko Bold'), local('Teko-Bold'), url(https://fonts.gstatic.com/s/teko/v9/LYjCdG7kmE0gdRhYsCRgqA.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+center {
+	z-index: 5;
+	background-color: purple;
+	border: 2px solid white;
 }
