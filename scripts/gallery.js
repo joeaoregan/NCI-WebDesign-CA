@@ -18,7 +18,7 @@ function changePic(imgID, newSrc, caption) {
     document.getElementById(caption).innerHTML = filename;//output filename
 }
 
-//https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
+// https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
 const capitalize = (s) => {
     s=s.toLowerCase();//Convert string to lower case
     if (typeof s !== 'string') {//If it's not a string

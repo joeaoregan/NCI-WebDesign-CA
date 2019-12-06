@@ -25,7 +25,9 @@
 	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
 	<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
 	<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>
-
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="scripts/fade-jquery.js"></script>
 </head>
 
 <body>
@@ -159,7 +161,7 @@
 
 				<!-- Photos are formatted to look like polaroid pictures -->
 				<!-- They rotate and change from black and white to colour when the mouse hovers -->
-				<div class="photos">
+				<div class="photos p1">
 					<!-- The title property is placed on the div instead of the image. The div is use to create a polaroid effect -->
 					<div class="item" title="Antibody Screenshot 1 - Start" onclick="changePic('gallery1','img/antibody1.jpg','caption1')">
 
@@ -226,7 +228,7 @@
 					<span>Choose A Polaroid Below:</span>
 				</div>
 
-				<div class="photos">
+				<div class="photos p2">
 					<div class="item" title="Flappy Bird Screenshot 1 - Start Menu" onclick="changePic('gallery2','img/flappybird1.jpg','caption2')">
 						<div class="polaroid">
 							<img src="img/flappybird1.jpg" alt="Flappybird Image 1 Start Menu" />
@@ -286,7 +288,7 @@
 					<span>Choose A Polaroid Below:</span>
 				</div>
 
-				<div class="photos">
+				<div class="photos p3">
 					<div class="item" title="Space Invaders Screenshot 1 - Start" onclick="changePic('gallery3','img/spaceInvaders1.jpg','caption3')">
 						<div class="polaroid">
 							<img src="img/spaceInvaders1.jpg" alt="Space Invaders Image 1 - Start" />
