@@ -82,7 +82,7 @@ function createNewUser() {
 		}
 	}
 	//console.log(newUser);
-	console.log(JSON.stringify(newUser, '', 4));
+	//console.log(JSON.stringify(newUser, '', 4));
 
 	return newUser;
 }
@@ -133,13 +133,28 @@ function submitForm() {
 	document.getElementById("add").outerHTML = dataEntered;//display the survey data at the specified id
 }
 
-
 function confirmPressed() {
 	console.log('User Registered')
+	
+	var userdb =  JSON.parse(localStorage.getItem('user-db')) || users;
 	//console.log(JSON.stringify(users, '', 4));
 	var newUser = createNewUser();
-	users.push(newUser);
-	console.log('number of users: ' + users.length);
+	userdb.push(newUser);
+
+	localStorage.setItem('user-db',JSON.stringify(userdb));
+
+	console.log('\nNumber of users: ' + userdb.length);
+
+/*
+	var newuserdb=JSON.parse(localStorage.getItem('user-db')) || users;
+	console.log(JSON.stringify(newuserdb,' ', 4));
+
+	var count = 0;
+	for (var i in userdb) {
+		count++;
+	}
+	console.log('COUNT: '+count);
+*/
 	resetForm();//Reset the form
 }
 
@@ -157,10 +172,13 @@ function validatePassword() {
 }
 
 function validateUsername() {
+	var storedUserDB=JSON.parse(localStorage.getItem('user-db')) || users;
+
 	document.getElementById('username').setCustomValidity('');
 
-	for (var i in users) {
-		if (users[i].username == document.getElementById('username').value) {
+	for (var i in storedUserDB) {
+		if (storedUserDB[i].username == document.getElementById('username').value) {
+			console.log('Username: ' + storedUserDB[i].username + ' is already taken!');
 			document.getElementById('username').setCustomValidity('The Username Is Already taken');
 		} else {
 			document.getElementById('username').setCustomValidity('');
@@ -168,8 +186,36 @@ function validateUsername() {
 	}
 }
 
+function validateEmail() {
+	var storedUserDB=JSON.parse(localStorage.getItem('user-db')) || users;
+
+	document.getElementById('email').setCustomValidity('');
+
+	for (var i in storedUserDB) {
+		if (storedUserDB[i].email == document.getElementById('email').value) {
+			console.log('Email: ' + storedUserDB[i].email + ' is already registered. Try resetting you password!');
+			document.getElementById('email').setCustomValidity('Email: ' + storedUserDB[i].email + ' is already registered. Try resetting you password!');
+		} else {
+			document.getElementById('email').setCustomValidity('');
+		}
+	}
+}
+
+function updateNumberOfUsers() {
+	var newuserdb=JSON.parse(localStorage.getItem('user-db')) || users;
+
+	var count = 0;
+	for (var i in newuserdb) {
+		count++;
+	}
+
+	document.getElementById('numUsers').innerHTML="<b>Registered Users:</b> "+count;
+}
+
 // This function creates the form HTML in a table
 function resetForm(editForm) {
+	updateNumberOfUsers();//Update the number of users when the form loads
+
 	var formFields = `<h1>New User Registration</h1>
 	<h2>Please Complete This Form</h2><div class="center">
 	<form onsubmit="submitForm()">
@@ -222,5 +268,6 @@ function resetForm(editForm) {
 	document.getElementById("formdiv").innerHTML = formFields;
 	document.getElementsByName("submit")[0].onclick = validatePassword;//needs to be here for password validation to work
 	document.getElementsByName("submit")[0].onclick = validateUsername;
+	document.getElementsByName("submit")[0].onclick = validateEmail;
 	//console.log(formFields)
 }
