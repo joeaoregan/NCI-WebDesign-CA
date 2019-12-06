@@ -545,7 +545,7 @@ footer {
 
 /*The width needs to be set on the SVG space invader image in the footer*/
 .logo {
-	width: 20%;
+	border: 2px solid #555;
 }
 
 /*Links have the same colour as other text in the footer*/
