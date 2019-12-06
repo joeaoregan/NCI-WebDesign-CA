@@ -21,8 +21,6 @@
 	<!-- The footer.js external file uses document.write() to create a footer -->
 	<!-- It can then be included across multiple pages and edited once for consistency -->
 	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
-	<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
-	<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>
 </head>
 
 <body>
@@ -41,36 +39,33 @@
 	<div class="body-border">
 		<h1>User Login</h1>
 
-		<!--Animation is used to expand the login form on the screen-->
-		<form class="modal-content" action="index.html#topofpage">
+		<div class="login-container">
+			<!--Animation is used to expand the login form on the screen-->
 			<!--Login form - Username and Password are required fields-->
-			<div class="login-container">
-				<!--Labels are attached to the text input fields-->
+			<!--Labels are attached to the text input fields-->
+			<!-- <form class="modal-content" action="index.html#topofpage" onsubmit="userLogin()">   This works with now onclick - redirects, but doesn't check password-->
+			<form class="modal-content" onsubmit="javascript:userLogin()">
 				<label for="uname"><b>Username</b></label>
-				<input type="text" placeholder="Enter Username" name="uname" id="username" required>
+				<input type="text" placeholder="Enter Username" name="uname" id="username" required />
 
 				<label for="psw"><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="psw" id="password" required>
+				<input type="password" placeholder="Enter Password" name="psw" id="password" required />
 
-				<button type="submit" onclick="userLogin()">Login</button>
-				<label>
-					<input type="checkbox" checked="checked" name="remember"> Remember me
-				</label>
-			</div>
+				<button type="submit">Login</button>
+				<label><input type="checkbox" checked="checked" name="remember" /> Remember me</label>
 
-			<div class="login-container">
-				<button type="button" onclick="document.getElementById('loginID').style.display='none'"
-					class="cancelbtn">Cancel</button>
 				<span class="psw"> <a href="#forgot">Forgot password?</a></span>
-			</div>
-		</form>
+			</form>
+		</div>
+		<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
+		<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>
 	</div>
 
 	<div class="body-border yellow-section">
 		<a name="forgot"></a>
 		<h1>Password Reset</h1>
 
-		<form  action="javascript:resetPassword()" submit="">
+		<form action="javascript:resetPassword()" submit="">
 			<!--Reset password form - email is a required field-->
 			<label for="uname"><b>Email</b></label>
 			<!--User must enter a valid email format and press "Reset Password" button-->

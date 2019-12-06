@@ -15,7 +15,7 @@ function userLogin() {
     for (var i in storedUserDB) {
         console.log('Username: ' + storedUserDB[i].username + ' Password: ' + storedUserDB[i].password);
 
-        if (storedUserDB[i].username == document.getElementById('username').value && storedUserDB[i].password == document.getElementById('username').value) {
+        if (storedUserDB[i].username == document.getElementById('username').value && storedUserDB[i].password == document.getElementById('password').value) {
             //console.log('Username: ' + storedUserDB[i].username + ' is already taken!');
             //document.getElementById('username').setCustomValidity('The Username Is Already taken');
             // welcome-personalise
@@ -29,12 +29,10 @@ function userLogin() {
             storedUserDB[i].loggedin=true;
 
             console.log('success');
-            break;
-        } else {
-            console.log('nope');
-            if (i + 1 >= storedUserDB.length) {
-                document.getElementById('username').setCustomValidity('There is a problem with the details you entered');//Set validity message
-            }
+            return;
         }
     }
+    console.log('nope');
+
+    document.getElementById('username').setCustomValidity('There is a problem with the details you entered');//Set validity message
 }
