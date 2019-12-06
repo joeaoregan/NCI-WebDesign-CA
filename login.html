@@ -17,16 +17,18 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	
+
 	<!-- The footer.js external file uses document.write() to create a footer -->
 	<!-- It can then be included across multiple pages and edited once for consistency -->
-	<script src="scripts/footer.js"></script>
+	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
+	<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
+	<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>
 </head>
 
 <body>
 	<!--Anchor to return to top of page from bottom-->
 	<a id="topofpage"></a>
-	
+
 	<div class="menu stretch">
 		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
 		<script src="scripts/menu.js"></script>
@@ -40,17 +42,17 @@
 		<h1>User Login</h1>
 
 		<!--Animation is used to expand the login form on the screen-->
-		<form class="modal-content" action="/action_page.php" method="post">
+		<form class="modal-content" action="index.html#topofpage">
 			<!--Login form - Username and Password are required fields-->
 			<div class="login-container">
 				<!--Labels are attached to the text input fields-->
 				<label for="uname"><b>Username</b></label>
-				<input type="text" placeholder="Enter Username" name="uname" required>
+				<input type="text" placeholder="Enter Username" name="uname" id="username" required>
 
 				<label for="psw"><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="psw" required>
+				<input type="password" placeholder="Enter Password" name="psw" id="password" required>
 
-				<button type="submit">Login</button>
+				<button type="submit" onclick="userLogin()">Login</button>
 				<label>
 					<input type="checkbox" checked="checked" name="remember"> Remember me
 				</label>
@@ -65,18 +67,20 @@
 	</div>
 
 	<div class="body-border yellow-section">
-		<a name="forgot" ></a>
+		<a name="forgot"></a>
 		<h1>Password Reset</h1>
 
-		<!--Reset password form - email is a required field-->
-		<label for="uname"><b>Email</b></label>
-		<!--User must enter a valid email format and press "Reset Password" button-->
-		<input type="email" placeholder="Enter Email Address" name="email" required>
+		<form  action="javascript:resetPassword()" submit="">
+			<!--Reset password form - email is a required field-->
+			<label for="uname"><b>Email</b></label>
+			<!--User must enter a valid email format and press "Reset Password" button-->
+			<input id="emailvalue" type="email" placeholder="Enter Email Address" name="email" required>
 
-		<button type="submit" onclick="resetPassword()">Reset Password</button>
+			<button type="submit">Reset Password</button>
+		</form>
 
-		<p id="resetPasswordID">Enter The Email Address You Registered With</p>
-		
+		<p id="resetPasswordID">Please Enter The Email Address You Registered With</p>
+
 		<script src="scripts/password-reset.js"></script>
 	</div>
 
@@ -95,10 +99,10 @@
 			<p><a href="#topofpage" title="Scroll back to top of this page">Back To Top</a></p>
 		</div>
 
-	<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
-	<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
-	<!-- All other pages are not fixed, and have different formatting -->
-	<script>createFooter("regular-footer")</script>
+		<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
+		<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
+		<!-- All other pages are not fixed, and have different formatting -->
+		<script>createFooter("regular-footer")</script>
 </body>
 
 </html>

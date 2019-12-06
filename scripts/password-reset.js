@@ -6,5 +6,6 @@ J O'Regan
 Handle resetting passwords
 */
 function resetPassword(){
-    document.getElementById("resetPasswordID").innerHTML = "Check your email to reset password";
+    document.getElementById("resetPasswordID").innerHTML = "Please check your email. A reset link has been sent to " + document.getElementById('emailvalue').value;//Update message below password screen
+    document.getElementById('emailvalue').value = "";//Reset value in input field
 }
