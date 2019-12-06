@@ -238,7 +238,7 @@ function resetForm(editForm) {
 			formFields += `<tr><td class="lbl"><label>` + formJSON[i].label + `</label></td><td>`;
 
 			for (var j in formJSON[i].options) {
-				formFields += `<input type="` + formJSON[i].type + `" id="` + formJSON[i].id + `" value="` + formJSON[i].options[j].value + `" />` + formJSON[i].options[j].label + `<br/>`;
+				formFields += `<input type="` + formJSON[i].type + `" name="` + formJSON[i].id + `" value="` + formJSON[i].options[j].value + `" />` + formJSON[i].options[j].label + `<br/>`;
 			}
 			formFields += `</td></tr>`;
 		} else if (formJSON[i].type == "select") {
