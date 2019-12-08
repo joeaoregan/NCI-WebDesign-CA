@@ -45,10 +45,10 @@
 			<!--Labels are attached to the text input fields-->
 			<!-- <form class="modal-content" action="index.html#topofpage" onsubmit="userLogin()">   This works with now onclick - redirects, but doesn't check password-->
 			<form class="modal-content" action="index.html" onsubmit="javascript:userLogin()">
-				<label for="uname"><b>Username</b></label>
+				<label for="username"><b>Username</b></label>
 				<input type="text" placeholder="Enter Username" name="uname" id="username" required />
 
-				<label for="psw"><b>Password</b></label>
+				<label for="password"><b>Password</b></label>
 				<input type="password" placeholder="Enter Password" name="psw" id="password" required />
 
 				<button type="submit">Login</button>
@@ -67,7 +67,7 @@
 
 		<form action="javascript:resetPassword()" submit="">
 			<!--Reset password form - email is a required field-->
-			<label for="uname"><b>Email</b></label>
+			<label for="username"><b>Email</b></label>
 			<!--User must enter a valid email format and press "Reset Password" button-->
 			<input id="emailvalue" type="email" placeholder="Enter Email Address" name="email" required>
 
@@ -93,6 +93,8 @@
 		<div class="backtotop">
 			<p><a href="#topofpage" title="Scroll back to top of this page">Back To Top</a></p>
 		</div>
+	</div>
+
 
 		<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
 		<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
