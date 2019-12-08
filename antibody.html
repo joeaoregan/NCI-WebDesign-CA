@@ -23,12 +23,12 @@
 		<![endif]-->
 
 	<!--Score data stored in external json file-->
-	<script language="JavaScript" type="text/javascript" src="game-antibody/scores.json"></script>
+	<script src="game-antibody/scores.json"></script>
 	<!-- The footer.js external file uses document.write() to create a footer -->
 	<!-- It can then be included across multiple pages and edited once for consistency -->
-	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
+	<script src="scripts/footer.js"></script>
 	<!--Script to show/hide the information popup-->
-	<script language="JavaScript" type="text/javascript" src="scripts/popup.js"></script>
+	<script src="scripts/popup.js"></script>
 </head>
 
 <body>
@@ -83,16 +83,20 @@
 				<!-- Direction Buttons -->
 				<div class="button-box">
 					<!-- handle touch events for buttons -->
-					<button class="button button-round btn-direction" ontouchstart="moveUp()" onmousedown="moveUp()"
-						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
-					<button class="button button-round btn-direction" ontouchstart="moveLeft()" onmousedown="moveLeft()"
-						onmouseup="moveXClear()" ontouchend="moveXClear()">&nbsp;&#8592;&nbsp;</button>
+					<!-- &#8593; = Up Arrow, &#8592; = Left Arrow,  &#8594; = Right Arrow, &#8595 = Down Arrow -->
+					<button class="button button-round btn-direction" onmousedown="moveUp()" onmouseup="moveYClear()"
+						id="button-up">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</button><br>
+
+					<button class="button button-round btn-direction" onmousedown="moveLeft()" onmouseup="moveXClear()"
+						id="button-left">&nbsp;&#8592;&nbsp;</button>
+
 					<span class="button-divider"></span>
-					<button class="button button-round btn-direction" ontouchstart="moveRight()"
-						onmousedown="moveRight()" onmouseup="moveXClear()"
-						ontouchend="moveXClear()">&nbsp;&#8594;&nbsp;</button><br>
-					<button class="button button-round btn-direction" ontouchstart="moveDown()" onmousedown="moveDown()"
-						onmouseup="moveYClear()" ontouchend="moveYClear()">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
+
+					<button class="button button-round btn-direction" onmousedown="moveRight()" onmouseup="moveXClear()"
+						id="button-right">&nbsp;&#8594;&nbsp;</button><br>
+
+					<button class="button button-round btn-direction" onmousedown="moveDown()" onmouseup="moveYClear()"
+						id="button-down">&nbsp;&nbsp;&#8595;&nbsp;&nbsp;</button>
 				</div>
 
 				<!-- Menu Button -->
@@ -128,11 +132,13 @@
 				<button id="muteID" onclick="muteAudio()" class="cancelbtn" title="Turn Game Effects On/Off">FX
 					Off</button>
 				<button id="backID" onclick="skipBackwards()" title="Skip Track Backwards">
-					<<</button> <button id="rewindID" onclick="rewindTrack()" title="Rewind 5 Seconds">
-						<</button> <button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music
+					<!-- Escape character < = &lt; (less than) for rewind, and track skip back buttons -->
+					&lt;&lt;</button> <button id="rewindID" onclick="rewindTrack()" title="Rewind 5 Seconds">
+					&lt;</button> <button id="playID" onclick="playMusic()" title="Play/Pause Current Track">Play Music
 				</button>
-				<button id="fastforwardID" onclick="fastForwardTrack()" title="Fast Forward 5 Seconds">></button>
-				<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">>></button>
+				<!-- Escape character > = &gt; (greater than) for fast forward, and track skip forwards buttons -->
+				<button id="fastforwardID" onclick="fastForwardTrack()" title="Fast Forward 5 Seconds">&gt;</button>
+				<button id="forwardID" onclick="skipForwards()" title="Skip Track Forwards">&gt;&gt;</button>
 				<button id="randomID" onclick="playRandomMusic()" title="Play A Random Music Track">Random</button>
 			</div>
 
@@ -144,12 +150,14 @@
 					<div class="popuptext above" id="popupID">
 						<h3>Control Panel</h3>
 						<ul>
+							<!-- Escape character < = &lt; (less than) -->
 							<li><b>FX On/Off:</b><br />Game sound effects on/off</li>
-							<li><b><<:</b> <br />Play the previous track</li>
-							<li><b><:</b> <br />Rewind 5 seconds</li>
+							<li><b>&lt;&lt;:</b> <br />Play the previous track</li>
+							<li><b>&lt;:</b> <br />Rewind 5 seconds</li>
 							<li><b>Play/Pause Music:</b><br />Play or Pause the audio</li>
-							<li><b>>:</b><br />Fast forward 5 seconds</li>
-							<li><b>>>:</b><br />Skip forward to the next track</li>
+							<!-- Escape character > = &gt; (greater than) -->
+							<li><b>&gt;:</b><br />Fast forward 5 seconds</li>
+							<li><b>&gt;&gt;:</b><br />Skip forward to the next track</li>
 							<li><b>Random Track:</b><br />Selects a random audio file</li>
 						</ul>
 					</div>
@@ -159,7 +167,7 @@
 
 		<script src="scripts/game-buttons.js"></script>
 		<!--Script for handling background music controls-->
-		<script language="JavaScript" type="text/javascript" src="scripts/music.js"></script>
+		<script src="scripts/music.js"></script>
 	</div>
 
 	<!--Info Accordion Panel-->
@@ -167,52 +175,55 @@
 		<div>
 			<button class="accordion">Current Top Score: <span id="scoreID"></span></button>
 			<div class="panel">
-				<p>
-					<h2>Top Scores</h2>
-					<ul>
-						<li><b>Joe</b> 100</li>
-						<li><b>Ian</b> 90</li>
-						<li><b>Martin</b> 80</li>
-					</ul>
-				</p>
+				<h2>Top Scores</h2>
+
+				<ul>
+					<li><b>Joe</b> 100</li>
+					<li><b>Ian</b> 90</li>
+					<li><b>Martin</b> 80</li>
+				</ul>
 			</div>
 
 			<button class="accordion">Controls</button>
 			<div class="panel">
-				<p>
-					<h2>Movement</h2>
-					<ul>
-						<li><b>A, 4, &larr;</b> = Left</li>
-						<li><b>S, 2, &darr;</b> = Down</li>
-						<li><b>D, 6, &rarr;</b> = Right</li>
-						<li><b>W, 8, &uarr;</b> = Up</li>
-					</ul>
-					<h2>Weapons</h2>
-					<ul>
-						<li><b>SPACE, Right Click</b> = Fire</li>
-					</ul>
-					<h2>General</h2>
-					<ul>
-						<li><b>SPACE, Right Click</b> = Fire</li>
-						<li><b>F5</b> = Reset Game (Refreshes Page)</li>
-						<li><b>F11</b> = Full Screen</li>
-					</ul>
-				</p>
+				<h2>Movement</h2>
+
+				<ul>
+					<li><b>A, 4, &larr;</b> = Left</li>
+					<li><b>S, 2, &darr;</b> = Down</li>
+					<li><b>D, 6, &rarr;</b> = Right</li>
+					<li><b>W, 8, &uarr;</b> = Up</li>
+				</ul>
+
+				<h2>Weapons</h2>
+
+				<ul>
+					<li><b>SPACE, Right Click</b> = Fire</li>
+				</ul>
+
+				<h2>General</h2>
+
+				<ul>
+					<li><b>SPACE, Right Click</b> = Fire</li>
+					<li><b>F5</b> = Reset Game (Refreshes Page)</li>
+					<li><b>F11</b> = Full Screen</li>
+				</ul>
 			</div>
 
 			<button class="accordion">Info</button>
 			<div class="panel">
-				<p>
-					<h2>How To Play</h2>
-					<ul>
-						<li>Score points by destroying enemy ships</li>
-						<li>Player does not lose health when flashing</li>
-						<li>Avoid destorying bloodcells</li>
-						<li>If the Bloodcell Count goes below zero, the game is over</li>
-						<li>The timer doesn't do anything yet</li>
-					</ul>
-				</p>
+				<h2>How To Play</h2>
+
+				<ul>
+					<li>Score points by destroying enemy ships</li>
+					<li>Player does not lose health when flashing</li>
+					<li>Avoid destorying bloodcells</li>
+					<li>If the Bloodcell Count goes below zero, the game is over</li>
+					<li>The timer doesn't do anything yet</li>
+				</ul>
+
 				<h2>Links</h2>
+
 				<p>
 					<a href="https://github.com/joeaoregan/AntibodyJS" target="_blank">AntiBody JS GitHub Page</a>
 				</p>

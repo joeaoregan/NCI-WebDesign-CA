@@ -293,3 +293,14 @@ document.addEventListener('keyup', function(event) {
 			break;
 	}	
 });
+
+// Add event listeners to controller buttons as onTouchStart and onTouchEnd are causing errors in html
+document.getElementById("button-up").addEventListener("touchstart", moveUp);
+document.getElementById("button-down").addEventListener("touchstart", moveDown);
+document.getElementById("button-left").addEventListener("touchstart", moveLeft);
+document.getElementById("button-right").addEventListener("touchstart", moveRight);
+
+document.getElementById("button-up").addEventListener("touchend", moveYClear);
+document.getElementById("button-down").addEventListener("touchend", moveYClear);
+document.getElementById("button-left").addEventListener("touchend", moveXClear);
+document.getElementById("button-right").addEventListener("touchend", moveXClear);
