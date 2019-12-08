@@ -22,27 +22,27 @@
 
 	<!-- The footer.js external file uses document.write() to create a footer -->
 	<!-- It can then be included across multiple pages and edited once for consistency -->
-	<script language="JavaScript" src="scripts/footer.js"></script>
+	<script src="scripts/footer.js"></script>
 	<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
-	<script language="JavaScript" src="scripts/login.js"></script>
+	<script src="scripts/login.js"></script>
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script language="JavaScript" src="scripts/fade-jquery.js"></script>
+	<script src="scripts/fade-jquery.js"></script>
 </head>
 
 <body>
 	<!-- Anchor to return to top of page from bottom -->
 	<!-- Anchor name: https://www.w3schools.com/tags/att_a_name.asp -->
-	<a name="topofpage"></a>
+	<a id="topofpage"></a>
 
 	<!-- The menu is created in the menu.js JavaScript file -->
 	<!-- It highlights the current page by comparing the page title to JSON used to create the menu items-->
 	<div class="menu stretch">
 		<div id="menu" class="center"></div><!-- menu.js: displays the menu here -->
 		<!-- External menu script to display top navigation bar-->
-		<script language="JavaScript" src="scripts/menu.js"></script>
+		<script src="scripts/menu.js"></script>
 		<!-- Picture gallery change picture on click -->
-		<script language="JavaScript" src="scripts/gallery.js"></script>
+		<script src="scripts/gallery.js"></script>
 	</div>
 
 	<div class="main">
@@ -57,7 +57,7 @@
 			</div>
 
 			<div>
-				<script language="JavaScript" src="scripts/logo-jquery.js"></script>
+				<script src="scripts/logo-jquery.js"></script>
 
 				<h1 id="welcome-personalise">Welcome to J.I.M Games</h1>
 
@@ -120,10 +120,10 @@
 					<!--Login form - Username and Password are required fields-->
 					<div class="login-container">
 						<!--Labels are attached to the text input fields-->
-						<label class="ps" for="uname"><b>Username</b></label>
+						<label class="ps" for="username"><b>Username</b></label>
 						<input type="text" placeholder="Enter Username" name="uname" id="username" required />
 
-						<label class="ps" for="psw"><b>Password</b></label>
+						<label class="ps" for="password"><b>Password</b></label>
 						<input type="password" placeholder="Enter Password" name="psw" id="password" required />
 
 						<span class=ps>
@@ -148,7 +148,7 @@
 		<!-- Antibody information section -->
 		<div class="body-border">
 			<!-- Anchor to move from top of page to Antibody info section -->
-			<a name="antibody"></a>
+			<a id="antibody"></a>
 
 			<div>
 				<h1>Antibody JS</h1>
@@ -220,7 +220,7 @@
 		<!-- Flappy Bird information section -->
 		<div class="body-border yellow-section">
 			<!--Anchor to move from top of page to flappy bird info section-->
-			<a name="flappybird"></a>
+			<a id="flappybird"></a>
 
 			<div>
 				<h1>Flappy Bird</h1>
@@ -375,13 +375,14 @@
 				<span id="spaceScoreID">0</span><br />
 			</div>
 			<!-- Script to display high-scores for each game on right panel -->
-			<script language="JavaScript" src="scripts/high-scores.js"></script>
+			<script src="scripts/high-scores.js"></script>
 		</div>
 
 		<!-- The createFooter() function is called from the external footer.js file included in the head tag -->
 		<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
 		<!-- All other pages are not fixed, and have different formatting -->
-		<script>createFooter("fixed-footer")</script>
+		<script>createFooter("fixed-footer")</script>		
+	</div><!-- Close main class div -->
 </body>
 
 </html>
