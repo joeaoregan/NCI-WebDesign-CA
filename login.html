@@ -20,7 +20,7 @@
 
 	<!-- The footer.js external file uses document.write() to create a footer -->
 	<!-- It can then be included across multiple pages and edited once for consistency -->
-	<script language="JavaScript" type="text/javascript" src="scripts/footer.js"></script>
+	<script src="scripts/footer.js"></script>
 </head>
 
 <body>
@@ -45,10 +45,10 @@
 			<!--Labels are attached to the text input fields-->
 			<!-- <form class="modal-content" action="index.html#topofpage" onsubmit="userLogin()">   This works with now onclick - redirects, but doesn't check password-->
 			<form class="modal-content" action="index.html" onsubmit="javascript:userLogin()">
-				<label for="uname"><b>Username</b></label>
+				<label for="username"><b>Username</b></label>
 				<input type="text" placeholder="Enter Username" name="uname" id="username" required />
 
-				<label for="psw"><b>Password</b></label>
+				<label for="password"><b>Password</b></label>
 				<input type="password" placeholder="Enter Password" name="psw" id="password" required />
 
 				<button type="submit">Login</button>
@@ -58,16 +58,16 @@
 			</form>
 		</div>
 		<!--The login script is used to handle user login: https://www.w3schools.com/html/html5_svg.asp-->
-		<script language="JavaScript" type="text/javascript" src="scripts/login.js"></script>
+		<script src="scripts/login.js"></script>
 	</div>
 
 	<div class="body-border yellow-section">
-		<a name="forgot"></a>
+		<a id="forgot"></a>
 		<h1>Password Reset</h1>
 
-		<form action="javascript:resetPassword()" submit="">
+		<form action="javascript:resetPassword()" onsubmit="">
 			<!--Reset password form - email is a required field-->
-			<label for="uname"><b>Email</b></label>
+			<label for="emailvalue"><b>Email</b></label>
 			<!--User must enter a valid email format and press "Reset Password" button-->
 			<input id="emailvalue" type="email" placeholder="Enter Email Address" name="email" required>
 
@@ -98,6 +98,7 @@
 		<!-- It takes a class name parameter, the index page footer is fixed to the bottom of the screen -->
 		<!-- All other pages are not fixed, and have different formatting -->
 		<script>createFooter("regular-footer")</script>
+	</div>
 </body>
 
 </html>
