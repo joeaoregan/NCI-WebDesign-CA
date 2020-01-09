@@ -88,3 +88,23 @@ Ian Fitzpatrick | x19175400@student.ncirl.ie | [ianfitzpatrick52](https://github
 
 * [Live Web Page](http://wdtest2019jim.gearhostpreview.com/index.html) using [GearHost Local Git Deploy](https://www.gearhost.com/documentation/git-deploy-your-application)
 * [Project Spec](https://github.com/joeaoregan/NCI-WebDesign-CA/wiki/Project-Spec)
+
+---
+
+## Screenshots
+
+![JIM Games Home](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/1home.jpg "JIM Games Home")
+
+![JIM Games Antibody](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/2antibody.jpg "JIM Games Antibody")
+
+![JIM Games Flappy Bird](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/3flappy.jpg "JIM Games Flappy Bird")
+
+![JIM Games Space Invaders](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/4space-inavders.jpg "JIM Games Space Invaders")
+
+![JIM Games Register](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/5register.jpg "JIM Games Register")
+
+![JIM Games Contact Us](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/6contact.jpg "JIM Games Contact Us")
+
+![JIM Games About](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/7about.jpg "JIM Games About")
+
+![JIM Games Login](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/8login.jpg "JIM Games Login")
