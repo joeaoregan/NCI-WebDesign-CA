@@ -93,18 +93,35 @@ Ian Fitzpatrick | x19175400@student.ncirl.ie | [ianfitzpatrick52](https://github
 
 ## Screenshots
 
-![JIM Games Home](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/1home.jpg "JIM Games Home")
+![JIM Games Home](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/1home.jpg "JIM Games Home")
+###### Home Page
 
-![JIM Games Antibody](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/2antibody.jpg "JIM Games Antibody")
+![JIM Games Antibody](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/2antibody.jpg "JIM Games Antibody")
+###### Game 1 Antibody
 
-![JIM Games Flappy Bird](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/3flappy.jpg "JIM Games Flappy Bird")
+![JIM Games Flappy Bird](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/3flappy.jpg "JIM Games Flappy Bird")
+###### Game 2 Flappy Bird
 
-![JIM Games Space Invaders](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/4space-inavders.jpg "JIM Games Space Invaders")
+![JIM Games Space Invaders](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/4space-inavders.jpg "JIM Games Space Invaders")
+###### Game 3 Space Invaders
 
-![JIM Games Register](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/5register.jpg "JIM Games Register")
+![JIM Games Register](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/5register.jpg "JIM Games Register")
+###### Register Page
 
-![JIM Games Contact Us](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/6contact.jpg "JIM Games Contact Us")
+![JIM Games Contact Us](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/6contact.jpg "JIM Games Contact Us")
+###### Contact Page
 
-![JIM Games About](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/7about.jpg "JIM Games About")
+![JIM Games About](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/7about.jpg "JIM Games About")
+###### About Page
 
-![JIM Games Login](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/Screenshots/8login.jpg "JIM Games Login")
+![JIM Games Login](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/8login.jpg "JIM Games Login")
+###### Login Page
+
+![JIM Games Popup  Login](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/9popup-login.jpg "JIM Games Popup Login")
+###### Popup Login
+
+![JIM Games Photo Gallery](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/10gallery.jpg "JIM Games Photo Gallery")
+###### Photo Gallery
+
+![JIM Games Popup Message](https://raw.githubusercontent.com/joeaoregan/NCI-WebDesign-CA/master/screenshots/11popup.jpg "JIM Games Popup Message")
+###### Popup Message
